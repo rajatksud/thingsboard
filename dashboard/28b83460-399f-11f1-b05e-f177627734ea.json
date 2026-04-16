@@ -1,0 +1,1455 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "title" : "GeoMap",
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "configuration" : {
+      "description" : "Auto-generated dashboard scaffold with States and Aliases configured.",
+      "widgets" : {
+        "bf4eb0d6-b348-b803-394c-c5d6269b5bf7" : {
+          "typeFullFqn" : "system.map",
+          "type" : "latest",
+          "sizeX" : 8.5,
+          "sizeY" : 6,
+          "config" : {
+            "datasources" : [ ],
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "mapType" : "geoMap",
+              "layers" : [ {
+                "label" : "{i18n:widgets.maps.layer.roadmap}",
+                "provider" : "openstreet",
+                "layerType" : "OpenStreetMap.Mapnik"
+              }, {
+                "label" : "{i18n:widgets.maps.layer.satellite}",
+                "provider" : "openstreet",
+                "layerType" : "Esri.WorldImagery"
+              }, {
+                "label" : "{i18n:widgets.maps.layer.hybrid}",
+                "provider" : "openstreet",
+                "layerType" : "Esri.WorldImagery",
+                "referenceLayer" : "openstreetmap_hybrid"
+              } ],
+              "imageSource" : {
+                "sourceType" : "image",
+                "url" : "data:image/svg+xml;base64,PHN2ZyBpZD0ic3ZnMiIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTAwIiB3aWR0aD0iMTAwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgdmlld0JveD0iMCAwIDEwMCAxMDAiPgogPGcgaWQ9ImxheWVyMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtOTUyLjM2KSI+CiAgPHJlY3QgaWQ9InJlY3Q0Njg0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBoZWlnaHQ9Ijk5LjAxIiB3aWR0aD0iOTkuMDEiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiB5PSI5NTIuODYiIHg9Ii40OTUwNSIgc3Ryb2tlLXdpZHRoPSIuOTkwMTAiIGZpbGw9IiNlZWUiLz4KICA8dGV4dCBpZD0idGV4dDQ2ODYiIHN0eWxlPSJ3b3JkLXNwYWNpbmc6MHB4O2xldHRlci1zcGFjaW5nOjBweDt0ZXh0LWFuY2hvcjptaWRkbGU7dGV4dC1hbGlnbjpjZW50ZXIiIGZvbnQtd2VpZ2h0PSJib2xkIiB4bWw6c3BhY2U9InByZXNlcnZlIiBmb250LXNpemU9IjEwcHgiIGxpbmUtaGVpZ2h0PSIxMjUlIiB5PSI5NzAuNzI4MDkiIHg9IjQ5LjM5NjQ3NyIgZm9udC1mYW1pbHk9IlJvYm90byIgZmlsbD0iIzY2NjY2NiI+PHRzcGFuIGlkPSJ0c3BhbjQ2OTAiIHg9IjUwLjY0NjQ3NyIgeT0iOTcwLjcyODA5Ij5JbWFnZSBiYWNrZ3JvdW5kIDwvdHNwYW4+PHRzcGFuIGlkPSJ0c3BhbjQ2OTIiIHg9IjQ5LjM5NjQ3NyIgeT0iOTgzLjIyODA5Ij5pcyBub3QgY29uZmlndXJlZDwvdHNwYW4+PC90ZXh0PgogIDxyZWN0IGlkPSJyZWN0NDY5NCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgaGVpZ2h0PSIxOS4zNiIgd2lkdGg9IjY5LjM2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgeT0iOTkyLjY4IiB4PSIxNS4zMiIgc3Ryb2tlLXdpZHRoPSIuNjM5ODYiIGZpbGw9Im5vbmUiLz4KIDwvZz4KPC9zdmc+Cg==",
+                "entityAliasId" : "98331165-5da1-4823-aff4-f8aeb77617db",
+                "entityKey" : null
+              },
+              "markers" : [ {
+                "dsType" : "entity",
+                "dsLabel" : "",
+                "dsDeviceId" : null,
+                "dsEntityAliasId" : "98331165-5da1-4823-aff4-f8aeb77617db",
+                "dsFilterId" : null,
+                "additionalDataSources" : null,
+                "additionalDataKeys" : [ {
+                  "name" : "device.health.alert_active",
+                  "type" : "timeseries",
+                  "label" : "device.health.alert_active",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "device.runtime.uptime_s",
+                  "type" : "timeseries",
+                  "label" : "device.runtime.uptime_s",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "electrical.battery_level_pct",
+                  "type" : "timeseries",
+                  "label" : "electrical.battery_level_pct",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "device.sensor.internal_temp_c",
+                  "type" : "timeseries",
+                  "label" : "device.sensor.internal_temp_c",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "electrical.mains_status",
+                  "type" : "timeseries",
+                  "label" : "electrical.mains_status",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "network.radio.connection_type",
+                  "type" : "timeseries",
+                  "label" : "network.radio.connection_type",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "network.radio.packet_loss_pct",
+                  "type" : "timeseries",
+                  "label" : "network.radio.packet_loss_pct",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "network.radio.rsrp_dbm",
+                  "type" : "timeseries",
+                  "label" : "network.radio.rsrp_dbm",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "network.radio.rsrq_db",
+                  "type" : "timeseries",
+                  "label" : "network.radio.rsrq_db",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "network.radio.rssi_dbm",
+                  "type" : "timeseries",
+                  "label" : "network.radio.rssi_dbm",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "network.radio.latency_ms",
+                  "type" : "timeseries",
+                  "label" : "network.radio.latency_ms",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "network.radio.snr_db",
+                  "type" : "timeseries",
+                  "label" : "network.radio.snr_db",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "network.stats.bytes_received",
+                  "type" : "timeseries",
+                  "label" : "network.stats.bytes_received",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "network.stats.bytes_sent",
+                  "type" : "timeseries",
+                  "label" : "network.stats.bytes_sent",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                }, {
+                  "name" : "device.health.score",
+                  "type" : "timeseries",
+                  "label" : "device.health.score",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                } ],
+                "label" : {
+                  "show" : true,
+                  "type" : "pattern",
+                  "pattern" : "${entityName}"
+                },
+                "tooltip" : {
+                  "show" : true,
+                  "type" : "pattern",
+                  "pattern" : "<div style=\"padding: 4px;\">\n    <b>${entityName}</b><hr/>\n    <b>Health Score:</b> <span style=\"font-weight: bold; font-size: 16px;\">${device.health.score} / 100</span><br/>\n    <b>RSRP (Signal Ratio):</b> ${device.network.rsrp:1} dBm<br/>\n    <b>SNR (Noise Ratio):</b> ${device.network.snr:1} dB<br/>\n    <hr/>\n\n    \n</div>",
+                  "patternFunction" : null,
+                  "trigger" : "hover",
+                  "autoclose" : true,
+                  "offsetX" : 0,
+                  "offsetY" : -1,
+                  "tagActions" : [ {
+                    "name" : "open_nic",
+                    "type" : "openDashboardState",
+                    "targetDashboardStateId" : "device_detail",
+                    "setEntityId" : true,
+                    "stateEntityParamName" : null,
+                    "openRightLayout" : false,
+                    "openInSeparateDialog" : false,
+                    "openInPopover" : false
+                  } ]
+                },
+                "click" : {
+                  "type" : "openDashboardState",
+                  "targetDashboardStateId" : "device_detail",
+                  "setEntityId" : true,
+                  "stateEntityParamName" : null,
+                  "openRightLayout" : false,
+                  "openInSeparateDialog" : false,
+                  "openInPopover" : false
+                },
+                "groups" : null,
+                "edit" : {
+                  "enabledActions" : [ ],
+                  "attributeScope" : "SERVER_SCOPE",
+                  "snappable" : false
+                },
+                "xKey" : {
+                  "name" : "deployment_latitude",
+                  "type" : "attribute",
+                  "label" : "deployment_latitude",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                },
+                "yKey" : {
+                  "name" : "deployment_longitude",
+                  "type" : "attribute",
+                  "label" : "deployment_longitude",
+                  "color" : "#2196f3",
+                  "settings" : { }
+                },
+                "markerType" : "icon",
+                "markerShape" : {
+                  "shape" : "markerShape1",
+                  "size" : 34,
+                  "color" : {
+                    "type" : "constant",
+                    "color" : "#307FE5"
+                  }
+                },
+                "markerIcon" : {
+                  "iconContainer" : "iconContainer1",
+                  "icon" : "mdi:lightbulb-on",
+                  "size" : 48,
+                  "color" : {
+                    "type" : "function",
+                    "color" : "#30E53A",
+                    "rangeKey" : null,
+                    "range" : null,
+                    "colorFunction" : "// Function takes `data` mapping the current entity's keys\nlet score = data['health_score'];\n\n// If the key is missing (loading), default to blue\nif (score === undefined || score === null) {\n    return '#2196f3';\n}\n\nif (score < 40) {\n    return '#ff0000'; // Critical Health (Red)\n} else if (score < 75) {\n    return '#ffa500'; // Warning Health (Orange)\n} else {\n    return '#00ff00'; // Optimal Health (Green)\n}"
+                  }
+                },
+                "markerImage" : {
+                  "type" : "image",
+                  "image" : "/assets/markers/shape1.svg",
+                  "imageSize" : 34
+                },
+                "markerOffsetX" : 0.5,
+                "markerOffsetY" : 1,
+                "markerClustering" : {
+                  "enable" : true,
+                  "zoomOnClick" : true,
+                  "maxZoom" : null,
+                  "maxClusterRadius" : 80,
+                  "zoomAnimation" : true,
+                  "showCoverageOnHover" : true,
+                  "spiderfyOnMaxZoom" : true,
+                  "chunkedLoad" : true,
+                  "lazyLoad" : true,
+                  "useClusterMarkerColorFunction" : true,
+                  "clusterMarkerColorFunction" : "let total = 0;\nlet count = 0;\n\nfor (let markerData of data) {\n    let score = Number(markerData.device.health.score);\n\n    if (!isNaN(score)) {\n        total += score;\n        count++;\n    }\n}\n\n// No valid score found in cluster\nif (count === 0) {\n    return '#2196f3';\n}\n\nlet avgScore = total / count;\n\nif (avgScore < 40) {\n    return '#ff0000';   // Critical Health\n} else if (avgScore < 75) {\n    return '#ffa500';   // Warning Health\n} else {\n    return '#00ff00';   // Optimal Health\n}"
+                }
+              } ],
+              "polygons" : [ ],
+              "circles" : [ ],
+              "additionalDataSources" : [ ],
+              "controlsPosition" : "topleft",
+              "zoomActions" : [ "scroll", "doubleClick", "controlButtons" ],
+              "scales" : [ "metric" ],
+              "dragModeButton" : false,
+              "fitMapBounds" : true,
+              "useDefaultCenterPosition" : false,
+              "defaultCenterPosition" : "0,0",
+              "defaultZoomLevel" : null,
+              "mapPageSize" : 16384,
+              "mapActionButtons" : [ ],
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "padding" : "8px"
+            },
+            "title" : "Map",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "configMode" : "advanced",
+            "titleFont" : null,
+            "titleColor" : null,
+            "margin" : "0px",
+            "borderRadius" : "0px",
+            "iconSize" : "24px",
+            "titleIcon" : "map",
+            "iconColor" : "#1F6BDD",
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "bf4eb0d6-b348-b803-394c-c5d6269b5bf7"
+        },
+        "4ba570e5-6461-3674-778b-48e3e05d9eca" : {
+          "typeFullFqn" : "system.cards.timeseries_table",
+          "type" : "timeseries",
+          "sizeX" : 8,
+          "sizeY" : 6.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "3251d246-e779-43fd-8de9-2d81d179fa36",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "network.radio.connection_type",
+                "type" : "timeseries",
+                "label" : "Type",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value;"
+              }, {
+                "name" : "network.radio.rssi_dbm",
+                "type" : "timeseries",
+                "label" : "RSSI",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : "dBm",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "network.radio.rsrp_dbm",
+                "type" : "timeseries",
+                "label" : "RSRP",
+                "color" : "#4caf50",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : "dBm",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "network.radio.rsrq_db",
+                "type" : "timeseries",
+                "label" : "RSRQ",
+                "color" : "#f44336",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : "dB",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "device.health.score",
+                "type" : "timeseries",
+                "label" : "Health",
+                "color" : "#f44336",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : "%",
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "device.runtime.uptime_s",
+                "type" : "timeseries",
+                "label" : "Uptime",
+                "color" : "#ffc107",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : "hr",
+                "decimals" : 2,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/3600;"
+              }, {
+                "name" : "device.sensor.internal_temp_c",
+                "type" : "timeseries",
+                "label" : "Temp",
+                "color" : "#607d8b",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : "°C",
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "network.stats.bytes_received",
+                "type" : "timeseries",
+                "label" : "MB IN",
+                "color" : "#e91e63",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/1000000;"
+              }, {
+                "name" : "network.stats.bytes_sent",
+                "type" : "timeseries",
+                "label" : "MB Out",
+                "color" : "#ffeb3b",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : 1,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "return value/1000000;"
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ ]
+            } ],
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "showCellActionsMenu" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "showTimestamp" : true,
+              "dateFormat" : {
+                "format" : "yyyy-MM-dd HH:mm:ss"
+              },
+              "displayPagination" : true,
+              "useEntityLabel" : true,
+              "defaultPageSize" : 20,
+              "pageStepCount" : 3,
+              "pageStepIncrement" : 10,
+              "hideEmptyLines" : false,
+              "disableStickyHeader" : false,
+              "useRowStyleFunction" : false,
+              "rowStyleFunction" : ""
+            },
+            "title" : "Details for Device ${entityName}",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : true,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "configMode" : "advanced",
+            "titleFont" : null,
+            "titleColor" : null,
+            "titleIcon" : "show_chart",
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "4ba570e5-6461-3674-778b-48e3e05d9eca"
+        },
+        "957fb80c-91ca-e3b6-e9e1-913b28e97961" : {
+          "typeFullFqn" : "system.battery_level",
+          "type" : "latest",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "3251d246-e779-43fd-8de9-2d81d179fa36",
+              "dataKeys" : [ {
+                "name" : "electrical.battery_level_pct",
+                "type" : "timeseries",
+                "label" : "electrical.battery_level_pct",
+                "color" : "#2196f3",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "layout" : "vertical_solid",
+              "showValue" : true,
+              "autoScaleValueSize" : true,
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 20,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "24px"
+              },
+              "valueColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "batteryLevelColor" : {
+                "type" : "range",
+                "color" : "rgb(224, 224, 224)",
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : null,
+                    "to" : 25,
+                    "color" : "rgba(227, 71, 71, 1)"
+                  }, {
+                    "from" : 25,
+                    "to" : 50,
+                    "color" : "rgba(246, 206, 67, 1)"
+                  }, {
+                    "from" : 50,
+                    "to" : null,
+                    "color" : "rgba(92, 223, 144, 1)"
+                  } ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "batteryShapeColor" : {
+                "type" : "range",
+                "color" : "rgba(224, 224, 224, 0.32)",
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "from" : null,
+                    "to" : 25,
+                    "color" : "rgba(227, 71, 71, 0.32)"
+                  }, {
+                    "from" : 25,
+                    "to" : 50,
+                    "color" : "rgba(246, 206, 67, 0.32)"
+                  }, {
+                    "from" : 50,
+                    "to" : null,
+                    "color" : "rgba(92, 223, 144, 0.32)"
+                  } ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "sectionsCount" : 4,
+              "padding" : "12px"
+            },
+            "title" : "Battery level",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "%",
+            "decimals" : 0,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "configMode" : "basic",
+            "margin" : "0px",
+            "borderRadius" : "0px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : "normal",
+              "lineHeight" : "24px"
+            },
+            "titleIcon" : "mdi:battery-high",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "18px",
+            "timewindowStyle" : {
+              "showIcon" : true,
+              "iconSize" : "14px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : null,
+                "weight" : null,
+                "style" : null,
+                "lineHeight" : "1"
+              },
+              "color" : null
+            },
+            "titleColor" : "rgba(0, 0, 0, 0.87)"
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "957fb80c-91ca-e3b6-e9e1-913b28e97961"
+        },
+        "6025c11d-355a-1086-2557-20dd6dd73bcc" : {
+          "typeFullFqn" : "system.signal_strength",
+          "type" : "latest",
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "3251d246-e779-43fd-8de9-2d81d179fa36",
+              "dataKeys" : [ {
+                "name" : "network.radio.rsrp_dbm",
+                "type" : "timeseries",
+                "label" : "network.radio.rsrp_dbm",
+                "color" : "#2196f3",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "layout" : "cellular_bar",
+              "showDate" : true,
+              "dateFormat" : {
+                "format" : null,
+                "lastUpdateAgo" : true,
+                "custom" : false
+              },
+              "dateFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "16px"
+              },
+              "dateColor" : "rgba(0, 0, 0, 0.38)",
+              "activeBarsColor" : {
+                "color" : "rgba(92, 223, 144, 1)",
+                "type" : "range",
+                "rangeList" : {
+                  "advancedMode" : false,
+                  "range" : [ {
+                    "to" : -85,
+                    "color" : "rgba(227, 71, 71, 1)"
+                  }, {
+                    "from" : -85,
+                    "to" : -70,
+                    "color" : "rgba(255, 122, 0, 1)"
+                  }, {
+                    "from" : -70,
+                    "to" : -55,
+                    "color" : "rgba(246, 206, 67, 1)"
+                  }, {
+                    "from" : -55,
+                    "color" : "rgba(92, 223, 144, 1)"
+                  } ]
+                },
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "inactiveBarsColor" : "rgba(224, 224, 224, 1)",
+              "noSignalRssiValue" : -100,
+              "showTooltip" : true,
+              "showTooltipValue" : true,
+              "tooltipValueFont" : {
+                "family" : "Roboto",
+                "size" : 13,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "16px"
+              },
+              "tooltipValueColor" : "rgba(0,0,0,0.76)",
+              "showTooltipDate" : true,
+              "tooltipDateFormat" : {
+                "format" : null,
+                "lastUpdateAgo" : true,
+                "custom" : false
+              },
+              "tooltipDateFont" : {
+                "family" : "Roboto",
+                "size" : 13,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "16px"
+              },
+              "tooltipDateColor" : "rgba(0,0,0,0.76)",
+              "tooltipBackgroundColor" : "rgba(255,255,255,0.72)",
+              "tooltipBackgroundBlur" : 3,
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "padding" : "12px"
+            },
+            "title" : "Signal strength",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "dBm",
+            "decimals" : 0,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "configMode" : "basic",
+            "margin" : "0px",
+            "borderRadius" : "0px",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : "normal",
+              "lineHeight" : "24px"
+            },
+            "titleIcon" : "signal_cellular_alt",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "18px",
+            "timewindowStyle" : {
+              "showIcon" : true,
+              "iconSize" : "14px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : null,
+                "weight" : null,
+                "style" : null,
+                "lineHeight" : "1"
+              },
+              "color" : null
+            },
+            "titleColor" : "rgba(0, 0, 0, 0.87)"
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "6025c11d-355a-1086-2557-20dd6dd73bcc"
+        },
+        "8f3fbbe7-8038-12c0-c5e4-c1274e4234ea" : {
+          "typeFullFqn" : "system.simple_value_and_chart_card",
+          "type" : "timeseries",
+          "sizeX" : 4.5,
+          "sizeY" : 2,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "3251d246-e779-43fd-8de9-2d81d179fa36",
+              "dataKeys" : [ {
+                "name" : "device.sensor.internal_temp_c",
+                "type" : "timeseries",
+                "label" : "device.sensor.internal_temp_c",
+                "color" : "rgba(63, 82, 221, 1)",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "device.sensor.internal_temp_c",
+                "type" : "timeseries",
+                "label" : "Latest",
+                "color" : "rgba(63, 82, 221, 1)",
+                "settings" : { },
+                "units" : null,
+                "decimals" : null
+              } ]
+            } ],
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : null,
+            "padding" : "0",
+            "settings" : {
+              "layout" : "left",
+              "autoScale" : true,
+              "showValue" : true,
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 28,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "32px"
+              },
+              "valueColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "background" : {
+                "type" : "color",
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                }
+              },
+              "padding" : "12px"
+            },
+            "title" : "Temperature",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : null,
+            "mobileHeight" : null,
+            "configMode" : "basic",
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : "thermostat",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : "normal",
+              "lineHeight" : "24px"
+            },
+            "iconSize" : "18px",
+            "titleTooltip" : "",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "useDashboardTimewindow" : true,
+            "decimals" : 0,
+            "titleColor" : "rgba(0, 0, 0, 0.87)",
+            "borderRadius" : null,
+            "units" : "°C",
+            "timewindowStyle" : {
+              "showIcon" : false,
+              "iconSize" : "24px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "400",
+                "style" : "normal",
+                "lineHeight" : "16px"
+              },
+              "color" : "rgba(0, 0, 0, 0.38)",
+              "displayTypePrefix" : true
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "8f3fbbe7-8038-12c0-c5e4-c1274e4234ea"
+        },
+        "9ed4f044-e13b-0e76-53f6-2b7f1acaad4e" : {
+          "typeFullFqn" : "system.simple_value_and_chart_card",
+          "type" : "timeseries",
+          "sizeX" : 4.5,
+          "sizeY" : 2,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "3251d246-e779-43fd-8de9-2d81d179fa36",
+              "dataKeys" : [ {
+                "name" : "device.health.score",
+                "type" : "timeseries",
+                "label" : "device.health.score",
+                "color" : "rgb(63, 221, 68)",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              },
+              "latestDataKeys" : [ {
+                "name" : "device.health.score",
+                "type" : "timeseries",
+                "label" : "Latest",
+                "color" : "rgb(63, 221, 68)",
+                "settings" : { },
+                "units" : null,
+                "decimals" : null
+              } ]
+            } ],
+            "showTitle" : true,
+            "backgroundColor" : "rgba(0, 0, 0, 0)",
+            "color" : null,
+            "padding" : "0",
+            "settings" : {
+              "layout" : "right",
+              "autoScale" : true,
+              "showValue" : true,
+              "valueFont" : {
+                "family" : "Roboto",
+                "size" : 28,
+                "sizeUnit" : "px",
+                "style" : "normal",
+                "weight" : "500",
+                "lineHeight" : "32px"
+              },
+              "valueColor" : {
+                "type" : "constant",
+                "color" : "rgba(0, 0, 0, 0.87)",
+                "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+              },
+              "background" : {
+                "type" : "color",
+                "imageUrl" : null,
+                "color" : "#fff",
+                "overlay" : {
+                  "enabled" : true,
+                  "color" : "rgba(255, 255, 255, 0.23)",
+                  "blur" : 3
+                }
+              },
+              "padding" : "12px"
+            },
+            "title" : "Device Health",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : null,
+            "mobileHeight" : null,
+            "configMode" : "basic",
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : "thermostat",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "titleFont" : {
+              "size" : 16,
+              "sizeUnit" : "px",
+              "family" : "Roboto",
+              "weight" : "500",
+              "style" : "normal",
+              "lineHeight" : "24px"
+            },
+            "iconSize" : "18px",
+            "titleTooltip" : "",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "useDashboardTimewindow" : true,
+            "decimals" : 0,
+            "titleColor" : "rgba(0, 0, 0, 0.87)",
+            "borderRadius" : null,
+            "units" : "%",
+            "timewindowStyle" : {
+              "showIcon" : false,
+              "iconSize" : "24px",
+              "icon" : "query_builder",
+              "iconPosition" : "left",
+              "font" : {
+                "size" : 12,
+                "sizeUnit" : "px",
+                "family" : "Roboto",
+                "weight" : "400",
+                "style" : "normal",
+                "lineHeight" : "16px"
+              },
+              "color" : "rgba(0, 0, 0, 0.38)",
+              "displayTypePrefix" : true
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "9ed4f044-e13b-0e76-53f6-2b7f1acaad4e"
+        },
+        "10e4d000-95fe-b4eb-4660-8d5c6fbf891c" : {
+          "typeFullFqn" : "system.cards.attributes_card",
+          "type" : "latest",
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "3251d246-e779-43fd-8de9-2d81d179fa36",
+              "dataKeys" : [ {
+                "name" : "lastActivityTime",
+                "type" : "attribute",
+                "label" : "Last Active",
+                "color" : "#2196f3",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : true,
+                "postFuncBody" : "// Ensure we have a valid value\nif (!value) return '';\n\n// Get current time and calculate difference in milliseconds\nconst now = Date.now();\nconst diffMs = now - value; \n\n// If the time is in the future\nif (diffMs < 0) return \"Just now\"; \n\nconst seconds = Math.floor(diffMs / 1000);\nconst minutes = Math.floor(seconds / 60);\nconst hours = Math.floor(minutes / 60);\nconst days = Math.floor(hours / 24);\n\nif (seconds < 60) {\n    return seconds + \" seconds ago\";\n} else if (minutes < 60) {\n    return minutes + \" mins ago\";\n} else if (hours < 24) {\n    return hours + \" hours ago\";\n} else {\n    return days + \" days ago\";\n}\n"
+              }, {
+                "name" : "imsi",
+                "type" : "attribute",
+                "label" : "IMSI",
+                "color" : "#607d8b",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "iccid",
+                "type" : "attribute",
+                "label" : "ICCID",
+                "color" : "#4caf50",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "som_id",
+                "type" : "attribute",
+                "label" : "Module ID",
+                "color" : "#f44336",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "som_model",
+                "type" : "attribute",
+                "label" : "Module Model",
+                "color" : "#ffc107",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "nic_hardware_revision",
+                "type" : "attribute",
+                "label" : "NIC H/W Rev",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "nic_id",
+                "type" : "attribute",
+                "label" : "NIC ID",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "nic_imei",
+                "type" : "attribute",
+                "label" : "NIC IMEI",
+                "color" : "#3f51b5",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "electrical.mains_status",
+                "type" : "timeseries",
+                "label" : "Mains On",
+                "color" : "#e91e63",
+                "settings" : { },
+                "aggregationType" : "NONE",
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(197, 50, 168, 0.87)",
+            "padding" : "8px",
+            "settings" : { },
+            "title" : "Network Details",
+            "decimals" : null,
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "10e4d000-95fe-b4eb-4660-8d5c6fbf891c"
+        },
+        "0005616c-fd39-15a5-7a5f-39b8a5537b62" : {
+          "typeFullFqn" : "system.cards.attributes_card",
+          "type" : "latest",
+          "sizeX" : 15,
+          "sizeY" : 6,
+          "row" : 0,
+          "col" : 2,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "entityAliasId" : "3251d246-e779-43fd-8de9-2d81d179fa36",
+              "dataKeys" : [ {
+                "name" : "admin_circle",
+                "label" : "Circle",
+                "type" : "attribute",
+                "color" : "#2196f3",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "admin_division",
+                "label" : "Division",
+                "type" : "attribute",
+                "color" : "#4caf50",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "admin_sub_division",
+                "type" : "attribute",
+                "label" : "Sub division",
+                "color" : "#e91e63",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "admin_section",
+                "label" : "Section",
+                "type" : "attribute",
+                "color" : "#f44336",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "consumer_name",
+                "label" : "Name",
+                "type" : "attribute",
+                "color" : "#ffeb3b",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "consumer_account_number",
+                "label" : "Consumer A/C No",
+                "type" : "attribute",
+                "color" : "#607d8b",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "consumer_connected_load",
+                "label" : "Connected Load",
+                "type" : "attribute",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "consumer_contracted_load",
+                "label" : "Contracted Load",
+                "type" : "attribute",
+                "color" : "#8bc34a",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "consumer_load_unit",
+                "label" : "Unit",
+                "type" : "attribute",
+                "color" : "#e91e63",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : { },
+            "title" : "Discom Details",
+            "decimals" : null,
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            }
+          },
+          "id" : "0005616c-fd39-15a5-7a5f-39b8a5537b62"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Map View",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "bf4eb0d6-b348-b803-394c-c5d6269b5bf7" : {
+                  "sizeX" : 25,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "layoutType" : "default"
+              }
+            }
+          }
+        },
+        "device_detail" : {
+          "name" : "Device Detail",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "4ba570e5-6461-3674-778b-48e3e05d9eca" : {
+                  "sizeX" : 22,
+                  "sizeY" : 6,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "957fb80c-91ca-e3b6-e9e1-913b28e97961" : {
+                  "sizeX" : 2,
+                  "sizeY" : 5,
+                  "row" : 6,
+                  "col" : 0
+                },
+                "6025c11d-355a-1086-2557-20dd6dd73bcc" : {
+                  "sizeX" : 2,
+                  "sizeY" : 5,
+                  "row" : 6,
+                  "col" : 2
+                },
+                "8f3fbbe7-8038-12c0-c5e4-c1274e4234ea" : {
+                  "sizeX" : 3,
+                  "sizeY" : 5,
+                  "mobileHeight" : null,
+                  "row" : 6,
+                  "col" : 4
+                },
+                "9ed4f044-e13b-0e76-53f6-2b7f1acaad4e" : {
+                  "sizeX" : 3,
+                  "sizeY" : 5,
+                  "mobileHeight" : null,
+                  "row" : 6,
+                  "col" : 7
+                },
+                "10e4d000-95fe-b4eb-4660-8d5c6fbf891c" : {
+                  "sizeX" : 6,
+                  "sizeY" : 5,
+                  "row" : 6,
+                  "col" : 16
+                },
+                "0005616c-fd39-15a5-7a5f-39b8a5537b62" : {
+                  "sizeX" : 6,
+                  "sizeY" : 5,
+                  "row" : 6,
+                  "col" : 10
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "layoutType" : "default"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "98331165-5da1-4823-aff4-f8aeb77617db" : {
+          "id" : "98331165-5da1-4823-aff4-f8aeb77617db",
+          "alias" : "All Endpoints",
+          "filter" : {
+            "type" : "deviceType",
+            "resolveMultiple" : true,
+            "deviceTypes" : [ "SmartEndpoint" ],
+            "deviceNameFilter" : null
+          }
+        },
+        "3251d246-e779-43fd-8de9-2d81d179fa36" : {
+          "id" : "3251d246-e779-43fd-8de9-2d81d179fa36",
+          "alias" : "Selected Device",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null
+          }
+        },
+        "c60a7719-655f-e386-81eb-c6c4da669548" : {
+          "id" : "c60a7719-655f-e386-81eb-c6c4da669548",
+          "alias" : "RR-KOR-90074",
+          "filter" : {
+            "type" : "singleEntity",
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "65525f20-38b1-11f1-ad66-01ce78174b1f"
+            },
+            "resolveMultiple" : false
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "timewindowMs" : 60000
+        },
+        "aggregation" : {
+          "type" : "NONE",
+          "limit" : 14374
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : true,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true,
+        "titleColor" : "rgba(0,0,0,0.870588)",
+        "showDashboardLogo" : false,
+        "dashboardLogoUrl" : null,
+        "hideToolbar" : false,
+        "showFilters" : true,
+        "showUpdateDashboardImage" : true,
+        "dashboardCss" : ""
+      }
+    },
+    "name" : "GeoMap",
+    "resources" : null,
+    "assignedCustomers" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "28b83460-399f-11f1-b05e-f177627734ea"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}
