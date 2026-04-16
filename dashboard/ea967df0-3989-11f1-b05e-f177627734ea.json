@@ -467,9 +467,9 @@
               "name" : "",
               "entityAliasId" : "b8378384-af1c-8ae6-46a1-917f0ef8346d",
               "dataKeys" : [ {
-                "name" : "rsrp",
+                "name" : "network.radio.rsrp_dbm",
                 "type" : "timeseries",
-                "label" : "rsrp",
+                "label" : "RSRP",
                 "color" : "#2196f3",
                 "settings" : {
                   "yAxisId" : "default",
@@ -540,11 +540,12 @@
                     "color" : ""
                   }
                 },
+                "units" : "dBm",
                 "decimals" : 0
               }, {
-                "name" : "rsrq",
+                "name" : "network.radio.rsrq_db",
                 "type" : "timeseries",
-                "label" : "rsrq",
+                "label" : "RSRQ",
                 "color" : "#4caf50",
                 "settings" : {
                   "yAxisId" : "default",
@@ -615,11 +616,12 @@
                     "color" : ""
                   }
                 },
+                "units" : "dBm",
                 "decimals" : 0
               }, {
-                "name" : "rssi",
+                "name" : "network.radio.rssi_dbm",
                 "type" : "timeseries",
-                "label" : "rssi",
+                "label" : "RSSI",
                 "color" : "#f44336",
                 "settings" : {
                   "yAxisId" : "default",
@@ -690,11 +692,16 @@
                     "color" : ""
                   }
                 },
-                "decimals" : 0
+                "decimals" : 0,
+                "aggregationType" : null,
+                "units" : "dBm",
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
-                "name" : "snr",
+                "name" : "network.radio.snr_db",
                 "type" : "timeseries",
-                "label" : "snr",
+                "label" : "SNR",
                 "color" : "#ffc107",
                 "settings" : {
                   "yAxisId" : "default",
@@ -765,11 +772,16 @@
                     "color" : ""
                   }
                 },
-                "decimals" : 0
+                "decimals" : 0,
+                "aggregationType" : null,
+                "units" : "dBm",
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
-                "name" : "latency_ms",
+                "name" : "network.radio.latency_ms",
                 "type" : "timeseries",
-                "label" : "latency_ms",
+                "label" : "Latency",
                 "color" : "#607d8b",
                 "settings" : {
                   "yAxisId" : "default",
@@ -840,11 +852,16 @@
                     "color" : ""
                   }
                 },
-                "decimals" : 0
+                "decimals" : 0,
+                "aggregationType" : null,
+                "units" : "ms",
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
-                "name" : "packet_loss_pct",
+                "name" : "network.radio.packet_loss_pct",
                 "type" : "timeseries",
-                "label" : "packet_loss_pct",
+                "label" : "Packet Loss",
                 "color" : "#9c27b0",
                 "settings" : {
                   "yAxisId" : "default",
@@ -915,6 +932,7 @@
                     "color" : ""
                   }
                 },
+                "units" : "%",
                 "decimals" : 0
               } ],
               "alarmFilterConfig" : {
@@ -936,7 +954,8 @@
                 "showMax" : false,
                 "showAvg" : true,
                 "showTotal" : false,
-                "showLatest" : false
+                "showLatest" : false,
+                "valueFormat" : null
               },
               "thresholds" : [ ],
               "dataZoom" : true,
@@ -1085,7 +1104,17 @@
                   "showSplitLines" : true,
                   "splitLinesColor" : "rgba(0, 0, 0, 0.12)",
                   "id" : "default",
-                  "order" : 0
+                  "order" : 0,
+                  "min" : {
+                    "type" : "constant",
+                    "value" : null,
+                    "entityAlias" : null
+                  },
+                  "max" : {
+                    "type" : "constant",
+                    "value" : null,
+                    "entityAlias" : null
+                  }
                 }
               },
               "noAggregationBarWidthSettings" : {
@@ -1178,7 +1207,9 @@
                 "weight" : "400",
                 "lineHeight" : "16px"
               },
-              "tooltipLabelColor" : "rgba(0, 0, 0, 0.76)"
+              "tooltipLabelColor" : "rgba(0, 0, 0, 0.76)",
+              "tooltipHideZeroValues" : null,
+              "tooltipStackedShowTotal" : false
             },
             "title" : "Time series chart",
             "dropShadow" : true,
