@@ -146,13 +146,13 @@
                 },
                 "tooltip" : {
                   "show" : true,
-                  "type" : "pattern",
-                  "pattern" : "<div style=\"padding: 4px;\">\n    <b>${entityName}</b><hr/>\n    <b>Health Score:</b> <span style=\"font-weight: bold; font-size: 16px;\">${device.health.score} / 100</span><br/>\n    <b>RSRP (Signal Ratio):</b> ${device.network.rsrp:1} dBm<br/>\n    <b>SNR (Noise Ratio):</b> ${device.network.snr:1} dB<br/>\n    <hr/>\n\n    \n</div>",
-                  "patternFunction" : null,
                   "trigger" : "hover",
                   "autoclose" : true,
+                  "type" : "pattern",
+                  "pattern" : "<div style=\"padding: 4px;\">\n    <b>${entityName}</b><hr/>\n    <b>Health Score:</b> <span style=\"font-weight: bold; font-size: 16px;\">${device.health.score} / 100</span><br/>\n    <b>RSRP (Signal Ratio):</b> ${device.network.rsrp:1} dBm<br/>\n    <b>SNR (Noise Ratio):</b> ${device.network.snr:1} dB<br/>\n    <hr/>\n\n    \n</div>",
                   "offsetX" : 0,
                   "offsetY" : -1,
+                  "patternFunction" : null,
                   "tagActions" : [ {
                     "name" : "open_nic",
                     "type" : "openDashboardState",
@@ -180,16 +180,16 @@
                   "snappable" : false
                 },
                 "xKey" : {
-                  "name" : "deployment_latitude",
+                  "name" : "latitude",
                   "type" : "attribute",
-                  "label" : "deployment_latitude",
+                  "label" : "latitude",
                   "color" : "#2196f3",
                   "settings" : { }
                 },
                 "yKey" : {
-                  "name" : "deployment_longitude",
+                  "name" : "longitude",
                   "type" : "attribute",
-                  "label" : "deployment_longitude",
+                  "label" : "longitude",
                   "color" : "#2196f3",
                   "settings" : { }
                 },
@@ -237,6 +237,7 @@
               } ],
               "polygons" : [ ],
               "circles" : [ ],
+              "polylines" : [ ],
               "additionalDataSources" : [ ],
               "controlsPosition" : "topleft",
               "zoomActions" : [ "scroll", "doubleClick", "controlButtons" ],
