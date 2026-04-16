@@ -32,10 +32,10 @@
               "entityLabelColumnTitle" : "",
               "displayEntityType" : false,
               "displayPagination" : true,
-              "defaultPageSize" : 10,
+              "defaultPageSize" : 30,
               "pageStepCount" : 3,
               "pageStepIncrement" : 10,
-              "defaultSortOrder" : "name",
+              "defaultSortOrder" : "Health",
               "useRowStyleFunction" : false,
               "rowStyleFunction" : ""
             },
@@ -54,11 +54,29 @@
               "entityAliasId" : "487c8e5d-6bdd-b433-5851-b2d47fce1eb1",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "endpoint_utility_identifier",
+                "name" : "consumer_name",
                 "type" : "attribute",
-                "label" : "endpoint_utility_identifier",
+                "label" : "Name",
+                "color" : "#ffeb3b",
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              }, {
+                "name" : "consumer_utility_id",
+                "type" : "attribute",
+                "label" : "Utility ID",
                 "color" : "#9c27b0",
-                "settings" : { }
+                "settings" : { },
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "device.health.score",
                 "type" : "timeseries",
@@ -1377,7 +1395,7 @@
               "widgets" : {
                 "1ae8bc59-0bc0-b1b8-24d2-c3ad5bee978c" : {
                   "sizeX" : 32,
-                  "sizeY" : 24,
+                  "sizeY" : 14,
                   "row" : 0,
                   "col" : 0
                 }
