@@ -294,8 +294,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 636,
-        "layoutY" : 343
+        "layoutX" : 758,
+        "layoutY" : 314
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
@@ -303,7 +303,11 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776340698331,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -329,7 +333,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 2685
+    "version" : 2733
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -342,7 +346,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 2675
+    "version" : 2723
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
