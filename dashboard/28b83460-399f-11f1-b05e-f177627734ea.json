@@ -1067,7 +1067,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "som_id",
+                "name" : "som_part_number",
                 "type" : "attribute",
                 "label" : "Module ID",
                 "color" : "#f44336",
@@ -1103,7 +1103,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "nic_id",
+                "name" : "nic_serial_number",
                 "type" : "attribute",
                 "label" : "NIC ID",
                 "color" : "#8bc34a",
@@ -1115,7 +1115,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "nic_imei",
+                "name" : "imei",
                 "type" : "attribute",
                 "label" : "NIC IMEI",
                 "color" : "#3f51b5",
@@ -1239,7 +1239,7 @@
                 "usePostProcessing" : null,
                 "postFuncBody" : null
               }, {
-                "name" : "consumer_account_number",
+                "name" : "consumer_utility_id",
                 "label" : "Consumer A/C No",
                 "type" : "attribute",
                 "color" : "#607d8b",
