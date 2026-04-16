@@ -40,10 +40,6 @@
     }, {
       "fromIndex" : 0,
       "toIndex" : 5,
-      "type" : "Other"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 5,
       "type" : "RPC Failed"
     }, {
       "fromIndex" : 0,
@@ -353,7 +349,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 2489
+    "version" : 2547
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -366,7 +362,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 2479
+    "version" : 2537
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
