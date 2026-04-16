@@ -656,11 +656,33 @@
               },
               "dateColor" : "rgba(0, 0, 0, 0.38)",
               "activeBarsColor" : {
-                "color" : "rgba(92, 223, 144, 1)",
                 "type" : "range",
+                "color" : "rgba(92, 223, 144, 1)",
+                "gradient" : {
+                  "advancedMode" : false,
+                  "gradient" : [ "rgba(0, 255, 0, 1)", "rgba(255, 0, 0, 1)" ],
+                  "gradientAdvanced" : [ {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(0, 255, 0, 1)"
+                  }, {
+                    "source" : {
+                      "type" : "constant"
+                    },
+                    "color" : "rgba(255, 0, 0, 1)"
+                  } ],
+                  "minValue" : 0,
+                  "maxValue" : 100
+                },
                 "rangeList" : {
                   "advancedMode" : false,
                   "range" : [ {
+                    "from" : -150,
+                    "to" : -100,
+                    "color" : "rgba(0, 0, 0, 0.75)"
+                  }, {
+                    "from" : -100,
                     "to" : -85,
                     "color" : "rgba(227, 71, 71, 1)"
                   }, {
@@ -673,8 +695,10 @@
                     "color" : "rgba(246, 206, 67, 1)"
                   }, {
                     "from" : -55,
+                    "to" : null,
                     "color" : "rgba(92, 223, 144, 1)"
-                  } ]
+                  } ],
+                  "rangeAdvanced" : [ ]
                 },
                 "colorFunction" : "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
               },
@@ -727,7 +751,7 @@
               "fontWeight" : 400
             },
             "units" : "dBm",
-            "decimals" : 0,
+            "decimals" : 1,
             "showLegend" : false,
             "widgetStyle" : { },
             "actions" : { },
