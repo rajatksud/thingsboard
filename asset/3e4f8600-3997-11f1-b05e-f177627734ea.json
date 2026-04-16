@@ -1,0 +1,27 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : null,
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "4e8d27d0-37e8-11f1-ad66-01ce78174b1f"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "3e4f8600-3997-11f1-b05e-f177627734ea"
+    },
+    "label" : "SECTOR 1",
+    "name" : "ADM_BANGALORE SOUTH_KORAMANGALA_HSR LAYOUT_SECTOR 1",
+    "type" : "Section"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}
