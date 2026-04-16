@@ -43,28 +43,12 @@
       "type" : "RPC Failed"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 6,
-      "type" : "Activity Event"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 6,
-      "type" : "Connect Event"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 6,
-      "type" : "Disconnect Event"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 6,
+      "toIndex" : 9,
       "type" : "Post attributes"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 6,
+      "toIndex" : 9,
       "type" : "Post telemetry"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 6,
-      "type" : "RPC Request from Device"
     }, {
       "fromIndex" : 4,
       "toIndex" : 0,
@@ -74,17 +58,17 @@
       "toIndex" : 5,
       "type" : "Failure"
     }, {
-      "fromIndex" : 6,
-      "toIndex" : 8,
-      "type" : "SendToOutput"
-    }, {
-      "fromIndex" : 8,
-      "toIndex" : 7,
+      "fromIndex" : 7,
+      "toIndex" : 6,
       "type" : "Post attributes"
     }, {
-      "fromIndex" : 8,
-      "toIndex" : 9,
+      "fromIndex" : 7,
+      "toIndex" : 8,
       "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 7,
+      "type" : "SendToOutput"
     } ],
     "firstNodeIndex" : 4,
     "nodes" : [ {
@@ -223,33 +207,6 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 783,
-        "layoutY" : 468
-      },
-      "configuration" : {
-        "forwardMsgToDefaultRuleChain" : false,
-        "ruleChainId" : "670795f0-38c1-11f1-ad66-01ce78174b1f"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 0,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "cede56a0-3984-11f1-b05e-f177627734ea"
-      },
-      "name" : "Tier2Map",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
         "layoutX" : 1358,
         "layoutY" : 565
       },
@@ -334,6 +291,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 636,
+        "layoutY" : 343
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "197cbbe0-3983-11f1-b05e-f177627734ea"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5c4aba20-3989-11f1-b05e-f177627734ea"
+      },
+      "name" : "Tier2Map",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -349,7 +329,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 2547
+    "version" : 2685
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -358,11 +338,11 @@
     },
     "to" : {
       "entityType" : "RULE_CHAIN",
-      "id" : "670795f0-38c1-11f1-ad66-01ce78174b1f"
+      "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 2537
+    "version" : 2675
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
