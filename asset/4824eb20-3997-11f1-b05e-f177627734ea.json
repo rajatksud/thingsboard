@@ -1,0 +1,27 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : null,
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "4e17d0c0-37e8-11f1-ad66-01ce78174b1f"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "4824eb20-3997-11f1-b05e-f177627734ea"
+    },
+    "label" : "LAKKIREDDY PALLI",
+    "name" : "ADM_KADAPA_RAYACHOTY_LAKKIREDDY PALLI",
+    "type" : "Sub-Division"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}
