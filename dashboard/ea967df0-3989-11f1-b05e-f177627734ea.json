@@ -54,12 +54,6 @@
               "entityAliasId" : "487c8e5d-6bdd-b433-5851-b2d47fce1eb1",
               "filterId" : null,
               "dataKeys" : [ {
-                "name" : "consumer_name",
-                "type" : "attribute",
-                "label" : "consumer_name",
-                "color" : "#8bc34a",
-                "settings" : { }
-              }, {
                 "name" : "endpoint_utility_identifier",
                 "type" : "attribute",
                 "label" : "endpoint_utility_identifier",
