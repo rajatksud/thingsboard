@@ -1,0 +1,652 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "lastConnectedGateway" : "927ed9e0-3980-11f1-b05e-f177627734ea"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "266acb10-37b4-11f1-be19-9d41581c645d"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "82b77500-37b7-11f1-be19-9d41581c645d"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "3d1c5f30-3981-11f1-b05e-f177627734ea"
+    },
+    "label" : null,
+    "name" : "RR-KOR-90072",
+    "softwareId" : null,
+    "type" : "SmartEndpoint"
+  },
+  "credentials" : {
+    "credentialsId" : "doRG3RxX0CshtfJG4Zpb",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "927ed9e0-3980-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "3d1c5f30-3981-11f1-b05e-f177627734ea"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON",
+    "version" : 2426
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "2ea14850-3998-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "3d1c5f30-3981-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 4622
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "3e4f8600-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "3d1c5f30-3981-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 4620
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1776686206895,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "admin_circle",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "BANGALORE SOUTH"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "admin_division",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "KORAMANGALA"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "admin_section",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "SECTOR 1"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "admin_sub_division",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "HSR LAYOUT"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 8.0,
+      "jsonValue" : null,
+      "key" : "connected_load",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "consumer_name",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "Sunil K"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "consumer_phone",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "NA"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "consumer_utility_id",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "RR-KOR-90072"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 8.0,
+      "jsonValue" : null,
+      "key" : "contracted_load",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "distribution_area",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "Mangammanapalya"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "elec_dtr_sl_no",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : 872,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "elec_feeder_code",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : 734929023864,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "elec_sub_station_code",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : 73498434207,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1776414517204,
+      "longValue" : 1776414517204,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1776686577888,
+      "longValue" : 1776686576964,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1776686206895,
+      "longValue" : 1776686206895,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1776413871788,
+      "longValue" : 1776413871788,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 12.91333,
+      "jsonValue" : null,
+      "key" : "latitude",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "load_unit",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "kW"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 77.63492,
+      "jsonValue" : null,
+      "key" : "longitude",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "meter_metrology_fw",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "1.0.5"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "meter_model",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "Omni 1-Phase"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "meter_serial_number",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "OMN-2026092"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "meter_utility_asset_id",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "BESCOM-10092"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "nic_hardware_revision",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "REV-A1"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "nic_part_number",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "LWT-NIC-MT2731-32M64-CAT1B-I-R2"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "nic_serial_number",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "NIC-MT2731-82313091"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "nic_status",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "AVAILABLE"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "sim_form_factor",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "ISIM"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "sim_msisdn",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : 919800000036,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "sim_operator",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "Airtel"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "sim_status",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "ACTIVE"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "som_chipset",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "Cortex-M4"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "som_comm_standard",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "LTE-Cat1.bis"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "som_grade",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "Industrial"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "som_manufacturer",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "MediaTek 2731"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "som_memory",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "32MB / 64MB"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "som_model",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "MT2731"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "som_part_number",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "LWT-SOM-MT2731-32M64-CAT1B-I-R2"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "som_revision",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "A1"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "som_serial_number",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "SOM-MT2731-46122145"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "som_vendor",
+      "lastUpdateTs" : 1776349584031,
+      "longValue" : null,
+      "strValue" : "MediaTek"
+    } ],
+    "SHARED_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "admin_circle",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "BANGALORE SOUTH"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "admin_division",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "KORAMANGALA"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "admin_section",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "SECTOR 1"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "admin_sub_division",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "HSR LAYOUT"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 8.0,
+      "jsonValue" : null,
+      "key" : "consumer_connected_load",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 8.0,
+      "jsonValue" : null,
+      "key" : "consumer_contracted_load",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "consumer_id",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "40000000-0000-0000-0000-000000000086"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "consumer_load_unit",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "kW"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "consumer_name",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "Sunil K"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "display_name",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "RR-KOR-90072"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "elec_dtr_sl_no",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : 872,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "elec_feeder_code",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : 734929023864,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "elec_sub_station_code",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : 73498434207,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "endpoint_utility_identifier",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "RR-KOR-90072"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "fw",
+      "lastUpdateTs" : 1776336266442,
+      "longValue" : null,
+      "strValue" : "v1.0.0-PROD"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "hr",
+      "lastUpdateTs" : 1776336266442,
+      "longValue" : null,
+      "strValue" : "HW-3.0"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "iccid",
+      "lastUpdateTs" : 1776336266442,
+      "longValue" : null,
+      "strValue" : "89910345000000000000"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "imei",
+      "lastUpdateTs" : 1776336266442,
+      "longValue" : 865678050000866,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "imsi",
+      "lastUpdateTs" : 1776336266442,
+      "longValue" : 404300000000086,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "meter_model",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "Omni 1-Phase"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "meter_serial_number",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "OMN-2026092"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "metrology_fw_version",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "1.0.5"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "nid",
+      "lastUpdateTs" : 1776336266442,
+      "longValue" : null,
+      "strValue" : "39c5e634-5714-49f5-a2b6-fc1cc232eeef"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "oper",
+      "lastUpdateTs" : 1776336266442,
+      "longValue" : null,
+      "strValue" : "Vi"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "sid",
+      "lastUpdateTs" : 1776336266442,
+      "longValue" : null,
+      "strValue" : "577691dc-4333-430f-962a-4708964ff17e"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "sm",
+      "lastUpdateTs" : 1776336266442,
+      "longValue" : null,
+      "strValue" : "SQ Monarch 2-LWT-SOM-SQMON2-04M08-M1NB-I-R1"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "uid",
+      "lastUpdateTs" : 1776336266442,
+      "longValue" : null,
+      "strValue" : "68eedacb-0b3f-5160-970b-bc7182103be2"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "utility_asset_id",
+      "lastUpdateTs" : 1776349584314,
+      "longValue" : null,
+      "strValue" : "BESCOM-10092"
+    } ]
+  },
+  "calculatedFields" : [ ]
+}

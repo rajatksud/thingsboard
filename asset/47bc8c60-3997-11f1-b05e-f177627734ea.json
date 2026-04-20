@@ -19,7 +19,33 @@
     "name" : "ADM_KADAPA_RAYACHOTY",
     "type" : "Division"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "47514770-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "47bc8c60-3997-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 2766
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "47bc8c60-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "4824eb20-3997-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 2767
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   },

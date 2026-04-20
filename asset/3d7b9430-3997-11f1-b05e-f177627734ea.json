@@ -19,7 +19,33 @@
     "name" : "ADM_BANGALORE SOUTH_KORAMANGALA",
     "type" : "Division"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "3d11d5e0-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "3d7b9430-3997-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 2746
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "3d7b9430-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "3de838b0-3997-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 2747
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   },

@@ -19,7 +19,33 @@
     "name" : "ELE_73498434202",
     "type" : "Sub-Station"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "41892d30-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "41f00550-3997-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 3249
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "41892d30-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "455db4d0-3997-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 3224
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   },

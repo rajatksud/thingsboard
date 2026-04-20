@@ -8,7 +8,7 @@
     },
     "customerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "13814000-1dd2-11b2-8080-808080808080"
+      "id" : "266acb10-37b4-11f1-be19-9d41581c645d"
     },
     "externalId" : null,
     "id" : {
@@ -19,7 +19,33 @@
     "name" : "ELE_78793434165_734929347993_575",
     "type" : "DTR"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "c3ed9bd0-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "d9f1e670-3997-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 2894
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "d9f1e670-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "3c5cdfc0-3981-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 4410
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   },

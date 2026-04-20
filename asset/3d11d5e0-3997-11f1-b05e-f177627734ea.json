@@ -19,7 +19,20 @@
     "name" : "ADM_BANGALORE SOUTH",
     "type" : "Circle"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "3d11d5e0-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "3d7b9430-3997-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 2746
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   },

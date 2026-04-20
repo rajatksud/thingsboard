@@ -175,9 +175,21 @@
     } ],
     "ruleChainConnections" : null
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "be0af4a0-2944-11f1-934f-053385dac27e"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 4777
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
-  },
-  "calculatedFields" : [ ]
+  }
 }

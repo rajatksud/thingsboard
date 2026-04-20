@@ -1,0 +1,26 @@
+{
+  "entityType" : "ASSET_PROFILE",
+  "entity" : {
+    "default" : false,
+    "defaultDashboardId" : null,
+    "defaultEdgeRuleChainId" : null,
+    "defaultQueueName" : null,
+    "defaultRuleChainId" : null,
+    "description" : "Default asset profile",
+    "externalId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "5008cb50-37e8-11f1-ad66-01ce78174b1f"
+    },
+    "id" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "5008cb50-37e8-11f1-ad66-01ce78174b1f"
+    },
+    "image" : null,
+    "name" : "Sub-Station"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}

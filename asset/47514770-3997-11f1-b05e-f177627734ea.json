@@ -19,7 +19,20 @@
     "name" : "ADM_KADAPA",
     "type" : "Circle"
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "47514770-3997-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "47bc8c60-3997-11f1-b05e-f177627734ea"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON",
+    "version" : 2766
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   },

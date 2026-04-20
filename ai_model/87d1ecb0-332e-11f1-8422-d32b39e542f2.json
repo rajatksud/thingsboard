@@ -1,0 +1,30 @@
+{
+  "entityType" : "AI_MODEL",
+  "entity" : {
+    "configuration" : {
+      "contextLength" : null,
+      "maxOutputTokens" : null,
+      "maxRetries" : null,
+      "modelId" : "mistral-nemo",
+      "providerConfig" : {
+        "auth" : {
+          "type" : "TOKEN",
+          "token" : "vedic-ai-secret-key"
+        },
+        "baseUrl" : "https://ollama.vedic-ai.com/"
+      },
+      "provider" : "OLLAMA",
+      "temperature" : null,
+      "timeoutSeconds" : null,
+      "topK" : null,
+      "topP" : null,
+      "modelType" : "CHAT"
+    },
+    "externalId" : null,
+    "name" : "ollama",
+    "id" : {
+      "entityType" : "AI_MODEL",
+      "id" : "87d1ecb0-332e-11f1-8422-d32b39e542f2"
+    }
+  }
+}

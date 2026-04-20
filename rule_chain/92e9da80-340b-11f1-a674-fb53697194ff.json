@@ -1,0 +1,64 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "140c9d30-3413-11f1-a674-fb53697194ff"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "92e9da80-340b-11f1-a674-fb53697194ff"
+    },
+    "name" : "NIC Tier 2: Dead Letter",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : null,
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "layoutX" : 250,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "jsScript" : "return 'Critical Failure: ' + JSON.stringify(msg) + '\\nMetadata: ' + JSON.stringify(metadata);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "140c9d30-3413-11f1-a674-fb53697194ff"
+      },
+      "name" : "Log Fatal Failure",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbLogMsgNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "be0af4a0-2944-11f1-934f-053385dac27e"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "92e9da80-340b-11f1-a674-fb53697194ff"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 4775
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

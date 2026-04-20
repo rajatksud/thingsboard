@@ -1,0 +1,29 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : null,
+    "address" : null,
+    "address2" : null,
+    "city" : "Bangalore",
+    "country" : "India",
+    "email" : "system@default.local",
+    "externalId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "1b411160-35c3-11f1-b4ca-9799bf44ec62"
+    },
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "1b411160-35c3-11f1-b4ca-9799bf44ec62"
+    },
+    "name" : "System Default",
+    "phone" : "+1234567890",
+    "state" : null,
+    "title" : "System Default",
+    "zip" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}

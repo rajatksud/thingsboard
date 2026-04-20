@@ -1,0 +1,38 @@
+{
+  "entityType" : "NOTIFICATION_TEMPLATE",
+  "entity" : {
+    "configuration" : {
+      "deliveryMethodsTemplates" : {
+        "WEB" : {
+          "method" : "WEB",
+          "additionalConfig" : {
+            "icon" : {
+              "enabled" : true,
+              "icon" : "warning",
+              "color" : "#757575"
+            },
+            "actionButtonConfig" : {
+              "enabled" : true,
+              "text" : "Go to rule chain",
+              "linkType" : "LINK",
+              "link" : "/ruleChains/${ruleChainId}"
+            }
+          },
+          "body" : "${componentType} '${componentName}' failed to ${action}",
+          "enabled" : true,
+          "subject" : "${action:capitalize} failure in Rule chain '${ruleChainName}'"
+        }
+      }
+    },
+    "externalId" : {
+      "entityType" : "NOTIFICATION_TEMPLATE",
+      "id" : "bf822b50-2944-11f1-934f-053385dac27e"
+    },
+    "id" : {
+      "entityType" : "NOTIFICATION_TEMPLATE",
+      "id" : "bf822b50-2944-11f1-934f-053385dac27e"
+    },
+    "name" : "Rule chain/node lifecycle failure notification",
+    "notificationType" : "RULE_ENGINE_COMPONENT_LIFECYCLE_EVENT"
+  }
+}
