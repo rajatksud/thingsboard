@@ -46,8 +46,9 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 120,
-        "layoutY" : 120
+        "description" : null,
+        "layoutX" : 173,
+        "layoutY" : 323
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -55,7 +56,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776689869276,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
