@@ -186,23 +186,23 @@
               "name" : "",
               "entityAliasId" : "b8378384-af1c-8ae6-46a1-917f0ef8346d",
               "dataKeys" : [ {
-                "name" : "battery_level",
+                "name" : "electrical.battery_level_pct",
                 "type" : "timeseries",
-                "label" : "battery_level",
+                "label" : "Battery Level",
                 "color" : "#2196f3",
                 "settings" : { },
                 "decimals" : 0
               }, {
-                "name" : "battery_voltage",
+                "name" : "electrical.voltage_v",
                 "type" : "timeseries",
-                "label" : "battery_voltage",
+                "label" : "Battery Voltage",
                 "color" : "#4caf50",
                 "settings" : { },
                 "decimals" : 0
               }, {
-                "name" : "health_score",
+                "name" : "device.health.score",
                 "type" : "timeseries",
-                "label" : "health_score",
+                "label" : "Health Score",
                 "color" : "#f44336",
                 "settings" : { },
                 "decimals" : 0
@@ -1500,10 +1500,10 @@
           "id" : "b8378384-af1c-8ae6-46a1-917f0ef8346d",
           "alias" : "Selected Endpoints",
           "filter" : {
-            "type" : "deviceType",
+            "type" : "stateEntity",
             "resolveMultiple" : false,
-            "deviceTypes" : [ "SmartEndpoint" ],
-            "deviceNameFilter" : ""
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null
           }
         }
       },
