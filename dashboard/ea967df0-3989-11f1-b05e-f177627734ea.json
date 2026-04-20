@@ -1324,7 +1324,12 @@
                   "useCellContentFunction" : false,
                   "cellContentFunction" : ""
                 },
-                "funcBody" : null
+                "funcBody" : null,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "originator",
                 "type" : "alarm",
@@ -1336,19 +1341,18 @@
                   "useCellContentFunction" : false,
                   "cellContentFunction" : ""
                 },
-                "funcBody" : null
+                "funcBody" : null,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "type",
-                "type" : "alarm",
+                "type" : "entityField",
                 "label" : "Type",
                 "color" : "#f44336",
-                "settings" : {
-                  "useCellStyleFunction" : false,
-                  "cellStyleFunction" : "",
-                  "useCellContentFunction" : false,
-                  "cellContentFunction" : ""
-                },
-                "funcBody" : null
+                "settings" : { }
               }, {
                 "name" : "severity",
                 "type" : "alarm",
@@ -1566,5 +1570,6 @@
   "relations" : [ ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
-  }
+  },
+  "calculatedFields" : [ ]
 }
