@@ -73,6 +73,7 @@
     "firstNodeIndex" : 4,
     "nodes" : [ {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 354,
         "layoutY" : 142
       },
@@ -81,7 +82,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776686288330,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -337,7 +342,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 4734
+    "version" : 4775
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -350,7 +355,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 4724
+    "version" : 4777
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
