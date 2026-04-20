@@ -1405,10 +1405,10 @@
             "actions" : { },
             "configMode" : "basic",
             "alarmFilterConfig" : {
-              "statusList" : [ "ACTIVE" ],
+              "statusList" : [ ],
               "severityList" : [ ],
               "typeList" : [ ],
-              "searchPropagatedAlarms" : false,
+              "searchPropagatedAlarms" : true,
               "assignedToCurrentUser" : false,
               "assigneeId" : null
             },
@@ -1542,7 +1542,7 @@
         "realtime" : {
           "realtimeType" : 0,
           "interval" : 1000,
-          "timewindowMs" : 60000
+          "timewindowMs" : 300000
         },
         "aggregation" : {
           "type" : "AVG"
