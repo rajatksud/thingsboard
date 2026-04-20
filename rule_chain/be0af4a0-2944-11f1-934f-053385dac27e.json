@@ -247,6 +247,7 @@
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 1076,
         "layoutY" : 472
       },
@@ -257,7 +258,7 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 0,
+        "allEnabledUntil" : 1776696502018,
         "failuresEnabled" : false
       },
       "externalId" : null,
@@ -342,7 +343,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 4775
+    "version" : 5168
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -355,9 +356,10 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 4777
+    "version" : 5170
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
-  }
+  },
+  "calculatedFields" : [ ]
 }
