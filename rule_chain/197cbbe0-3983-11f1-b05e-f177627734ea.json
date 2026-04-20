@@ -70,6 +70,10 @@
       "fromIndex" : 5,
       "toIndex" : 7,
       "type" : "Failure"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 7,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : 0,
     "nodes" : [ {
