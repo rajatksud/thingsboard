@@ -186,8 +186,8 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 420,
-        "layoutY" : 320
+        "layoutX" : 419,
+        "layoutY" : 496
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -208,8 +208,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 320
+        "layoutX" : 719,
+        "layoutY" : 496
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -230,8 +230,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1020,
-        "layoutY" : 320
+        "layoutX" : 1019,
+        "layoutY" : 496
       },
       "configuration" : {
         "topicPattern" : "${kafkaTopic}",
@@ -261,8 +261,8 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 520
+        "layoutX" : 1054,
+        "layoutY" : 299
       },
       "configuration" : {
         "name" : "Output"
