@@ -110,8 +110,8 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 120,
-        "layoutY" : 120
+        "layoutX" : 110,
+        "layoutY" : 263
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -298,8 +298,8 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1020,
-        "layoutY" : 120
+        "layoutX" : 1350,
+        "layoutY" : 123
       },
       "configuration" : {
         "name" : "Output"
