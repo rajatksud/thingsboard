@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "60e57e30-3d8a-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
@@ -22,26 +25,14 @@
     }, {
       "fromIndex" : 0,
       "toIndex" : 4,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 7,
       "type" : "Failure"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 8,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 9,
-      "type" : "Success"
     }, {
       "fromIndex" : 1,
       "toIndex" : 2,
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 7,
+      "toIndex" : 4,
       "type" : "Failure"
     }, {
       "fromIndex" : 2,
@@ -49,82 +40,22 @@
       "type" : "Success"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 7,
+      "toIndex" : 4,
       "type" : "Failure"
     }, {
-      "fromIndex" : 2,
-      "toIndex" : 7,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 5,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 7,
+      "fromIndex" : 3,
+      "toIndex" : 4,
       "type" : "Failure"
     }, {
-      "fromIndex" : 4,
-      "toIndex" : 7,
-      "type" : "IGNORE"
-    }, {
-      "fromIndex" : 5,
-      "toIndex" : 6,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 5,
-      "toIndex" : 7,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 8,
-      "toIndex" : 7,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 8,
-      "toIndex" : 7,
-      "type" : "IGNORE"
-    }, {
-      "fromIndex" : 8,
-      "toIndex" : 7,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 7,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 7,
-      "type" : "IGNORE"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 10,
-      "type" : "ALARM_UPSERT"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 11,
-      "type" : "ALARM_CLEAR"
-    }, {
-      "fromIndex" : 10,
-      "toIndex" : 7,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 10,
-      "toIndex" : 7,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 11,
-      "toIndex" : 7,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 11,
-      "toIndex" : 7,
+      "fromIndex" : 3,
+      "toIndex" : 4,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 143,
-        "layoutY" : 346
+        "layoutX" : 120,
+        "layoutY" : 120
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -136,7 +67,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fe9f49c0-3d86-11f1-b05e-f177627734ea"
+        "id" : "60e57e30-3d8a-11f1-b05e-f177627734ea"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -158,7 +89,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fe9f49c1-3d86-11f1-b05e-f177627734ea"
+        "id" : "60e57e31-3d8a-11f1-b05e-f177627734ea"
       },
       "name" : "Telemetry Mapper",
       "queueName" : "Main Queue",
@@ -180,7 +111,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fe9f70d0-3d86-11f1-b05e-f177627734ea"
+        "id" : "60e5a540-3d8a-11f1-b05e-f177627734ea"
       },
       "name" : "Telemetry Candidate Router",
       "queueName" : "Main Queue",
@@ -211,7 +142,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fe9f70d1-3d86-11f1-b05e-f177627734ea"
+        "id" : "60e5a541-3d8a-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Main",
       "queueName" : "Main Queue",
@@ -220,83 +151,8 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 420,
-        "layoutY" : 320
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "tbelScript" : "var alarmMap = {\n  '2101': 'power.mains.lost',\n  '2102': 'power.backup.active',\n  '2103': 'power.battery.low',\n  '2104': 'power.supercap.low',\n  '2105': 'power.last_gasp.failed',\n  '2106': 'power.modem.shutdown',\n  '2107': 'power.supply.unstable',\n  '2201': 'uart.meter.no_response',\n  '2202': 'uart.meter.timeout',\n  '2203': 'uart.meter.flow_control_failure',\n  '2204': 'uart.meter.protocol_error',\n  '2205': 'uart.meter.link_stalled',\n  '2206': 'uart.meter.disconnected',\n  '2207': 'spi.meter.no_response',\n  '2208': 'spi.meter.protocol_error',\n  '2209': 'spi.meter.link_stalled',\n  '2301': 'modem.sim.not_detected',\n  '2302': 'modem.sim.init_failure',\n  '2303': 'modem.sim.profile_invalid',\n  '2304': 'modem.baseband.hang_detected',\n  '2305': 'modem.config.invalid',\n  '2401': 'modem.network.no_coverage',\n  '2402': 'modem.network.signal_degraded',\n  '2403': 'modem.network.attach_failed',\n  '2404': 'modem.network.attach_timeout',\n  '2405': 'modem.network.registration_denied',\n  '2406': 'modem.network.apn_rejected',\n  '2407': 'modem.network.pdp_activation_failed',\n  '2408': 'modem.network.ip_unavailable',\n  '2409': 'modem.network.reattach_loop',\n  '2410': 'modem.network.roaming_blocked',\n  '2411': 'modem.network.registration_timeout',\n  '2412': 'modem.rf.signal_low',\n  '2413': 'modem.rf.signal_degraded',\n  '2501': 'backend.dns.resolution_failed',\n  '2502': 'backend.hes.tcp_handshake_failed',\n  '2503': 'backend.hes.tls_validation_failed',\n  '2504': 'backend.hes.connect_timeout',\n  '2505': 'backend.hes.session_dropped',\n  '2506': 'backend.hes.response_timeout',\n  '2507': 'backend.hes.rejected',\n  '2508': 'backend.noc.mqtt_connect_failed',\n  '2509': 'backend.noc.publish_failed',\n  '2510': 'backend.hes.unreachable',\n  '2511': 'security.replay_detected',\n  '2512': 'security.jamming_suspected',\n  '2513': 'security.unknown_payload',\n  '2601': 'nic.runtime.thermal_stress',\n  '2602': 'nic.runtime.memory_pressure',\n  '2603': 'nic.runtime.cpu_overload',\n  '2604': 'nic.runtime.storage_low',\n  '2605': 'nic.runtime.clock_drift',\n  '2606': 'nic.runtime.config_corrupt',\n  '2701': 'fota.nic.download_failed',\n  '2702': 'fota.nic.signature_invalid',\n  '2703': 'fota.nic.apply_failed',\n  '2704': 'fota.nic.post_boot_attach_failed',\n  '2705': 'fota.meter.package_transfer_failed',\n  '2706': 'fota.meter.signature_invalid',\n  '2707': 'fota.meter.apply_failed',\n  '2708': 'fota.meter.status_timeout',\n  '2801': 'control.reset.failed',\n  '2802': 'control.reconfig.rejected',\n  '2803': 'control.diagnostic.ping_failed',\n  '2804': 'control.diagnostic.traceroute_failed',\n  '2805': 'control.diagnostic.cell_scan_failed'\n};\nvar authorityMap = {\n  'backend.hes': 'rulechain',\n  'modem.network': 'profile',\n  'modem.rf': 'profile',\n  'power.battery': 'profile',\n  'power.mains': 'profile',\n  'security.jamming_suspected': 'rulechain',\n  'security.replay_detected': 'rulechain',\n  'security.unknown_payload': 'rulechain',\n  'uart.meter': 'rulechain'\n};\nvar sourcePriorityMap = {\n  'backend.hes': 'nic_transition',\n  'modem.network': 'nic_transition',\n  'modem.rf': 'nic_transition',\n  'power.battery': 'nic_transition',\n  'power.mains': 'nic_transition',\n  'security.jamming_suspected': 'nic_transition',\n  'security.replay_detected': 'nic_transition',\n  'security.unknown_payload': 'nic_transition',\n  'uart.meter': 'nic_transition'\n};\nfunction familyOf(canonical) {\n  if (canonical == null) { return 'unknown'; }\n  var parts = canonical.split('.');\n  if (parts.size() >= 2) { return parts[0] + '.' + parts[1]; }\n  return canonical;\n}\nvar transitions = msg['ev'];\nif (transitions == null) {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nvar out = [];\nvar replayFlag = false;\nif (msg['trace'] != null && msg['trace']['replay'] == true) { replayFlag = true; }\nif (metadata['replay'] == true || metadata['replay'] == 'true') { replayFlag = true; }\nfor (t : transitions) {\n  var code = '' + t['c'];\n  var canonical = alarmMap[code];\n  if (canonical != null) {\n    var stateCode = t['s'];\n    var lifecycleState = 'RAISED';\n    if (stateCode == 0) {\n      lifecycleState = 'CLEARED';\n    } else if (stateCode == 2) {\n      lifecycleState = 'UPDATED';\n    }\n    var family = familyOf(canonical);\n    var entityWriter = authorityMap[family];\n    if (entityWriter == null) { entityWriter = 'profile'; }\n    var sourcePriority = sourcePriorityMap[family];\n    if (sourcePriority == null) { sourcePriority = 'nic_transition'; }\n    var sourceEventTs = t['ts'];\n    if (sourceEventTs == null) { sourceEventTs = msg['sourceEventTs']; }\n    if (sourceEventTs == null) { sourceEventTs = msg['ts']; }\n    if (sourceEventTs == null) { sourceEventTs = metadata['ts']; }\n    var source = replayFlag ? 'replay' : 'nic';\n    var row = {'canonicalAlarm': canonical, 'sourceCode': code, 'state': stateCode, 'lifecycleState': lifecycleState, 'authorityFamily': family, 'entityWriter': entityWriter, 'sourcePriority': sourcePriority, 'source': source, 'replay': replayFlag, 'sourceEventTs': sourceEventTs};\n    if (t['m'] != null) { row['metadata'] = t['m']; }\n    out.push(row);\n  }\n}\nif (out.size() == 0) {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nreturn {msg: {'candidateType': 'alarm', 'alarmTransitions': out}, metadata: metadata, msgType: 'Success'};"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "fe9f70d2-3d86-11f1-b05e-f177627734ea"
-      },
-      "name" : "Alarm Events Mapper",
-      "queueName" : "HighPriority",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
         "layoutX" : 720,
         "layoutY" : 320
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "tbelScript" : "var routes = {\n  'alarm': 'tb.nic.candidate.alarm.v1',\n  'device_state': 'tb.nic.candidate.device-state.v1',\n  'lifecycle': 'tb.nic.candidate.lifecycle.v1',\n  'ota': 'tb.nic.candidate.ota.v1'\n};\nvar candidateType = msg['candidateType'];\nif (candidateType == null) { throw new Error('missing_candidate_type'); }\nvar topic = routes[candidateType];\nif (topic == null) { throw new Error('unknown_candidate_type:' + candidateType); }\nmetadata['kafkaTopic'] = topic;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "fe9f97e0-3d86-11f1-b05e-f177627734ea"
-      },
-      "name" : "Alarm Candidate Router",
-      "queueName" : "HighPriority",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "layoutX" : 1020,
-        "layoutY" : 320
-      },
-      "configuration" : {
-        "topicPattern" : "${kafkaTopic}",
-        "keyPattern" : "${deviceName}",
-        "bootstrapServers" : "localhost:9092",
-        "retries" : 0,
-        "batchSize" : 16384,
-        "linger" : 0,
-        "bufferMemory" : 33554432,
-        "acks" : "-1",
-        "otherProperties" : { },
-        "addMetadataKeyValuesAsKafkaHeaders" : false,
-        "kafkaHeadersCharset" : "UTF-8"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "fe9fbef0-3d86-11f1-b05e-f177627734ea"
-      },
-      "name" : "Kafka Export HighPriority",
-      "queueName" : "HighPriority",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
-    }, {
-      "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 520
       },
       "configuration" : {
         "name" : "Output"
@@ -307,104 +163,13 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "fe9fbef1-3d86-11f1-b05e-f177627734ea"
+        "id" : "60e5a542-3d8a-11f1-b05e-f177627734ea"
       },
       "name" : "SendToOutput",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
-    }, {
-      "additionalInfo" : {
-        "layoutX" : 420,
-        "layoutY" : 520
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "tbelScript" : "var alarmMap = {\n  '2101': 'power.mains.lost',\n  '2102': 'power.backup.active',\n  '2103': 'power.battery.low',\n  '2104': 'power.supercap.low',\n  '2105': 'power.last_gasp.failed',\n  '2106': 'power.modem.shutdown',\n  '2107': 'power.supply.unstable',\n  '2201': 'uart.meter.no_response',\n  '2202': 'uart.meter.timeout',\n  '2203': 'uart.meter.flow_control_failure',\n  '2204': 'uart.meter.protocol_error',\n  '2205': 'uart.meter.link_stalled',\n  '2206': 'uart.meter.disconnected',\n  '2207': 'spi.meter.no_response',\n  '2208': 'spi.meter.protocol_error',\n  '2209': 'spi.meter.link_stalled',\n  '2301': 'modem.sim.not_detected',\n  '2302': 'modem.sim.init_failure',\n  '2303': 'modem.sim.profile_invalid',\n  '2304': 'modem.baseband.hang_detected',\n  '2305': 'modem.config.invalid',\n  '2401': 'modem.network.no_coverage',\n  '2402': 'modem.network.signal_degraded',\n  '2403': 'modem.network.attach_failed',\n  '2404': 'modem.network.attach_timeout',\n  '2405': 'modem.network.registration_denied',\n  '2406': 'modem.network.apn_rejected',\n  '2407': 'modem.network.pdp_activation_failed',\n  '2408': 'modem.network.ip_unavailable',\n  '2409': 'modem.network.reattach_loop',\n  '2410': 'modem.network.roaming_blocked',\n  '2411': 'modem.network.registration_timeout',\n  '2412': 'modem.rf.signal_low',\n  '2413': 'modem.rf.signal_degraded',\n  '2501': 'backend.dns.resolution_failed',\n  '2502': 'backend.hes.tcp_handshake_failed',\n  '2503': 'backend.hes.tls_validation_failed',\n  '2504': 'backend.hes.connect_timeout',\n  '2505': 'backend.hes.session_dropped',\n  '2506': 'backend.hes.response_timeout',\n  '2507': 'backend.hes.rejected',\n  '2508': 'backend.noc.mqtt_connect_failed',\n  '2509': 'backend.noc.publish_failed',\n  '2510': 'backend.hes.unreachable',\n  '2511': 'security.replay_detected',\n  '2512': 'security.jamming_suspected',\n  '2513': 'security.unknown_payload',\n  '2601': 'nic.runtime.thermal_stress',\n  '2602': 'nic.runtime.memory_pressure',\n  '2603': 'nic.runtime.cpu_overload',\n  '2604': 'nic.runtime.storage_low',\n  '2605': 'nic.runtime.clock_drift',\n  '2606': 'nic.runtime.config_corrupt',\n  '2701': 'fota.nic.download_failed',\n  '2702': 'fota.nic.signature_invalid',\n  '2703': 'fota.nic.apply_failed',\n  '2704': 'fota.nic.post_boot_attach_failed',\n  '2705': 'fota.meter.package_transfer_failed',\n  '2706': 'fota.meter.signature_invalid',\n  '2707': 'fota.meter.apply_failed',\n  '2708': 'fota.meter.status_timeout',\n  '2801': 'control.reset.failed',\n  '2802': 'control.reconfig.rejected',\n  '2803': 'control.diagnostic.ping_failed',\n  '2804': 'control.diagnostic.traceroute_failed',\n  '2805': 'control.diagnostic.cell_scan_failed'\n};\nvar authorityMap = {\n  'backend.hes': 'rulechain',\n  'modem.network': 'profile',\n  'modem.rf': 'profile',\n  'power.battery': 'profile',\n  'power.mains': 'profile',\n  'security.jamming_suspected': 'rulechain',\n  'security.replay_detected': 'rulechain',\n  'security.unknown_payload': 'rulechain',\n  'uart.meter': 'rulechain'\n};\nvar sourcePriorityMap = {\n  'backend.hes': 'nic_transition',\n  'modem.network': 'nic_transition',\n  'modem.rf': 'nic_transition',\n  'power.battery': 'nic_transition',\n  'power.mains': 'nic_transition',\n  'security.jamming_suspected': 'nic_transition',\n  'security.replay_detected': 'nic_transition',\n  'security.unknown_payload': 'nic_transition',\n  'uart.meter': 'nic_transition'\n};\nfunction familyOf(canonical) {\n  if (canonical == null) { return 'unknown'; }\n  var parts = canonical.split('.');\n  if (parts.size() >= 2) { return parts[0] + '.' + parts[1]; }\n  return canonical;\n}\nfunction ensureFamily(outObj, family) {\n  var authority = authorityMap[family];\n  if (authority == null) { authority = 'profile'; }\n  var sourcePriority = sourcePriorityMap[family];\n  if (sourcePriority == null) { sourcePriority = 'nic_transition'; }\n  if (outObj['alarm.authority.' + family] == null) {\n    outObj['alarm.authority.' + family] = authority;\n    outObj['alarm.nic_active.' + family] = false;\n    outObj['alarm.inferred_allowed.' + family] = true;\n    outObj['alarm.source.' + family] = 'profile_inferred';\n    outObj['alarm.replay.' + family] = false;\n    outObj['alarm.source_priority.' + family] = sourcePriority;\n  }\n}\nvar transitions = msg['ev'];\nvar aa = msg['aa'];\nvar out = {};\nvar snapshotCount = 0;\nvar transitionCount = 0;\nvar replayFlag = false;\nif (msg['trace'] != null && msg['trace']['replay'] == true) { replayFlag = true; }\nif (metadata['replay'] == true || metadata['replay'] == 'true') { replayFlag = true; }\nif (aa != null) {\n  for (code : aa) {\n    var codeStr = '' + code;\n    var canonicalSnap = alarmMap[codeStr];\n    if (canonicalSnap != null) {\n      out['alarm.active.' + canonicalSnap] = true;\n      out['alarm.state.' + canonicalSnap] = 'ACTIVE';\n      var familySnap = familyOf(canonicalSnap);\n      ensureFamily(out, familySnap);\n      out['alarm.nic_active.' + familySnap] = true;\n      out['alarm.inferred_allowed.' + familySnap] = false;\n      out['alarm.source.' + familySnap] = replayFlag ? 'replay' : 'nic';\n      out['alarm.replay.' + familySnap] = replayFlag;\n      snapshotCount = snapshotCount + 1;\n    }\n  }\n}\nvar ha = msg['ha'];\nvar atTop = msg['at'];\nvar hintCount = 0;\nif (ha == true && atTop != null) {\n  var topStr = '' + atTop;\n  var validTop = false;\n  for (ck : alarmMap.keySet()) {\n    if (alarmMap[ck] == topStr) {\n      validTop = true;\n      break;\n    }\n  }\n  if (validTop) {\n    out['alarm.active.' + topStr] = true;\n    out['alarm.state.' + topStr] = 'ACTIVE';\n    var familyTop = familyOf(topStr);\n    ensureFamily(out, familyTop);\n    out['alarm.nic_active.' + familyTop] = true;\n    out['alarm.inferred_allowed.' + familyTop] = false;\n    out['alarm.source.' + familyTop] = replayFlag ? 'replay' : 'nic';\n    out['alarm.replay.' + familyTop] = replayFlag;\n    hintCount = hintCount + 1;\n  }\n}\nif (transitions != null) {\n  for (t : transitions) {\n    var code = '' + t['c'];\n    var canonical = alarmMap[code];\n    if (canonical != null) {\n      var stateCode = t['s'];\n      var state = 'RAISED';\n      if (stateCode == 0) {\n        state = 'CLEARED';\n      } else if (stateCode == 2) {\n        state = 'UPDATED';\n      }\n      var active = (stateCode != 0);\n      out['alarm.active.' + canonical] = active;\n      out['alarm.state.' + canonical] = state;\n      var familyTransition = familyOf(canonical);\n      ensureFamily(out, familyTransition);\n      out['alarm.nic_active.' + familyTransition] = active;\n      out['alarm.nic_last_state.' + familyTransition] = state;\n      out['alarm.inferred_allowed.' + familyTransition] = !active;\n      out['alarm.source.' + familyTransition] = replayFlag ? 'replay' : 'nic';\n      out['alarm.replay.' + familyTransition] = replayFlag;\n      var sourceTs = t['ts'];\n      if (sourceTs == null) { sourceTs = msg['sourceEventTs']; }\n      if (sourceTs == null) { sourceTs = msg['ts']; }\n      if (sourceTs == null) { sourceTs = metadata['ts']; }\n      out['alarm.source_event_ts.' + familyTransition] = sourceTs;\n      out['alarm.nic_last_ts.' + familyTransition] = sourceTs;\n      transitionCount = transitionCount + 1;\n    }\n  }\n}\nif (snapshotCount == 0 && transitionCount == 0 && hintCount == 0) {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nout['alarm.snapshot.count'] = snapshotCount;\nout['alarm.hint.count'] = hintCount;\nout['alarm.transition.count'] = transitionCount;\nreturn {msg: out, metadata: metadata, msgType: 'Success'};"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "fe9fbef2-3d86-11f1-b05e-f177627734ea"
-      },
-      "name" : "Alarm Profile Mapper",
-      "queueName" : "HighPriority",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "layoutX" : 420,
-        "layoutY" : 720
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "tbelScript" : "var alarmMap = {\n  '2101': 'power.mains.lost',\n  '2102': 'power.backup.active',\n  '2103': 'power.battery.low',\n  '2104': 'power.supercap.low',\n  '2105': 'power.last_gasp.failed',\n  '2106': 'power.modem.shutdown',\n  '2107': 'power.supply.unstable',\n  '2201': 'uart.meter.no_response',\n  '2202': 'uart.meter.timeout',\n  '2203': 'uart.meter.flow_control_failure',\n  '2204': 'uart.meter.protocol_error',\n  '2205': 'uart.meter.link_stalled',\n  '2206': 'uart.meter.disconnected',\n  '2207': 'spi.meter.no_response',\n  '2208': 'spi.meter.protocol_error',\n  '2209': 'spi.meter.link_stalled',\n  '2301': 'modem.sim.not_detected',\n  '2302': 'modem.sim.init_failure',\n  '2303': 'modem.sim.profile_invalid',\n  '2304': 'modem.baseband.hang_detected',\n  '2305': 'modem.config.invalid',\n  '2401': 'modem.network.no_coverage',\n  '2402': 'modem.network.signal_degraded',\n  '2403': 'modem.network.attach_failed',\n  '2404': 'modem.network.attach_timeout',\n  '2405': 'modem.network.registration_denied',\n  '2406': 'modem.network.apn_rejected',\n  '2407': 'modem.network.pdp_activation_failed',\n  '2408': 'modem.network.ip_unavailable',\n  '2409': 'modem.network.reattach_loop',\n  '2410': 'modem.network.roaming_blocked',\n  '2411': 'modem.network.registration_timeout',\n  '2412': 'modem.rf.signal_low',\n  '2413': 'modem.rf.signal_degraded',\n  '2501': 'backend.dns.resolution_failed',\n  '2502': 'backend.hes.tcp_handshake_failed',\n  '2503': 'backend.hes.tls_validation_failed',\n  '2504': 'backend.hes.connect_timeout',\n  '2505': 'backend.hes.session_dropped',\n  '2506': 'backend.hes.response_timeout',\n  '2507': 'backend.hes.rejected',\n  '2508': 'backend.noc.mqtt_connect_failed',\n  '2509': 'backend.noc.publish_failed',\n  '2510': 'backend.hes.unreachable',\n  '2511': 'security.replay_detected',\n  '2512': 'security.jamming_suspected',\n  '2513': 'security.unknown_payload',\n  '2601': 'nic.runtime.thermal_stress',\n  '2602': 'nic.runtime.memory_pressure',\n  '2603': 'nic.runtime.cpu_overload',\n  '2604': 'nic.runtime.storage_low',\n  '2605': 'nic.runtime.clock_drift',\n  '2606': 'nic.runtime.config_corrupt',\n  '2701': 'fota.nic.download_failed',\n  '2702': 'fota.nic.signature_invalid',\n  '2703': 'fota.nic.apply_failed',\n  '2704': 'fota.nic.post_boot_attach_failed',\n  '2705': 'fota.meter.package_transfer_failed',\n  '2706': 'fota.meter.signature_invalid',\n  '2707': 'fota.meter.apply_failed',\n  '2708': 'fota.meter.status_timeout',\n  '2801': 'control.reset.failed',\n  '2802': 'control.reconfig.rejected',\n  '2803': 'control.diagnostic.ping_failed',\n  '2804': 'control.diagnostic.traceroute_failed',\n  '2805': 'control.diagnostic.cell_scan_failed'\n};\nvar authorityMap = {\n  'backend.hes': 'rulechain',\n  'modem.network': 'profile',\n  'modem.rf': 'profile',\n  'power.battery': 'profile',\n  'power.mains': 'profile',\n  'security.jamming_suspected': 'rulechain',\n  'security.replay_detected': 'rulechain',\n  'security.unknown_payload': 'rulechain',\n  'uart.meter': 'rulechain'\n};\nvar sourcePriorityMap = {\n  'backend.hes': 'nic_transition',\n  'modem.network': 'nic_transition',\n  'modem.rf': 'nic_transition',\n  'power.battery': 'nic_transition',\n  'power.mains': 'nic_transition',\n  'security.jamming_suspected': 'nic_transition',\n  'security.replay_detected': 'nic_transition',\n  'security.unknown_payload': 'nic_transition',\n  'uart.meter': 'nic_transition'\n};\nfunction familyOf(canonical) {\n  if (canonical == null) { return 'unknown'; }\n  var parts = canonical.split('.');\n  if (parts.size() >= 2) { return parts[0] + '.' + parts[1]; }\n  return canonical;\n}\nvar transitions = msg['ev'];\nif (transitions == null || transitions.size() == 0) {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nvar picked = null;\nfor (t : transitions) {\n  var code = '' + t['c'];\n  var canonical = alarmMap[code];\n  if (canonical != null) {\n    picked = {'transition': t, 'sourceCode': code, 'canonicalAlarm': canonical};\n  }\n}\nif (picked == null) {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nvar family = familyOf(picked['canonicalAlarm']);\nvar entityWriter = authorityMap[family];\nif (entityWriter == null) { entityWriter = 'profile'; }\nif (entityWriter != 'rulechain') {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nvar sourcePriority = sourcePriorityMap[family];\nif (sourcePriority == null) { sourcePriority = 'nic_transition'; }\nvar stateCode = picked['transition']['s'];\nvar lifecycleState = 'RAISED';\nvar msgOutType = 'ALARM_UPSERT';\nif (stateCode == 0) {\n  lifecycleState = 'CLEARED';\n  msgOutType = 'ALARM_CLEAR';\n} else if (stateCode == 2) {\n  lifecycleState = 'UPDATED';\n}\nvar replayFlag = false;\nif (msg['trace'] != null && msg['trace']['replay'] == true) { replayFlag = true; }\nif (metadata['replay'] == true || metadata['replay'] == 'true') { replayFlag = true; }\nvar sourceEventTs = picked['transition']['ts'];\nif (sourceEventTs == null) { sourceEventTs = msg['sourceEventTs']; }\nif (sourceEventTs == null) { sourceEventTs = msg['ts']; }\nif (sourceEventTs == null) { sourceEventTs = metadata['ts']; }\nvar source = replayFlag ? 'replay' : 'nic';\nvar alarmPayload = {\n  'alarmType': picked['canonicalAlarm'],\n  'alarmSeverity': 'MAJOR',\n  'alarmStatus': lifecycleState,\n  'alarmDetails': {\n    'canonicalAlarm': picked['canonicalAlarm'],\n    'sourceCode': picked['sourceCode'],\n    'state': stateCode,\n    'authorityFamily': family,\n    'entityWriter': entityWriter,\n    'sourcePriority': sourcePriority,\n    'source': source,\n    'replay': replayFlag,\n    'sourceEventTs': sourceEventTs\n  }\n};\nif (picked['transition']['m'] != null) {\n  alarmPayload['alarmDetails']['metadata'] = picked['transition']['m'];\n}\nreturn {msg: alarmPayload, metadata: metadata, msgType: msgOutType};"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "fe9fe600-3d86-11f1-b05e-f177627734ea"
-      },
-      "name" : "Alarm Entity Mapper",
-      "queueName" : "HighPriority",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 720
-      },
-      "configuration" : {
-        "useMessageAlarmData" : true,
-        "alarmType" : "${msg.alarmType}",
-        "alarmSeverity" : "${msg.alarmSeverity}",
-        "alarmDetailsBuildJs" : "return JSON.stringify(msg.alarmDetails);",
-        "propagate" : false
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "fea03420-3d86-11f1-b05e-f177627734ea"
-      },
-      "name" : "Create Alarm Entity",
-      "queueName" : "HighPriority",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.alarm.TbCreateAlarmNode"
-    }, {
-      "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 820
-      },
-      "configuration" : {
-        "alarmType" : "${msg.alarmType}",
-        "propagate" : false
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "fea08240-3d86-11f1-b05e-f177627734ea"
-      },
-      "name" : "Clear Alarm Entity",
-      "queueName" : "HighPriority",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.alarm.TbClearAlarmNode"
     } ],
     "ruleChainConnections" : null
   },
