@@ -90,8 +90,8 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 120,
-        "layoutY" : 120
+        "layoutX" : 128,
+        "layoutY" : 252
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -187,6 +187,7 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 420,
         "layoutY" : 320
       },
@@ -196,7 +197,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776749173207,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -209,8 +214,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 320
+        "layoutX" : 742,
+        "layoutY" : 322
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -262,8 +267,8 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 520
+        "layoutX" : 752,
+        "layoutY" : 208
       },
       "configuration" : {
         "name" : "Output"
