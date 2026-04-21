@@ -44,6 +44,10 @@
     }, {
       "fromIndex" : 0,
       "toIndex" : 9,
+      "type" : "Alarm"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 9,
       "type" : "Post attributes"
     }, {
       "fromIndex" : 0,
@@ -343,7 +347,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 5168
+    "version" : 6220
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -356,7 +360,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 5170
+    "version" : 6222
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
