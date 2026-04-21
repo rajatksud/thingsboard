@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "62085350-3d8a-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
@@ -15,9 +18,159 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
-    "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 4,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 4,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "layoutX" : 120,
+        "layoutY" : 120
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "tbelScript" : "var s = msg['schema']; if (s == null) { s = metadata['schema']; } if (s == null) { s = '1'; } metadata['schema'] = s; return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "62085350-3d8a-11f1-b05e-f177627734ea"
+      },
+      "name" : "Schema Resolver",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 420,
+        "layoutY" : 120
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "tbelScript" : "var eventMap = {\n  '1001': 'device.boot',\n  '1002': 'device.heartbeat',\n  '1003': 'lifecycle.ota.download_started',\n  '1004': 'lifecycle.ota.apply_started',\n  '1006': 'dlms.session.started',\n  '1007': 'dlms.session.completed',\n  '1008': 'dlms.session.failed',\n  '1009': 'dlms.read.retrying',\n  '1101': 'power.last_gasp.started',\n  '1102': 'power.last_gasp.noc_sent',\n  '1103': 'power.mains.restored',\n  '1201': 'uart.meter.reset_triggered',\n  '1301': 'modem.baseband.reset',\n  '1302': 'modem.baseband.watchdog_recovery',\n  '1701': 'fota.nic.package_available',\n  '1702': 'fota.nic.rollback_triggered',\n  '1703': 'fota.nic.rollback_succeeded',\n  '1801': 'control.reset.nic_triggered',\n  '1802': 'control.reset.meter_triggered',\n  '1803': 'control.reconfig.applied',\n  '2027': 'lifecycle.provisioning.started',\n  '2028': 'lifecycle.provisioning.completed',\n  '2029': 'lifecycle.paired',\n  '2030': 'lifecycle.repaired',\n  '2031': 'lifecycle.deployed',\n  '2032': 'lifecycle.relocated',\n  '2033': 'lifecycle.decommissioned',\n  '2034': 'lifecycle.ota.download_completed',\n  '2035': 'lifecycle.ota.apply_completed',\n  '2036': 'lifecycle.ota.reverted',\n  '2037': 'device.online',\n  '2038': 'device.offline',\n  '2039': 'device.reconnected',\n  '2040': 'device.rebooted',\n  '2041': 'power.modem.restored',\n  '2042': 'modem.network.recovered',\n  '2043': 'uart.meter.restored',\n  '2044': 'backend.hes.restored',\n  '2045': 'alarm.cleared'\n};\nvar code = msg['eventCode'];\nif (code == null) { throw new Error('missing_code'); }\nvar canonical = eventMap[code];\nif (canonical == null) { throw new Error('unknown_compact_code:' + code); }\nvar resolvedCandidateType = 'lifecycle';\nif (canonical.startsWith('lifecycle.ota.')) { resolvedCandidateType = 'ota'; }\nreturn {msg: {'canonicalEvent': canonical, 'sourceCode': code, 'candidateType': resolvedCandidateType}, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "62085351-3d8a-11f1-b05e-f177627734ea"
+      },
+      "name" : "Event Mapper",
+      "queueName" : "Main Queue",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 720,
+        "layoutY" : 120
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "tbelScript" : "var routes = {\n  'alarm': 'tb.nic.candidate.alarm.v1',\n  'device_state': 'tb.nic.candidate.device-state.v1',\n  'lifecycle': 'tb.nic.candidate.lifecycle.v1',\n  'ota': 'tb.nic.candidate.ota.v1'\n};\nvar candidateType = msg['candidateType'];\nif (candidateType == null) { throw new Error('missing_candidate_type'); }\nvar topic = routes[candidateType];\nif (topic == null) { throw new Error('unknown_candidate_type:' + candidateType); }\nmetadata['kafkaTopic'] = topic;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "62085352-3d8a-11f1-b05e-f177627734ea"
+      },
+      "name" : "Event Candidate Router",
+      "queueName" : "Main Queue",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1020,
+        "layoutY" : 120
+      },
+      "configuration" : {
+        "topicPattern" : "${kafkaTopic}",
+        "keyPattern" : "${deviceName}",
+        "bootstrapServers" : "localhost:9092",
+        "retries" : 0,
+        "batchSize" : 16384,
+        "linger" : 0,
+        "bufferMemory" : 33554432,
+        "acks" : "-1",
+        "otherProperties" : { },
+        "addMetadataKeyValuesAsKafkaHeaders" : false,
+        "kafkaHeadersCharset" : "UTF-8"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "62085353-3d8a-11f1-b05e-f177627734ea"
+      },
+      "name" : "Kafka Export Event",
+      "queueName" : "Main Queue",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1020,
+        "layoutY" : 280
+      },
+      "configuration" : {
+        "name" : "Output"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "62087a60-3d8a-11f1-b05e-f177627734ea"
+      },
+      "name" : "SendToOutput",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
+    } ],
     "ruleChainConnections" : null
   },
   "relations" : [ ],
