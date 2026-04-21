@@ -78,7 +78,7 @@
           }
         },
         "id" : "de948958-b2da-8e50-d34c-9c6cab8c23ed",
-        "propagate" : false,
+        "propagate" : true,
         "propagateRelationTypes" : null,
         "propagateToOwner" : true,
         "propagateToTenant" : true
