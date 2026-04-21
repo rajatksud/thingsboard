@@ -49,7 +49,7 @@
           "schedule" : null
         },
         "createRules" : {
-          "CRITICAL" : {
+          "MAJOR" : {
             "alarmDetails" : null,
             "condition" : {
               "condition" : [ {
