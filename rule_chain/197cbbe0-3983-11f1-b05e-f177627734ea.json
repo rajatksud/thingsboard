@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "53c30830-3d4e-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
@@ -120,7 +123,7 @@
       "toIndex" : 7,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
         "layoutX" : 120,
@@ -136,7 +139,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e559120-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c30830-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -158,7 +161,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e559121-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c32f40-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Telemetry Mapper",
       "queueName" : "Main Queue",
@@ -180,7 +183,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e559122-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c32f41-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Telemetry Candidate Router",
       "queueName" : "Main Queue",
@@ -211,7 +214,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e559123-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c32f42-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Main",
       "queueName" : "Main Queue",
@@ -233,7 +236,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e55b830-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c32f43-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Events Mapper",
       "queueName" : "HighPriority",
@@ -255,7 +258,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e55b831-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c35650-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Candidate Router",
       "queueName" : "HighPriority",
@@ -286,7 +289,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e55b832-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c35651-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export HighPriority",
       "queueName" : "HighPriority",
@@ -307,7 +310,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e55df40-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c35652-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "SendToOutput",
       "queueName" : null,
@@ -329,7 +332,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e55df41-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c37d60-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Profile Mapper",
       "queueName" : "HighPriority",
@@ -351,7 +354,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e55df42-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c37d61-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Entity Mapper",
       "queueName" : "HighPriority",
@@ -376,7 +379,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e562d60-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c3cb80-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Create Alarm Entity",
       "queueName" : "HighPriority",
@@ -398,7 +401,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "9e567b80-3d4d-11f1-b05e-f177627734ea"
+        "id" : "53c419a0-3d4e-11f1-b05e-f177627734ea"
       },
       "name" : "Clear Alarm Entity",
       "queueName" : "HighPriority",
