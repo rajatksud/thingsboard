@@ -44,14 +44,26 @@
     }, {
       "fromIndex" : 0,
       "toIndex" : 9,
-      "type" : "Alarm"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 9,
       "type" : "Post attributes"
     }, {
       "fromIndex" : 0,
       "toIndex" : 9,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 10,
+      "type" : "Alarm"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 10,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 11,
+      "type" : "Activity Event"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 11,
       "type" : "Post telemetry"
     }, {
       "fromIndex" : 4,
@@ -78,8 +90,8 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 354,
-        "layoutY" : 142
+        "layoutX" : 412,
+        "layoutY" : 117
       },
       "configuration" : {
         "version" : 0
@@ -332,6 +344,52 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 750,
+        "layoutY" : 430
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "61511140-3d8a-11f1-b05e-f177627734ea"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d4cd5150-3d8b-11f1-b05e-f177627734ea"
+      },
+      "name" : "Alarms Handle",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 759,
+        "layoutY" : 524
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d4cd7860-3d8b-11f1-b05e-f177627734ea"
+      },
+      "name" : "EventsHandle",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -347,7 +405,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 6220
+    "version" : 7830
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -360,7 +418,33 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 6222
+    "version" : 7832
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "be0af4a0-2944-11f1-934f-053385dac27e"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "61511140-3d8a-11f1-b05e-f177627734ea"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 7823
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "be0af4a0-2944-11f1-934f-053385dac27e"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 7825
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
