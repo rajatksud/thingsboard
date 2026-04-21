@@ -35,6 +35,10 @@
       "toIndex" : 4,
       "type" : "Failure"
     }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
       "fromIndex" : 2,
       "toIndex" : 3,
       "type" : "Success"
@@ -54,8 +58,8 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 120,
-        "layoutY" : 120
+        "layoutX" : 154,
+        "layoutY" : 311
       },
       "configuration" : {
         "scriptLang" : "TBEL",
