@@ -91,7 +91,7 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1776850327479,
+        "allEnabledUntil" : 1776857898354,
         "failuresEnabled" : false
       },
       "externalId" : null,
@@ -316,8 +316,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 493,
-        "layoutY" : 469
+        "layoutX" : 497,
+        "layoutY" : 376
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
@@ -364,7 +364,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 12771
+    "version" : 12823
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
