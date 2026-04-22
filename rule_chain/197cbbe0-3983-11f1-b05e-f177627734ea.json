@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "529f6bb0-3e3e-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
@@ -30,6 +33,10 @@
     }, {
       "fromIndex" : 0,
       "toIndex" : 8,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 10,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
@@ -63,8 +70,16 @@
       "fromIndex" : 4,
       "toIndex" : 8,
       "type" : "Failure"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 10,
+      "type" : "Failure"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 9,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
@@ -234,8 +249,8 @@
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1220,
-        "layoutY" : 120
+        "layoutX" : 1400,
+        "layoutY" : 124
       },
       "configuration" : {
         "name" : "OUTPUT"
@@ -274,6 +289,53 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 249,
+        "layoutY" : 277
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "var s = msg.schema ;\n\n// If schema is missing or not 1, route to Failure\nif (s == null || ('' + s) != '1') {\n    return ['Failure'];\n}\n\n// Otherwise, ensure it's in metadata and route to Success\nmetadata.schema = '' + s;\nreturn ['Success'];"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "529f6bb0-3e3e-11f1-b05e-f177627734ea"
+      },
+      "name" : "isSchema1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 440,
+        "layoutY" : 448
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "92e9da80-340b-11f1-a674-fb53697194ff"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "529f92c0-3e3e-11f1-b05e-f177627734ea"
+      },
+      "name" : "DLT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -290,6 +352,19 @@
     "type" : "Uses",
     "typeGroup" : "COMMON",
     "version" : 7896
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "92e9da80-340b-11f1-a674-fb53697194ff"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 12976
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
