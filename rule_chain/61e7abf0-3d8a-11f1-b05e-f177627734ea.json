@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "a2afce00-3e12-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
@@ -21,7 +24,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 4,
+      "toIndex" : 5,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
@@ -29,7 +32,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 4,
+      "toIndex" : 5,
       "type" : "Failure"
     }, {
       "fromIndex" : 2,
@@ -37,18 +40,18 @@
       "type" : "Success"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 4,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 4,
+      "toIndex" : 5,
       "type" : "Failure"
     }, {
       "fromIndex" : 3,
       "toIndex" : 4,
       "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 5,
+      "type" : "Failure"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
         "layoutX" : 120,
@@ -64,7 +67,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "daa182a0-3e11-11f1-b05e-f177627734ea"
+        "id" : "a2afce00-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -86,7 +89,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "daa1a9b0-3e11-11f1-b05e-f177627734ea"
+        "id" : "a2afce01-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Event Mapper",
       "queueName" : "Main Queue",
@@ -108,7 +111,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "daa1a9b1-3e11-11f1-b05e-f177627734ea"
+        "id" : "a2aff510-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Event Candidate Router",
       "queueName" : "Main Queue",
@@ -139,7 +142,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "daa1a9b2-3e11-11f1-b05e-f177627734ea"
+        "id" : "a2aff511-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Event",
       "queueName" : "Main Queue",
@@ -160,9 +163,30 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "daa1d0c0-3e11-11f1-b05e-f177627734ea"
+        "id" : "a2aff512-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "SendToOutput",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 720,
+        "layoutY" : 320
+      },
+      "configuration" : {
+        "name" : "DLT_Ignored"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a2b01c20-3e12-11f1-b05e-f177627734ea"
+      },
+      "name" : "SendToDeadLetter",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
