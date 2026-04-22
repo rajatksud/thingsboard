@@ -56,16 +56,12 @@
       "type" : "Failure"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 10,
+      "toIndex" : 9,
       "type" : "True"
     }, {
       "fromIndex" : 3,
       "toIndex" : 6,
       "type" : "Failure"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 9,
-      "type" : "True"
     }, {
       "fromIndex" : 4,
       "toIndex" : 5,
@@ -163,7 +159,6 @@
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
         "layoutX" : 720,
         "layoutY" : 380
       },
@@ -173,11 +168,7 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776858835974,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -319,36 +310,9 @@
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     }, {
       "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 1044,
-        "layoutY" : 438
-      },
-      "configuration" : {
-        "forwardMsgToDefaultRuleChain" : false,
-        "ruleChainId" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776859155689,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "96f87390-3e40-11f1-b05e-f177627734ea"
-      },
-      "name" : "sendToEvents",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 1030,
-        "layoutY" : 257
+        "description" : "Send to Alarms Rule Chain",
+        "layoutX" : 996,
+        "layoutY" : 259
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
@@ -360,9 +324,9 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "96f89aa0-3e40-11f1-b05e-f177627734ea"
+        "id" : "40605f10-3e41-11f1-b05e-f177627734ea"
       },
-      "name" : "sendToAlarms",
+      "name" : "S2A",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -395,7 +359,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13307
+    "version" : 13411
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -408,20 +372,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13297
-  }, {
-    "additionalInfo" : null,
-    "from" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
-    },
-    "to" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
-    },
-    "type" : "Uses",
-    "typeGroup" : "COMMON",
-    "version" : 13295
+    "version" : 13401
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
