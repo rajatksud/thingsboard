@@ -83,8 +83,8 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 420,
-        "layoutY" : 220
+        "layoutX" : 277,
+        "layoutY" : 216
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -109,8 +109,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 180
+        "layoutX" : 593,
+        "layoutY" : 65
       },
       "configuration" : {
         "useMessageAlarmData" : true,
@@ -292,6 +292,19 @@
     "type" : "Uses",
     "typeGroup" : "COMMON",
     "version" : 7887
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "61511140-3d8a-11f1-b05e-f177627734ea"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 13297
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
