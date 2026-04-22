@@ -58,8 +58,8 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 120,
-        "layoutY" : 120
+        "layoutX" : 197,
+        "layoutY" : 306
       },
       "configuration" : {
         "scriptLang" : "TBEL",
