@@ -229,13 +229,13 @@
         "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : false,
-        "alarmType" : "${msg.alarmType}",
-        "severity" : "CRITICAL",
+        "alarmType" : "${alarmType}",
+        "severity" : "${alarmSeverity}",
         "propagate" : true,
         "relationTypes" : [ "Contains" ],
         "propagateToOwner" : true,
         "propagateToTenant" : true,
-        "dynamicSeverity" : false
+        "dynamicSeverity" : true
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14469
+    "version" : 14521
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
