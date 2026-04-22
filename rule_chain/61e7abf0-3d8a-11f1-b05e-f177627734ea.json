@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "eea11c40-3e14-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
@@ -48,7 +51,7 @@
       "toIndex" : 5,
       "type" : "Failure"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
         "layoutX" : 120,
@@ -64,7 +67,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a2cce100-3e14-11f1-b05e-f177627734ea"
+        "id" : "eea11c40-3e14-11f1-b05e-f177627734ea"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -86,7 +89,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a2cce101-3e14-11f1-b05e-f177627734ea"
+        "id" : "eea11c41-3e14-11f1-b05e-f177627734ea"
       },
       "name" : "Event Mapper",
       "queueName" : "Main Queue",
@@ -108,7 +111,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a2cce102-3e14-11f1-b05e-f177627734ea"
+        "id" : "eea11c42-3e14-11f1-b05e-f177627734ea"
       },
       "name" : "Event Candidate Router",
       "queueName" : "Main Queue",
@@ -139,7 +142,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a2cd0810-3e14-11f1-b05e-f177627734ea"
+        "id" : "eea14350-3e14-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Event",
       "queueName" : "Main Queue",
@@ -160,7 +163,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a2cd0811-3e14-11f1-b05e-f177627734ea"
+        "id" : "eea14351-3e14-11f1-b05e-f177627734ea"
       },
       "name" : "SendToOutput",
       "queueName" : null,
@@ -181,7 +184,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a2cd0812-3e14-11f1-b05e-f177627734ea"
+        "id" : "eea16a60-3e14-11f1-b05e-f177627734ea"
       },
       "name" : "SendToDeadLetter",
       "queueName" : null,
