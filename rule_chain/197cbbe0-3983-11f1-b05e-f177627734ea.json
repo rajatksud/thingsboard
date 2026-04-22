@@ -5,10 +5,7 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : {
-      "entityType" : "RULE_NODE",
-      "id" : "3b6fb5e0-3e3d-11f1-b05e-f177627734ea"
-    },
+    "firstRuleNodeId" : null,
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
@@ -66,20 +63,8 @@
       "fromIndex" : 4,
       "toIndex" : 8,
       "type" : "Failure"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 0,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 0,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 9,
-      "toIndex" : 10,
-      "type" : "Failure"
     } ],
-    "firstNodeIndex" : 9,
+    "firstNodeIndex" : null,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
@@ -89,13 +74,13 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : null,
-        "tbelScript" : "var telemetryMap = [\n    'aa': 'device.runtime.active_alarms',\n    'at': 'device.runtime.alarm_transition',\n    'atemp': 'device.sensor.ambient_temp_c',\n    'bat': 'electrical.battery_level_pct',\n    'ct': 'network.radio.connection_type',\n    'dlms_f': 'dlms.session.failed',\n    'dlms_ok': 'dlms.session.completed',\n    'dlms_r': 'dlms.read.retrying',\n    'dlms_st': 'dlms.session.started',\n    'err': 'device.runtime.error_code',\n    'fw': 'device.firmware.version',\n    'ha': 'device.health.alert_active',\n    'hr': 'device.nic.hw_rev',\n    'hsc': 'device.health.score',\n    'iccid': 'device.nic.sim.iccid',\n    'imei': 'device.nic.imei',\n    'imsi': 'device.nic.sim.imsi',\n    'kwh': 'electrical.energy_kwh',\n    'lcy': 'network.radio.latency_ms',\n    'ln': 'device.location.longitude',\n    'loss': 'network.radio.packet_loss_pct',\n    'lt': 'device.location.latitude',\n    'main': 'electrical.mains_status',\n    'nid': 'device.id.nic_id',\n    'oper': 'device.nic.sim.operator',\n    'ota_p': 'lifecycle.ota.progress_pct',\n    'ota_st': 'lifecycle.ota.state',\n    'pip': 'device.nic.sim.ip',\n    'rsrp': 'network.radio.rsrp_dbm',\n    'rsrq': 'network.radio.rsrq_db',\n    'rssi': 'network.radio.rssi_dbm',\n    'rx': 'network.stats.bytes_received',\n    'sid': 'device.id.som_id',\n    'sm': 'device.id.som_model',\n    'snr': 'network.radio.snr_db',\n    'temp': 'device.sensor.internal_temp_c',\n    'tx': 'network.stats.bytes_sent',\n    'uid': 'device.id.uid',\n    'upt': 'device.runtime.uptime_s',\n    'v': 'electrical.voltage_v'\n];\n\nvar eventMap = [\n    '1101': 'power.last_gasp.started',\n    '1203': 'dlms.session.started',\n    '1204': 'dlms.session.completed',\n    '1804': 'device.boot'\n];\n\nvar alarmMap = [\n    '2101': 'power.mains.lost',\n    '2103': 'power.battery.low',\n    '2201': 'uart.meter.no_response'\n];\n\nvar out = [:];\nvar partialFailures = [:];\nvar hasFailures = false;\nvar ignored = ['ev': true, 'schema': true, 'ts': true, 'deviceId': true, 'deviceName': true];\n\n// 1. Telemetry\nfor (var key : msg.keySet()) {\n    if (ignored[key] != true) {\n        var canonical = telemetryMap[key];\n        if (canonical != null) {\n            out[canonical] = msg[key];\n        } else {\n            partialFailures[key] = msg[key];\n            hasFailures = true;\n        }\n    }\n}\n\n// 2. Transitions (Manual processing for maximum compatibility)\nvar transitions = msg.ev;\nvar mappedEvents = [];\nvar mappedAlarms = [];\n\nif (transitions != null) {\n    for (var t : transitions) {\n        var code = '' + t.c;\n        var stateCode = t.s;\n        var lifecycleState = 'RAISED';\n        if (stateCode == 0) { lifecycleState = 'CLEARED'; }\n        if (stateCode == 2) { lifecycleState = 'UPDATED'; }\n\n        // Explicit Timestamp Fallback\n        var sourceEventTs = t.ts;\n        if (sourceEventTs == null) { sourceEventTs = msg.ts; }\n        if (sourceEventTs == null) { sourceEventTs = metadata.ts; }\n\n        // CHECK EVENTS\n        var eventCanonical = eventMap[code];\n        \n        if (eventCanonical != null) {\n            var eventType = 'lifecycle';\n            if (eventCanonical.startsWith('fota.') || eventCanonical.startsWith('ota.')) { \n                eventType = 'ota'; \n            }\n            var evRow = [\n                'candidateType': eventType,\n                'canonicalEvent': eventCanonical,\n                'sourceCode': code,\n                'transitionState': lifecycleState,\n                'sourceEventTs': sourceEventTs\n            ];\n            if (t.m != null) { evRow['metadata'] = t.m; }\n            mappedEvents.add(evRow);\n        } else {\n            // CHECK ALARMS\n            var alarmCanonical = alarmMap[code];\n            if (alarmCanonical != null) {\n                var alRow = [\n                    'canonicalAlarm': alarmCanonical,\n                    'sourceCode': code,\n                    'state': stateCode,\n                    'lifecycleState': lifecycleState,\n                    'sourceEventTs': sourceEventTs\n                ];\n                if (t.m != null) { alRow['metadata'] = t.m; }\n                mappedAlarms.add(alRow);\n            }\n        }\n    }\n}\n\n// 3. Flags and Output\nif (mappedEvents.size() > 0) {\n    out['mappedEvents'] = mappedEvents;\n    metadata.hasEvents = 'true';\n}\nif (mappedAlarms.size() > 0) {\n    out['mappedAlarms'] = mappedAlarms;\n    metadata.hasAlarms = 'true';\n}\n\nout['candidateType'] = 'device_state';\n\nif (hasFailures) {\n    out['partialFailures'] = partialFailures;\n    return {msg: out, metadata: metadata, msgType: 'Failure'};\n}\n\nreturn {msg: out, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var telemetryMap = [\n    'aa': 'device.runtime.active_alarms',\n    'at': 'device.runtime.alarm_transition',\n    'atemp': 'device.sensor.ambient_temp_c',\n    'bat': 'electrical.battery_level_pct',\n    'ct': 'network.radio.connection_type',\n    'dlms_f': 'dlms.session.failed',\n    'dlms_ok': 'dlms.session.completed',\n    'dlms_r': 'dlms.read.retrying',\n    'dlms_st': 'dlms.session.started',\n    'err': 'device.runtime.error_code',\n    'fw': 'device.firmware.version',\n    'ha': 'device.health.alert_active',\n    'hr': 'device.nic.hw_rev',\n    'hsc': 'device.health.score',\n    'iccid': 'device.nic.sim.iccid',\n    'imei': 'device.nic.imei',\n    'imsi': 'device.nic.sim.imsi',\n    'kwh': 'electrical.energy_kwh',\n    'lcy': 'network.radio.latency_ms',\n    'ln': 'device.location.longitude',\n    'loss': 'network.radio.packet_loss_pct',\n    'lt': 'device.location.latitude',\n    'main': 'electrical.mains_status',\n    'nid': 'device.id.nic_id',\n    'oper': 'device.nic.sim.operator',\n    'ota_p': 'lifecycle.ota.progress_pct',\n    'ota_st': 'lifecycle.ota.state',\n    'pip': 'device.nic.sim.ip',\n    'rsrp': 'network.radio.rsrp_dbm',\n    'rsrq': 'network.radio.rsrq_db',\n    'rssi': 'network.radio.rssi_dbm',\n    'rx': 'network.stats.bytes_received',\n    'sid': 'device.id.som_id',\n    'sm': 'device.id.som_model',\n    'snr': 'network.radio.snr_db',\n    'temp': 'device.sensor.internal_temp_c',\n    'tx': 'network.stats.bytes_sent',\n    'uid': 'device.id.uid',\n    'upt': 'device.runtime.uptime_s',\n    'v': 'electrical.voltage_v'\n];\n\nvar eventMap = [\n    '1101': 'power.last_gasp.started',\n    '1203': 'dlms.session.started',\n    '1204': 'dlms.session.completed',\n    '1804': 'device.boot'\n];\n\nvar alarmMap = [\n    '2101': 'power.mains.lost',\n    '2103': 'power.battery.low',\n    '2201': 'uart.meter.no_response'\n];\n\nvar out = [:];\nvar partialFailures = [:];\nvar hasFailures = false;\nvar ignored = ['ev': true, 'schema': true, 'ts': true, 'deviceId': true, 'deviceName': true];\n\n// 1. Telemetry - REMOVED 'var' FROM LOOP\nfor (key : msg.keySet()) {\n    if (ignored[key] != true) {\n        var canonical = telemetryMap[key];\n        if (canonical != null) {\n            out[canonical] = msg[key];\n        } else {\n            partialFailures[key] = msg[key];\n            hasFailures = true;\n        }\n    }\n}\n\n// 2. Transitions\nvar transitions = msg.ev;\nvar mappedEvents = [];\nvar mappedAlarms = [];\n\nif (transitions != null) {\n    // REMOVED 'var' FROM LOOP\n    for (t : transitions) {\n        var code = '' + t.c;\n        var stateCode = t.s;\n        var lifecycleState = 'RAISED';\n        if (stateCode == 0) { lifecycleState = 'CLEARED'; }\n        if (stateCode == 2) { lifecycleState = 'UPDATED'; }\n\n        var sourceEventTs = t.ts;\n        if (sourceEventTs == null) { sourceEventTs = msg.ts; }\n        if (sourceEventTs == null) { sourceEventTs = metadata.ts; }\n\n        var eventCanonical = eventMap[code];\n        \n        if (eventCanonical != null) {\n            var eventType = 'lifecycle';\n            if (eventCanonical.startsWith('fota.') || eventCanonical.startsWith('ota.')) { \n                eventType = 'ota'; \n            }\n            var evRow = [\n                'candidateType': eventType,\n                'canonicalEvent': eventCanonical,\n                'sourceCode': code,\n                'transitionState': lifecycleState,\n                'sourceEventTs': sourceEventTs\n            ];\n            if (t.m != null) { evRow['metadata'] = t.m; }\n            mappedEvents.add(evRow);\n        } else {\n            var alarmCanonical = alarmMap[code];\n            if (alarmCanonical != null) {\n                var alRow = [\n                    'canonicalAlarm': alarmCanonical,\n                    'sourceCode': code,\n                    'state': stateCode,\n                    'lifecycleState': lifecycleState,\n                    'sourceEventTs': sourceEventTs\n                ];\n                if (t.m != null) { alRow['metadata'] = t.m; }\n                mappedAlarms.add(alRow);\n            }\n        }\n    }\n}\n\n// 3. Flags and Output\nif (mappedEvents.size() > 0) {\n    out['mappedEvents'] = mappedEvents;\n    metadata.hasEvents = 'true';\n}\nif (mappedAlarms.size() > 0) {\n    out['mappedAlarms'] = mappedAlarms;\n    metadata.hasAlarms = 'true';\n}\n\nout['candidateType'] = 'device_state';\n\nif (hasFailures) {\n    out['partialFailures'] = partialFailures;\n    return {msg: out, metadata: metadata, msgType: 'Failure'};\n}\n\nreturn {msg: out, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1776857898354,
+        "allEnabledUntil" : 1776858075411,
         "failuresEnabled" : false
       },
       "externalId" : null,
@@ -289,57 +274,6 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 205,
-        "layoutY" : 252
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "var s = msg.schema ;\n\n// If schema is missing or not 1, route to Failure\nif (s != null && s == '1') {\n    return ['Success'];\n}\n// Otherwise, ensure it's in metadata and route to Success\nmetadata.schema = s;",
-        "tbelScript" : "var s = msg.schema ;\n\n// If schema is missing or not 1, route to Failure\nif (s == null || ('' + s) != '1') {\n    return ['Failure'];\n}\n\n// Otherwise, ensure it's in metadata and route to Success\nmetadata.schema = '' + s;\nreturn ['Success'];"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776857740137,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "3b6fb5e0-3e3d-11f1-b05e-f177627734ea"
-      },
-      "name" : "isSchema1",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 497,
-        "layoutY" : 376
-      },
-      "configuration" : {
-        "forwardMsgToDefaultRuleChain" : false,
-        "ruleChainId" : "92e9da80-340b-11f1-a674-fb53697194ff"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "9802bf00-3e3d-11f1-b05e-f177627734ea"
-      },
-      "name" : "DLT",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -356,19 +290,6 @@
     "type" : "Uses",
     "typeGroup" : "COMMON",
     "version" : 7896
-  }, {
-    "additionalInfo" : null,
-    "from" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
-    },
-    "to" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "92e9da80-340b-11f1-a674-fb53697194ff"
-    },
-    "type" : "Uses",
-    "typeGroup" : "COMMON",
-    "version" : 12875
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
