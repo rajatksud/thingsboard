@@ -82,6 +82,7 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 420,
         "layoutY" : 220
       },
@@ -91,7 +92,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776858600578,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -151,6 +156,7 @@
       "type" : "org.thingsboard.rule.engine.alarm.TbClearAlarmNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 420,
         "layoutY" : 420
       },
@@ -160,7 +166,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776858600578,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
