@@ -170,7 +170,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "if (msg.mappedAlarms == null || msg.mappedAlarms.size() == 0) {\n    return {msg: msg, metadata: metadata, msgType: \"Failure\"};\n}\n\nvar alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\nvar isClear = (alarm.state == 0); // 0 = CLEARED, 1 = RAISED\n\nvar alarmPayload = [\n    \"alarmType\": alarm.canonicalAlarm,\n    \"alarmSeverity\": \"MAJOR\",\n    \"alarmStatus\": alarm.lifecycleState,\n    \"alarmDetails\": [\n        \"source\": \"rulechain_primary\",\n        \"sourceCode\": alarm.sourceCode,\n        \"sourceEventTs\": alarm.sourceEventTs\n    ]\n];\n\n// If there is extra metadata in the NIC packet, attach it to details\nif (alarm.metadata != null) { \n    alarmPayload.alarmDetails.metadata = alarm.metadata; \n}\n\n// Set msgType for the next Switch node\nreturn {msg: alarmPayload, metadata: metadata, msgType: isClear ? \"ALARM_CLEAR\" : \"ALARM_UPSERT\"};"
+        "tbelScript" : "if (msg.mappedAlarms == null || msg.mappedAlarms.size() == 0) {\n    return {msg: msg, metadata: metadata, msgType: \"Failure\"};\n}\n\nvar alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\nvar isClear = (alarm.state == 0);\n\nvar alarmPayload = [\n    \"alarmType\": alarm.canonicalAlarm,\n    \"alarmSeverity\": \"MAJOR\",\n    \"alarmStatus\": alarm.lifecycleState,\n    \"alarmDetails\": [\n        \"source\": \"rulechain_primary\",\n        \"sourceCode\": alarm.sourceCode,\n        \"sourceEventTs\": alarm.sourceEventTs\n    ]\n];\n\nif (alarm.metadata != null) { \n    alarmPayload.alarmDetails.metadata = alarm.metadata; \n}\n\n// FIX: Explicitly define the msgType string before returning\nvar outType = isClear ? \"ALARM_CLEAR\" : \"ALARM_UPSERT\";\n\nreturn {msg: alarmPayload, metadata: metadata, msgType: outType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14313
+    "version" : 14365
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
