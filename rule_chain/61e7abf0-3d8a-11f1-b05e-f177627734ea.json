@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "a563cca0-3e21-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
@@ -21,15 +24,11 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 2,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 0,
       "toIndex" : 8,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 7,
+      "toIndex" : 2,
       "type" : "Success"
     }, {
       "fromIndex" : 1,
@@ -88,11 +87,11 @@
       "toIndex" : 8,
       "type" : "Failure"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 96,
-        "layoutY" : 290
+        "layoutX" : 120,
+        "layoutY" : 120
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -104,7 +103,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "75b66490-3e1c-11f1-b05e-f177627734ea"
+        "id" : "a563cca0-3e21-11f1-b05e-f177627734ea"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -113,9 +112,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
-        "layoutX" : 446,
-        "layoutY" : 224
+        "layoutX" : 300,
+        "layoutY" : 120
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -123,15 +121,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776843675499,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "75b68ba0-3e1c-11f1-b05e-f177627734ea"
+        "id" : "a563cca1-3e21-11f1-b05e-f177627734ea"
       },
       "name" : "Telemetry Mapper (Seq)",
       "queueName" : "Main Queue",
@@ -140,9 +134,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
-        "layoutX" : 410,
-        "layoutY" : 119
+        "layoutX" : 480,
+        "layoutY" : 120
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -150,15 +143,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776845285724,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "75b68ba1-3e1c-11f1-b05e-f177627734ea"
+        "id" : "a563cca2-3e21-11f1-b05e-f177627734ea"
       },
       "name" : "Has EV Filter",
       "queueName" : null,
@@ -167,26 +156,20 @@
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
         "layoutX" : 660,
         "layoutY" : 120
       },
       "configuration" : {
         "scriptLang" : "TBEL",
-        "jsScript" : null,
-        "tbelScript" : "var eventMap = {\n  '1101': 'power.last_gasp.started',\n  '1102': 'power.last_gasp.noc_sent',\n  '1103': 'power.mains.restored',\n  '1104': 'power.modem.restored',\n  '1201': 'uart.meter.reset_triggered',\n  '1202': 'uart.meter.restored',\n  '1203': 'dlms.session.started',\n  '1204': 'dlms.session.completed',\n  '1205': 'dlms.session.failed',\n  '1206': 'dlms.read.retrying',\n  '1301': 'modem.baseband.reset',\n  '1302': 'modem.baseband.watchdog_recovery',\n  '1401': 'modem.network.recovered',\n  '1501': 'backend.hes.restored',\n  '1701': 'fota.nic.package_available',\n  '1702': 'fota.nic.rollback_triggered',\n  '1703': 'fota.nic.rollback_succeeded',\n  '1704': 'lifecycle.ota.download_started',\n  '1705': 'lifecycle.ota.apply_started',\n  '1706': 'lifecycle.ota.download_completed',\n  '1707': 'lifecycle.ota.apply_completed',\n  '1708': 'lifecycle.ota.reverted',\n  '1801': 'control.reset.nic_triggered',\n  '1802': 'control.reset.meter_triggered',\n  '1803': 'control.reconfig.applied',\n  '1804': 'device.boot',\n  '1805': 'device.heartbeat',\n  '1806': 'lifecycle.provisioning.started',\n  '1807': 'lifecycle.provisioning.completed',\n  '1808': 'lifecycle.paired',\n  '1809': 'lifecycle.repaired',\n  '1810': 'lifecycle.deployed',\n  '1811': 'lifecycle.relocated',\n  '1812': 'lifecycle.decommissioned',\n  '1813': 'device.online',\n  '1814': 'device.offline',\n  '1815': 'device.reconnected',\n  '1816': 'device.rebooted',\n  '1817': 'alarm.cleared'\n};\nvar legacyMap = {\n  '1005': 'lifecycle.commissioning.incomplete',\n  '2009': 'lifecycle.ota.failed',\n  '2020': 'ota.download.failed',\n  '2021': 'ota.apply.failed',\n  '2022': 'ota.verify.failed',\n  '2023': 'ota.rollback.failed',\n  '2046': 'lifecycle.pairing.mismatch',\n  '2047': 'lifecycle.deployment.config_missing',\n  '2048': 'lifecycle.commissioning.incomplete',\n  '2049': 'lifecycle.som.lineage_missing',\n  '2050': 'lifecycle.nic.build_incomplete'\n  '2101': \"power.mains.lost\",\n};\nvar transitions = msg['ev'];\nif (transitions == null || transitions.size() == 0) {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nvar picked = null;\nvar seenCodes = [];\nfor (t : transitions) {\n  var code = '' + t['c'];\n  seenCodes.push(code);\n  var canonical = eventMap[code];\n  if (canonical == null) { canonical = legacyMap[code]; }\n  if (canonical != null) {\n    picked = {'transition': t, 'canonicalEvent': canonical, 'sourceCode': code};\n  }\n}\nif (picked == null) {\n  var err = {'error': 'no_event_transition_mapped', 'candidateType': 'dlt', 'seenCodes': seenCodes};\n  return {msg: err, metadata: metadata, msgType: 'Failure'};\n}\nvar candidateType = 'lifecycle';\nif (picked['canonicalEvent'].startsWith('fota.') || picked['canonicalEvent'].startsWith('ota.')) {\n  candidateType = 'ota';\n}\nvar stateCode = picked['transition']['s'];\nvar lifecycleState = 'RAISED';\nif (stateCode == 0) {\n  lifecycleState = 'CLEARED';\n} else if (stateCode == 2) {\n  lifecycleState = 'UPDATED';\n}\nvar sourceEventTs = picked['transition']['ts'];\nif (sourceEventTs == null) { sourceEventTs = msg['sourceEventTs']; }\nif (sourceEventTs == null) { sourceEventTs = msg['ts']; }\nif (sourceEventTs == null) { sourceEventTs = metadata['ts']; }\nreturn {msg: {'candidateType': candidateType, 'canonicalEvent': picked['canonicalEvent'], 'sourceCode': picked['sourceCode'], 'transitionState': lifecycleState, 'sourceEventTs': sourceEventTs}, metadata: metadata, msgType: 'Success'};"
+        "tbelScript" : "var eventMap = {\n  '1101': 'power.last_gasp.started',\n  '1102': 'power.last_gasp.noc_sent',\n  '1103': 'power.mains.restored',\n  '1104': 'power.modem.restored',\n  '1201': 'uart.meter.reset_triggered',\n  '1202': 'uart.meter.restored',\n  '1203': 'dlms.session.started',\n  '1204': 'dlms.session.completed',\n  '1205': 'dlms.session.failed',\n  '1206': 'dlms.read.retrying',\n  '1301': 'modem.baseband.reset',\n  '1302': 'modem.baseband.watchdog_recovery',\n  '1401': 'modem.network.recovered',\n  '1501': 'backend.hes.restored',\n  '1701': 'fota.nic.package_available',\n  '1702': 'fota.nic.rollback_triggered',\n  '1703': 'fota.nic.rollback_succeeded',\n  '1704': 'lifecycle.ota.download_started',\n  '1705': 'lifecycle.ota.apply_started',\n  '1706': 'lifecycle.ota.download_completed',\n  '1707': 'lifecycle.ota.apply_completed',\n  '1708': 'lifecycle.ota.reverted',\n  '1801': 'control.reset.nic_triggered',\n  '1802': 'control.reset.meter_triggered',\n  '1803': 'control.reconfig.applied',\n  '1804': 'device.boot',\n  '1805': 'device.heartbeat',\n  '1806': 'lifecycle.provisioning.started',\n  '1807': 'lifecycle.provisioning.completed',\n  '1808': 'lifecycle.paired',\n  '1809': 'lifecycle.repaired',\n  '1810': 'lifecycle.deployed',\n  '1811': 'lifecycle.relocated',\n  '1812': 'lifecycle.decommissioned',\n  '1813': 'device.online',\n  '1814': 'device.offline',\n  '1815': 'device.reconnected',\n  '1816': 'device.rebooted',\n  '1817': 'alarm.cleared'\n};\nvar legacyMap = {\n  '1005': 'lifecycle.commissioning.incomplete',\n  '2009': 'lifecycle.ota.failed',\n  '2020': 'ota.download.failed',\n  '2021': 'ota.apply.failed',\n  '2022': 'ota.verify.failed',\n  '2023': 'ota.rollback.failed',\n  '2046': 'lifecycle.pairing.mismatch',\n  '2047': 'lifecycle.deployment.config_missing',\n  '2048': 'lifecycle.commissioning.incomplete',\n  '2049': 'lifecycle.som.lineage_missing',\n  '2050': 'lifecycle.nic.build_incomplete'\n};\nvar transitions = msg['ev'];\nif (transitions == null || transitions.size() == 0) {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nvar picked = null;\nvar seenCodes = [];\nfor (t : transitions) {\n  var code = '' + t['c'];\n  seenCodes.push(code);\n  var canonical = eventMap[code];\n  if (canonical == null) { canonical = legacyMap[code]; }\n  if (canonical != null) {\n    picked = {'transition': t, 'canonicalEvent': canonical, 'sourceCode': code};\n  }\n}\nif (picked == null) {\n  var err = {'error': 'no_event_transition_mapped', 'candidateType': 'dlt', 'seenCodes': seenCodes};\n  return {msg: err, metadata: metadata, msgType: 'Failure'};\n}\nvar candidateType = 'lifecycle';\nif (picked['canonicalEvent'].startsWith('fota.') || picked['canonicalEvent'].startsWith('ota.')) {\n  candidateType = 'ota';\n}\nvar stateCode = picked['transition']['s'];\nvar lifecycleState = 'RAISED';\nif (stateCode == 0) {\n  lifecycleState = 'CLEARED';\n} else if (stateCode == 2) {\n  lifecycleState = 'UPDATED';\n}\nvar sourceEventTs = picked['transition']['ts'];\nif (sourceEventTs == null) { sourceEventTs = msg['sourceEventTs']; }\nif (sourceEventTs == null) { sourceEventTs = msg['ts']; }\nif (sourceEventTs == null) { sourceEventTs = metadata['ts']; }\nreturn {msg: {'candidateType': candidateType, 'canonicalEvent': picked['canonicalEvent'], 'sourceCode': picked['sourceCode'], 'transitionState': lifecycleState, 'sourceEventTs': sourceEventTs}, metadata: metadata, msgType: 'Success'};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776843675499,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "75b68ba2-3e1c-11f1-b05e-f177627734ea"
+        "id" : "a563f3b0-3e21-11f1-b05e-f177627734ea"
       },
       "name" : "Event Mapper",
       "queueName" : "Main Queue",
@@ -208,7 +191,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "75b68ba3-3e1c-11f1-b05e-f177627734ea"
+        "id" : "a563f3b1-3e21-11f1-b05e-f177627734ea"
       },
       "name" : "Mapped Event Filter",
       "queueName" : null,
@@ -230,7 +213,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "75b6b2b0-3e1c-11f1-b05e-f177627734ea"
+        "id" : "a563f3b2-3e21-11f1-b05e-f177627734ea"
       },
       "name" : "Event Candidate Router",
       "queueName" : "Main Queue",
@@ -261,7 +244,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "75b6b2b1-3e1c-11f1-b05e-f177627734ea"
+        "id" : "a563f3b3-3e21-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Event",
       "queueName" : "Main Queue",
@@ -270,24 +253,19 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
-        "layoutX" : 1202,
-        "layoutY" : 608
+        "layoutX" : 1200,
+        "layoutY" : 300
       },
       "configuration" : {
-        "name" : "Output"
+        "name" : "OUTPUT"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776843776434,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "75b6b2b2-3e1c-11f1-b05e-f177627734ea"
+        "id" : "a5641ac0-3e21-11f1-b05e-f177627734ea"
       },
       "name" : "SendToOutput",
       "queueName" : null,
@@ -296,8 +274,8 @@
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 267,
-        "layoutY" : 750
+        "layoutX" : 960,
+        "layoutY" : 340
       },
       "configuration" : {
         "name" : "DLT_Ignored"
@@ -308,7 +286,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "75b6d9c0-3e1c-11f1-b05e-f177627734ea"
+        "id" : "a5641ac1-3e21-11f1-b05e-f177627734ea"
       },
       "name" : "SendToDeadLetter",
       "queueName" : null,
