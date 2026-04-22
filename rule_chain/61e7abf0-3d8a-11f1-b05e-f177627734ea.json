@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "66add760-3e0a-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
@@ -48,11 +51,11 @@
       "toIndex" : 4,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 156,
-        "layoutY" : 253
+        "layoutX" : 120,
+        "layoutY" : 120
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -64,7 +67,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "62085350-3d8a-11f1-b05e-f177627734ea"
+        "id" : "66add760-3e0a-11f1-b05e-f177627734ea"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -73,26 +76,20 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
         "layoutX" : 420,
         "layoutY" : 120
       },
       "configuration" : {
         "scriptLang" : "TBEL",
-        "jsScript" : null,
-        "tbelScript" : "var eventMap = {\n  '1001': 'device.boot',\n  '1002': 'device.heartbeat',\n  '1003': 'lifecycle.ota.download_started',\n  '1004': 'lifecycle.ota.apply_started',\n  '1006': 'dlms.session.started',\n  '1007': 'dlms.session.completed',\n  '1008': 'dlms.session.failed',\n  '1009': 'dlms.read.retrying',\n  '1101': 'power.last_gasp.started',\n  '1102': 'power.last_gasp.noc_sent',\n  '1103': 'power.mains.restored',\n  '1201': 'uart.meter.reset_triggered',\n  '1301': 'modem.baseband.reset',\n  '1302': 'modem.baseband.watchdog_recovery',\n  '1701': 'fota.nic.package_available',\n  '1702': 'fota.nic.rollback_triggered',\n  '1703': 'fota.nic.rollback_succeeded',\n  '1801': 'control.reset.nic_triggered',\n  '1802': 'control.reset.meter_triggered',\n  '1803': 'control.reconfig.applied',\n  '2027': 'lifecycle.provisioning.started',\n  '2028': 'lifecycle.provisioning.completed',\n  '2029': 'lifecycle.paired',\n  '2030': 'lifecycle.repaired',\n  '2031': 'lifecycle.deployed',\n  '2032': 'lifecycle.relocated',\n  '2033': 'lifecycle.decommissioned',\n  '2034': 'lifecycle.ota.download_completed',\n  '2035': 'lifecycle.ota.apply_completed',\n  '2036': 'lifecycle.ota.reverted',\n  '2037': 'device.online',\n  '2038': 'device.offline',\n  '2039': 'device.reconnected',\n  '2040': 'device.rebooted',\n  '2041': 'power.modem.restored',\n  '2042': 'modem.network.recovered',\n  '2043': 'uart.meter.restored',\n  '2044': 'backend.hes.restored',\n  '2045': 'alarm.cleared'\n};\nvar code = msg['eventCode'];\nif (code == null) { \n    var err2 = {'error': 'unknown_compact_code', 'sourceCode': code, 'candidateType': 'dlt'};\n    return {msg: err2, metadata: metadata, msgType: 'FAILURE'}; \n    }\nvar canonical = eventMap[code];\nif (canonical == null) { throw new Error('unknown_compact_code:' + code); }\nvar resolvedCandidateType = 'lifecycle';\nif (canonical.startsWith('lifecycle.ota.')) { resolvedCandidateType = 'ota'; }\nreturn {msg: {'canonicalEvent': canonical, 'sourceCode': code, 'candidateType': resolvedCandidateType}, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var alarmMap = {\n  '2101': 'power.mains.lost',\n  '2102': 'power.backup.active',\n  '2103': 'power.battery.low',\n  '2104': 'power.supercap.low',\n  '2105': 'power.last_gasp.failed',\n  '2106': 'power.modem.shutdown',\n  '2107': 'power.supply.unstable',\n  '2201': 'uart.meter.no_response',\n  '2202': 'uart.meter.timeout',\n  '2203': 'uart.meter.flow_control_failure',\n  '2204': 'uart.meter.protocol_error',\n  '2205': 'uart.meter.link_stalled',\n  '2206': 'uart.meter.disconnected',\n  '2207': 'spi.meter.no_response',\n  '2208': 'spi.meter.protocol_error',\n  '2209': 'spi.meter.link_stalled',\n  '2301': 'modem.sim.not_detected',\n  '2302': 'modem.sim.init_failure',\n  '2303': 'modem.sim.profile_invalid',\n  '2304': 'modem.baseband.hang_detected',\n  '2305': 'modem.config.invalid',\n  '2401': 'modem.network.no_coverage',\n  '2402': 'modem.network.signal_degraded',\n  '2403': 'modem.network.attach_failed',\n  '2404': 'modem.network.attach_timeout',\n  '2405': 'modem.network.registration_denied',\n  '2406': 'modem.network.apn_rejected',\n  '2407': 'modem.network.pdp_activation_failed',\n  '2408': 'modem.network.ip_unavailable',\n  '2409': 'modem.network.reattach_loop',\n  '2410': 'modem.network.roaming_blocked',\n  '2411': 'modem.network.registration_timeout',\n  '2412': 'modem.rf.signal_low',\n  '2413': 'modem.rf.signal_degraded',\n  '2501': 'backend.dns.resolution_failed',\n  '2502': 'backend.hes.tcp_handshake_failed',\n  '2503': 'backend.hes.tls_validation_failed',\n  '2504': 'backend.hes.connect_timeout',\n  '2505': 'backend.hes.session_dropped',\n  '2506': 'backend.hes.response_timeout',\n  '2507': 'backend.hes.rejected',\n  '2508': 'backend.noc.mqtt_connect_failed',\n  '2509': 'backend.noc.publish_failed',\n  '2510': 'backend.hes.unreachable',\n  '2511': 'security.replay_detected',\n  '2512': 'security.jamming_suspected',\n  '2513': 'security.unknown_payload',\n  '2601': 'nic.runtime.thermal_stress',\n  '2602': 'nic.runtime.memory_pressure',\n  '2603': 'nic.runtime.cpu_overload',\n  '2604': 'nic.runtime.storage_low',\n  '2605': 'nic.runtime.clock_drift',\n  '2606': 'nic.runtime.config_corrupt',\n  '2701': 'fota.nic.download_failed',\n  '2702': 'fota.nic.signature_invalid',\n  '2703': 'fota.nic.apply_failed',\n  '2704': 'fota.nic.post_boot_attach_failed',\n  '2705': 'fota.meter.package_transfer_failed',\n  '2706': 'fota.meter.signature_invalid',\n  '2707': 'fota.meter.apply_failed',\n  '2708': 'fota.meter.status_timeout',\n  '2801': 'control.reset.failed',\n  '2802': 'control.reconfig.rejected',\n  '2803': 'control.diagnostic.ping_failed',\n  '2804': 'control.diagnostic.traceroute_failed',\n  '2805': 'control.diagnostic.cell_scan_failed'\n};\nfunction isEventLike(canonical) {\n  if (canonical == null) { return false; }\n  return canonical.startsWith('lifecycle.') || canonical.startsWith('fota.') || canonical.startsWith('ota.') || canonical.startsWith('control.');\n}\nvar transitions = msg['ev'];\nif (transitions == null || transitions.size() == 0) {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nvar picked = null;\nfor (t : transitions) {\n  var code = '' + t['c'];\n  var canonical = alarmMap[code];\n  if (canonical != null && isEventLike(canonical)) {\n    picked = {'transition': t, 'canonicalEvent': canonical, 'sourceCode': code};\n  }\n}\nif (picked == null) {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nvar candidateType = 'lifecycle';\nif (picked['canonicalEvent'].startsWith('fota.') || picked['canonicalEvent'].startsWith('ota.')) {\n  candidateType = 'ota';\n}\nvar stateCode = picked['transition']['s'];\nvar lifecycleState = 'RAISED';\nif (stateCode == 0) {\n  lifecycleState = 'CLEARED';\n} else if (stateCode == 2) {\n  lifecycleState = 'UPDATED';\n}\nvar sourceEventTs = picked['transition']['ts'];\nif (sourceEventTs == null) { sourceEventTs = msg['sourceEventTs']; }\nif (sourceEventTs == null) { sourceEventTs = msg['ts']; }\nif (sourceEventTs == null) { sourceEventTs = metadata['ts']; }\nreturn {msg: {'candidateType': candidateType, 'canonicalEvent': picked['canonicalEvent'], 'sourceCode': picked['sourceCode'], 'transitionState': lifecycleState, 'sourceEventTs': sourceEventTs}, metadata: metadata, msgType: 'Success'};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776781754687,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "62085351-3d8a-11f1-b05e-f177627734ea"
+        "id" : "66add761-3e0a-11f1-b05e-f177627734ea"
       },
       "name" : "Event Mapper",
       "queueName" : "Main Queue",
@@ -106,7 +103,7 @@
       },
       "configuration" : {
         "scriptLang" : "TBEL",
-        "tbelScript" : "var routes = {\n  'alarm': 'tb.nic.candidate.alarm.v1',\n  'device_state': 'tb.nic.candidate.device-state.v1',\n  'lifecycle': 'tb.nic.candidate.lifecycle.v1',\n  'ota': 'tb.nic.candidate.ota.v1'\n};\nvar candidateType = msg['candidateType'];\nif (candidateType == null) { throw new Error('missing_candidate_type'); }\nvar topic = routes[candidateType];\nif (topic == null) { throw new Error('unknown_candidate_type:' + candidateType); }\nmetadata['kafkaTopic'] = topic;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var routes = {\n  'alarm': 'tb.nic.candidate.alarm.v1',\n  'device_state': 'tb.nic.candidate.device-state.v1',\n  'lifecycle': 'tb.nic.candidate.lifecycle.v1',\n  'ota': 'tb.nic.candidate.ota.v1'\n};\nvar candidateType = msg['candidateType'];\nif (candidateType == null) {\n  var err = {'error': 'missing_candidate_type', 'candidateType': 'dlt'};\n  return {msg: err, metadata: metadata, msgType: 'FAILURE'};\n}\nvar topic = routes[candidateType];\nif (topic == null) {\n  var err2 = {'error': 'unknown_candidate_type', 'value': candidateType, 'candidateType': 'dlt'};\n  return {msg: err2, metadata: metadata, msgType: 'FAILURE'};\n}\nmetadata['kafkaTopic'] = topic;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -114,7 +111,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "62085352-3d8a-11f1-b05e-f177627734ea"
+        "id" : "66adfe70-3e0a-11f1-b05e-f177627734ea"
       },
       "name" : "Event Candidate Router",
       "queueName" : "Main Queue",
@@ -145,7 +142,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "62085353-3d8a-11f1-b05e-f177627734ea"
+        "id" : "66adfe71-3e0a-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Event",
       "queueName" : "Main Queue",
@@ -166,7 +163,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "62087a60-3d8a-11f1-b05e-f177627734ea"
+        "id" : "66ae2580-3e0a-11f1-b05e-f177627734ea"
       },
       "name" : "SendToOutput",
       "queueName" : null,
