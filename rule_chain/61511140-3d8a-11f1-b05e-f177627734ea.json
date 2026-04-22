@@ -74,6 +74,14 @@
       "fromIndex" : 9,
       "toIndex" : 4,
       "type" : "True"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 8,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 8,
+      "type" : "False"
     } ],
     "firstNodeIndex" : 2,
     "nodes" : [ {
@@ -200,7 +208,7 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1776864670549,
+        "allEnabledUntil" : 1776866061273,
         "failuresEnabled" : false
       },
       "externalId" : null,
@@ -337,8 +345,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 223,
-        "layoutY" : 361
+        "layoutX" : 215,
+        "layoutY" : 453
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -390,7 +398,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14101
+    "version" : 14151
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
