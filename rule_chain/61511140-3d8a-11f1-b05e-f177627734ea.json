@@ -202,7 +202,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "// Define the map of who owns what\nvar authorityMap = [\n  'backend.hes': 'rulechain',\n  'modem.network': 'profile',\n  'power.mains': 'profile',\n  'uart.meter': 'rulechain'\n];\n\n// Use an explicit lookup\nvar authority = authorityMap[metadata.alarmFamily];\n\n// Fallback to 'profile' if the family is not in the map\nif (authority == null) {\n    authority = 'profile';\n}\n\nmetadata.authority = authority;\n\n// Branching logic\nif (authority == 'rulechain') {\n    return ['RulechainPrimary'];\n}\n\nreturn ['CheckProfileStatus'];"
+        "tbelScript" : "// Define the map of who owns what\nvar authorityMap = [\n  'backend.hes': 'rulechain',\n  'modem.network': 'profile',\n  'power.mains': 'profile',\n  'uart.meter': 'rulechain'\n];\n\n// Use an explicit lookup\nvar authority = authorityMap[metadata.alarmFamily];\n\n// Fallback to 'profile' if the family is not in the map\nif (authority == null) {\n    authority = 'profile';\n}\n\nmetadata.authority = authority;\n\n// Branching logic\nif (authority == 'rulechain') {\n    return [true];\n}\n\nreturn [false'];"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -398,7 +398,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13992
+    "version" : 14046
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
