@@ -146,7 +146,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var preMapped = msg.mappedAlarms;\nif (preMapped != null && preMapped.size() > 0) {\n    var alarm = preMapped[preMapped.size() - 1];\n    var canonical = alarm.canonicalAlarm;\n    var parts = canonical.split('\\\\.'); // Escape the dot for split\n    \n    if (parts.size() >= 2) {\n        metadata.alarmFamily = parts[0] + '.' + parts[1];\n    } else {\n        metadata.alarmFamily = 'unknown';\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "if (msg.mappedAlarms != null && msg.mappedAlarms.size() > 0) {\n    var alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n    var canonical = alarm.canonicalAlarm;\n    var parts = canonical.split('\\\\.'); \n    \n    if (parts.size() >= 2) {\n        metadata.alarmFamily = parts[0] + '.' + parts[1];\n    } else {\n        metadata.alarmFamily = 'unknown';\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -398,7 +398,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14205
+    "version" : 14259
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
