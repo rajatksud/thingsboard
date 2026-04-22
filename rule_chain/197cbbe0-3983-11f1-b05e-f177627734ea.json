@@ -66,6 +66,10 @@
       "fromIndex" : 4,
       "toIndex" : 8,
       "type" : "Failure"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 0,
+      "type" : "Failure"
     } ],
     "firstNodeIndex" : 9,
     "nodes" : [ {
@@ -290,7 +294,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776857740137,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
