@@ -320,7 +320,11 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776859461000,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -359,7 +363,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13411
+    "version" : 13467
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -372,7 +376,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13401
+    "version" : 13457
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
