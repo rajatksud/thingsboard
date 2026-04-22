@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "a151c4a0-3e12-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "61511140-3d8a-11f1-b05e-f177627734ea"
@@ -104,7 +107,7 @@
       "toIndex" : 8,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
         "layoutX" : 120,
@@ -120,7 +123,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d9bc52c0-3e11-11f1-b05e-f177627734ea"
+        "id" : "a151c4a0-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -142,7 +145,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d9bc79d0-3e11-11f1-b05e-f177627734ea"
+        "id" : "a151c4a1-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Profile Mapper",
       "queueName" : "HighPriority",
@@ -164,7 +167,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d9bc79d1-3e11-11f1-b05e-f177627734ea"
+        "id" : "a151c4a2-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Entity Mapper",
       "queueName" : "HighPriority",
@@ -189,7 +192,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d9bcc7f0-3e11-11f1-b05e-f177627734ea"
+        "id" : "a15212c0-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Create Alarm Entity",
       "queueName" : "HighPriority",
@@ -211,7 +214,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d9bd1610-3e11-11f1-b05e-f177627734ea"
+        "id" : "a15239d0-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Clear Alarm Entity",
       "queueName" : "HighPriority",
@@ -233,7 +236,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d9bd1611-3e11-11f1-b05e-f177627734ea"
+        "id" : "a15260e0-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Events Mapper",
       "queueName" : "HighPriority",
@@ -255,7 +258,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d9bd1612-3e11-11f1-b05e-f177627734ea"
+        "id" : "a15260e1-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Candidate Router",
       "queueName" : "HighPriority",
@@ -286,7 +289,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d9bd1613-3e11-11f1-b05e-f177627734ea"
+        "id" : "a15260e2-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Alarm",
       "queueName" : "HighPriority",
@@ -307,7 +310,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "d9bd3d20-3e11-11f1-b05e-f177627734ea"
+        "id" : "a15287f0-3e12-11f1-b05e-f177627734ea"
       },
       "name" : "SendToOutput",
       "queueName" : null,
