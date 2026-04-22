@@ -20,114 +20,75 @@
   "metaData" : {
     "connections" : [ {
       "fromIndex" : 0,
-      "toIndex" : 5,
+      "toIndex" : 1,
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 6,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 1,
-      "toIndex" : 5,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 1,
-      "toIndex" : 6,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 2,
-      "toIndex" : 3,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 2,
-      "toIndex" : 6,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 4,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 3,
-      "toIndex" : 6,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 5,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 6,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 7,
       "toIndex" : 10,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
       "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 10,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 10,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 10,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 10,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 4,
+      "type" : "False"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 10,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 10,
+      "type" : "True"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 7,
+      "type" : "UpsertAlarm"
     }, {
       "fromIndex" : 8,
       "toIndex" : 9,
-      "type" : "Success"
+      "type" : "ClearAlarm"
     }, {
-      "fromIndex" : 10,
-      "toIndex" : 11,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 11,
-      "toIndex" : 9,
-      "type" : "False"
+      "fromIndex" : 8,
+      "toIndex" : 10,
+      "type" : "Failure"
     } ],
-    "firstNodeIndex" : 7,
+    "firstNodeIndex" : 3,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 593,
-        "layoutY" : 65
-      },
-      "configuration" : {
-        "useMessageAlarmData" : true,
-        "alarmType" : "${msg.alarmType}",
-        "alarmSeverity" : "${msg.alarmSeverity}",
-        "alarmDetailsBuildJs" : "return JSON.stringify(msg.alarmDetails);",
-        "propagate" : false
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "144e9980-3e2a-11f1-b05e-f177627734ea"
-      },
-      "name" : "Create Alarm Entity",
-      "queueName" : "HighPriority",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.alarm.TbCreateAlarmNode"
-    }, {
-      "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 280
-      },
-      "configuration" : {
-        "alarmType" : "${msg.alarmType}",
-        "propagate" : false
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "144ee7a0-3e2a-11f1-b05e-f177627734ea"
-      },
-      "name" : "Clear Alarm Entity",
-      "queueName" : "HighPriority",
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.alarm.TbClearAlarmNode"
-    }, {
-      "additionalInfo" : {
         "description" : null,
-        "layoutX" : 420,
-        "layoutY" : 420
+        "layoutX" : 363,
+        "layoutY" : 534
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -152,8 +113,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 420
+        "layoutX" : 663,
+        "layoutY" : 534
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -174,8 +135,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1020,
-        "layoutY" : 420
+        "layoutX" : 963,
+        "layoutY" : 534
       },
       "configuration" : {
         "topicPattern" : "${kafkaTopic}",
@@ -205,48 +166,6 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1020,
-        "layoutY" : 120
-      },
-      "configuration" : {
-        "name" : "TO_EVENTS"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "144f0eb0-3e2a-11f1-b05e-f177627734ea"
-      },
-      "name" : "SendToEvents",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
-    }, {
-      "additionalInfo" : {
-        "layoutX" : 1020,
-        "layoutY" : 300
-      },
-      "configuration" : {
-        "name" : "DLT_Ignored"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "144f0eb1-3e2a-11f1-b05e-f177627734ea"
-      },
-      "name" : "SendToDeadLetter",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
-    }, {
-      "additionalInfo" : {
         "description" : "",
         "layoutX" : 68,
         "layoutY" : 262
@@ -272,32 +191,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 380,
-        "layoutY" : 303
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var activeAlarms = msg['device.runtime.active_alarms']; // Ensure this key is available\nvar currentCode = msg.mappedAlarms[msg.mappedAlarms.size() - 1].sourceCode;\n\nif (activeAlarms != null) {\n    for (var code : activeAlarms) {\n        if (('' + code) == ('' + currentCode)) {\n            return false; // Alarm already set by profile, Filter = False\n        }\n    }\n}\nreturn true; // Alarm NOT set by profile, Rule Chain should take over"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "0f69d761-3e4b-11f1-b05e-f177627734ea"
-      },
-      "name" : "checkAlarmExists",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 563,
-        "layoutY" : 174
+        "layoutX" : 460,
+        "layoutY" : 368
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -320,8 +215,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 189,
-        "layoutY" : 412
+        "layoutX" : 226,
+        "layoutY" : 336
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -365,6 +260,115 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 907,
+        "layoutY" : 130
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "useMessageAlarmData" : true,
+        "overwriteAlarmDetails" : true,
+        "alarmType" : "General Alarm",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ "Contains" ],
+        "propagateToOwner" : true,
+        "propagateToTenant" : true,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776864270057,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7f5fafd0-3e4c-11f1-b05e-f177627734ea"
+      },
+      "name" : "Alarm",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 570,
+        "layoutY" : 208
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : "// Check the logic you set in the previous Transformation node\nif (msg.transitionState == 'CLEARED') {\n    return ['ClearAlarm'];\n} \nreturn ['UpsertAlarm'];"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7f5fafd1-3e4c-11f1-b05e-f177627734ea"
+      },
+      "name" : "ClearOrCreate",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 912,
+        "layoutY" : 240
+      },
+      "configuration" : {
+        "alarmType" : "General Alarm",
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7f5ffdf0-3e4c-11f1-b05e-f177627734ea"
+      },
+      "name" : "clearAlarm",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1025,
+        "layoutY" : 343
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "92e9da80-340b-11f1-a674-fb53697194ff"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7f5ffdf1-3e4c-11f1-b05e-f177627734ea"
+      },
+      "name" : "DLT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -394,6 +398,19 @@
     "type" : "Uses",
     "typeGroup" : "COMMON",
     "version" : 13511
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "61511140-3d8a-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "92e9da80-340b-11f1-a674-fb53697194ff"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 13616
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
