@@ -170,7 +170,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n\n// Building the flat structure TB expects when \"Use message alarm data\" is ON\nvar outMsg = [\n    \"alarmType\": alarm.canonicalAlarm,\n    \"severity\": \"MAJOR\", \n    \"details\": [\n        \"source\": \"rulechain_failsafe\",\n        \"sourceCode\": alarm.sourceCode,\n        \"sourceEventTs\": alarm.sourceEventTs\n    ]\n];\n\n// Add extra metadata to details if present\nif (alarm.metadata != null) {\n    outMsg.details.putAll(alarm.metadata);\n}\n\nvar outType = (alarm.state == 0) ? \"ALARM_CLEAR\" : \"ALARM_UPSERT\";\n\nreturn {msg: outMsg, metadata: metadata, msgType: outType};"
+        "tbelScript" : "var alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n\n// Building the flat structure TB expects when \"Use message alarm data\" is ON\nvar outMsg = [\n    \"type\": alarm.canonicalAlarm,\n    \"severity\": \"MAJOR\", \n    \"details\": [\n        \"source\": \"rulechain_failsafe\",\n        \"sourceCode\": alarm.sourceCode,\n        \"sourceEventTs\": alarm.sourceEventTs\n    ]\n];\n\n// Add extra metadata to details if present\nif (alarm.metadata != null) {\n    outMsg.details.putAll(alarm.metadata);\n}\n\nvar outType = (alarm.state == 0) ? \"ALARM_CLEAR\" : \"ALARM_UPSERT\";\n\nreturn {msg: outMsg, metadata: metadata, msgType: outType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14729
+    "version" : 14781
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
