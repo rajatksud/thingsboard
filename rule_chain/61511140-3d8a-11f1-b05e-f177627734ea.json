@@ -227,7 +227,7 @@
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
         "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "useMessageAlarmData" : false,
+        "useMessageAlarmData" : true,
         "overwriteAlarmDetails" : true,
         "alarmType" : "${msg.alarmType}",
         "severity" : "CRITICAL",
@@ -241,7 +241,7 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1776864270057,
+        "allEnabledUntil" : 1776867284245,
         "failuresEnabled" : false
       },
       "externalId" : null,
@@ -263,7 +263,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "// Check the logic you set in the previous Transformation node\nif (msg.transitionState == 'CLEARED') {\n    return ['ClearAlarm'];\n} \nreturn ['UpsertAlarm'];"
+        "tbelScript" : "if (msgType == \"ALARM_CLEAR\") {\n    return [\"ClearAlarm\"];\n} \nreturn [\"UpsertAlarm\"];"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14365
+    "version" : 14417
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
