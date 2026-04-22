@@ -57,7 +57,7 @@
     }, {
       "fromIndex" : 5,
       "toIndex" : 3,
-      "type" : "False"
+      "type" : "True"
     }, {
       "fromIndex" : 5,
       "toIndex" : 9,
@@ -65,7 +65,7 @@
     }, {
       "fromIndex" : 5,
       "toIndex" : 9,
-      "type" : "True"
+      "type" : "False"
     }, {
       "fromIndex" : 7,
       "toIndex" : 6,
@@ -239,9 +239,9 @@
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
         "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "useMessageAlarmData" : true,
+        "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : true,
-        "alarmType" : "General Alarm",
+        "alarmType" : "${msg.alarmType}",
         "severity" : "CRITICAL",
         "propagate" : true,
         "relationTypes" : [ "Contains" ],
@@ -379,7 +379,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13672
+    "version" : 13724
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
