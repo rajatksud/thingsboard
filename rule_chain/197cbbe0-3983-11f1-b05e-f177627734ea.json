@@ -163,6 +163,7 @@
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 720,
         "layoutY" : 380
       },
@@ -172,7 +173,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776858835974,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -392,7 +397,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13147
+    "version" : 13249
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
