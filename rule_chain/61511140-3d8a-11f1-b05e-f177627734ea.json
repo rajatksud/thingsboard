@@ -202,7 +202,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return msg.temperature > 20;",
-        "tbelScript" : "var activeAlarms = msg['device.runtime.active_alarms']; // Ensure this key is available\nvar currentCode = msg.mappedAlarms[msg.mappedAlarms.size() - 1].sourceCode;\n\nif (activeAlarms != null) {\n    for (var code : activeAlarms) {\n        if (('' + code) == ('' + currentCode)) {\n            return false; // Alarm already set by profile, Filter = False\n        }\n    }\n}\nreturn true; // Alarm NOT set by profile, Rule Chain should take over"
+        "tbelScript" : "// 1. Safety check for the mappedAlarms array\nif (msg.mappedAlarms == null || msg.mappedAlarms.size() == 0) {\n    return false; // Or return true if you want to allow it through; false is safer\n}\n\n// 2. Safe access to the current alarm code\nvar alarms = msg.mappedAlarms;\nvar lastIndex = alarms.size() - 1;\nvar currentCode = alarms[lastIndex].sourceCode;\n\n// 3. Process active alarms list\nvar activeAlarms = msg['device.runtime.active_alarms']; \n\nif (activeAlarms != null) {\n    for (code : activeAlarms) {\n        if (('' + code) == ('' + currentCode)) {\n            return false; // Alarm already set by profile, Filter = False\n        }\n    }\n}\n\n// 4. If code was not found in active list, Rule Chain handles it\nreturn true;"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -398,7 +398,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14151
+    "version" : 14205
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
