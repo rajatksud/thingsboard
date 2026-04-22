@@ -132,6 +132,7 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 720,
         "layoutY" : 260
       },
@@ -141,7 +142,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776858385397,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -368,7 +373,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13030
+    "version" : 13093
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
