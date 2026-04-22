@@ -170,7 +170,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "if (msg.mappedAlarms == null || msg.mappedAlarms.size() == 0) {\n    return {msg: msg, metadata: metadata, msgType: \"Failure\"};\n}\n\nvar alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\nvar isClear = (alarm.state == 0);\n\nvar alarmPayload = [\n    \"alarmType\": alarm.canonicalAlarm,\n    \"alarmSeverity\": \"MAJOR\",\n    \"alarmStatus\": alarm.lifecycleState,\n    \"alarmDetails\": [\n        \"source\": \"rulechain_primary\",\n        \"sourceCode\": alarm.sourceCode,\n        \"sourceEventTs\": alarm.sourceEventTs\n    ]\n];\n\nif (alarm.metadata != null) { \n    alarmPayload.alarmDetails.metadata = alarm.metadata; \n}\n\n// FIX: Explicitly define the msgType string before returning\nvar outType = isClear ? \"ALARM_CLEAR\" : \"ALARM_UPSERT\";\n\nreturn {msg: alarmPayload, metadata: metadata, msgType: outType};"
+        "tbelScript" : "var alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n\n// Building the flat structure TB expects when \"Use message alarm data\" is ON\nvar outMsg = [\n    \"alarmType\": alarm.canonicalAlarm,\n    \"severity\": \"MAJOR\", \n    \"details\": [\n        \"source\": \"rulechain_failsafe\",\n        \"sourceCode\": alarm.sourceCode,\n        \"sourceEventTs\": alarm.sourceEventTs\n    ]\n];\n\n// Add extra metadata to details if present\nif (alarm.metadata != null) {\n    outMsg.details.putAll(alarm.metadata);\n}\n\nvar outType = (alarm.state == 0) ? \"ALARM_CLEAR\" : \"ALARM_UPSERT\";\n\nreturn {msg: outMsg, metadata: metadata, msgType: outType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -227,7 +227,7 @@
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
         "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "useMessageAlarmData" : false,
+        "useMessageAlarmData" : true,
         "overwriteAlarmDetails" : false,
         "alarmType" : "${alarmType}",
         "severity" : "${alarmSeverity}",
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14677
+    "version" : 14729
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
