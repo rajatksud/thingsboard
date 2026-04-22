@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "423f9540-3e13-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "61511140-3d8a-11f1-b05e-f177627734ea"
@@ -104,7 +107,7 @@
       "toIndex" : 8,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
         "layoutX" : 120,
@@ -112,7 +115,7 @@
       },
       "configuration" : {
         "scriptLang" : "TBEL",
-        "tbelScript" : "var s = msg['schema'];\nif (s == null) { s = metadata['schema']; }\nif (s == null) { s = '1'; }\nmetadata['schema'] = s;\nvar transitions = msg['ev'];\nif (transitions == null || transitions.size() == 0) {\n  var err = {'error': 'missing_or_empty_ev', 'candidateType': 'dlt'};\n  return {msg: err, metadata: metadata, msgType: 'FAILURE'};\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var s = msg['schema'];\nif (s == null) { s = metadata['schema']; }\nif (s == null) { s = '1'; }\nmetadata['schema'] = s;\nvar transitions = msg['ev'];\nif (transitions == null || transitions.size() == 0) {\n  var err = {'error': 'missing_or_empty_ev', 'candidateType': 'dlt'};\n  return {msg: err, metadata: metadata, msgType: 'Failure'};\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -120,7 +123,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a151c4a0-3e12-11f1-b05e-f177627734ea"
+        "id" : "423f9540-3e13-11f1-b05e-f177627734ea"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -142,7 +145,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a151c4a1-3e12-11f1-b05e-f177627734ea"
+        "id" : "423f9541-3e13-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Profile Mapper",
       "queueName" : "HighPriority",
@@ -164,7 +167,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a151c4a2-3e12-11f1-b05e-f177627734ea"
+        "id" : "423f9542-3e13-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Entity Mapper",
       "queueName" : "HighPriority",
@@ -189,7 +192,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a15212c0-3e12-11f1-b05e-f177627734ea"
+        "id" : "423fe360-3e13-11f1-b05e-f177627734ea"
       },
       "name" : "Create Alarm Entity",
       "queueName" : "HighPriority",
@@ -211,7 +214,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a15239d0-3e12-11f1-b05e-f177627734ea"
+        "id" : "42403180-3e13-11f1-b05e-f177627734ea"
       },
       "name" : "Clear Alarm Entity",
       "queueName" : "HighPriority",
@@ -233,7 +236,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a15260e0-3e12-11f1-b05e-f177627734ea"
+        "id" : "42403181-3e13-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Events Mapper",
       "queueName" : "HighPriority",
@@ -247,7 +250,7 @@
       },
       "configuration" : {
         "scriptLang" : "TBEL",
-        "tbelScript" : "var routes = {\n  'alarm': 'tb.nic.candidate.alarm.v1',\n  'device_state': 'tb.nic.candidate.device-state.v1',\n  'lifecycle': 'tb.nic.candidate.lifecycle.v1',\n  'ota': 'tb.nic.candidate.ota.v1'\n};\nvar candidateType = msg['candidateType'];\nif (candidateType == null) {\n  var err = {'error': 'missing_candidate_type', 'candidateType': 'dlt'};\n  return {msg: err, metadata: metadata, msgType: 'FAILURE'};\n}\nvar topic = routes[candidateType];\nif (topic == null) {\n  var err2 = {'error': 'unknown_candidate_type', 'value': candidateType, 'candidateType': 'dlt'};\n  return {msg: err2, metadata: metadata, msgType: 'FAILURE'};\n}\nmetadata['kafkaTopic'] = topic;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var routes = {\n  'alarm': 'tb.nic.candidate.alarm.v1',\n  'device_state': 'tb.nic.candidate.device-state.v1',\n  'lifecycle': 'tb.nic.candidate.lifecycle.v1',\n  'ota': 'tb.nic.candidate.ota.v1'\n};\nvar candidateType = msg['candidateType'];\nif (candidateType == null) {\n  var err = {'error': 'missing_candidate_type', 'candidateType': 'dlt'};\n  return {msg: err, metadata: metadata, msgType: 'Failure'};\n}\nvar topic = routes[candidateType];\nif (topic == null) {\n  var err2 = {'error': 'unknown_candidate_type', 'value': candidateType, 'candidateType': 'dlt'};\n  return {msg: err2, metadata: metadata, msgType: 'Failure'};\n}\nmetadata['kafkaTopic'] = topic;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -255,7 +258,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a15260e1-3e12-11f1-b05e-f177627734ea"
+        "id" : "42405890-3e13-11f1-b05e-f177627734ea"
       },
       "name" : "Alarm Candidate Router",
       "queueName" : "HighPriority",
@@ -286,7 +289,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a15260e2-3e12-11f1-b05e-f177627734ea"
+        "id" : "42405891-3e13-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Alarm",
       "queueName" : "HighPriority",
@@ -307,7 +310,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a15287f0-3e12-11f1-b05e-f177627734ea"
+        "id" : "42405892-3e13-11f1-b05e-f177627734ea"
       },
       "name" : "SendToOutput",
       "queueName" : null,
