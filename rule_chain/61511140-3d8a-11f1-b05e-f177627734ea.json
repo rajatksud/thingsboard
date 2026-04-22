@@ -24,15 +24,15 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 9,
+      "toIndex" : 8,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 9,
+      "toIndex" : 8,
       "type" : "Failure"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 4,
+      "toIndex" : 9,
       "type" : "Success"
     }, {
       "fromIndex" : 3,
@@ -40,48 +40,40 @@
       "type" : "Success"
     }, {
       "fromIndex" : 3,
-      "toIndex" : 7,
+      "toIndex" : 6,
       "type" : "Success"
     }, {
       "fromIndex" : 3,
-      "toIndex" : 9,
+      "toIndex" : 8,
       "type" : "Failure"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 5,
-      "type" : "CheckProfileStatus"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 5,
-      "type" : "RuleChainPrimary"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 9,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 5,
       "toIndex" : 3,
       "type" : "True"
     }, {
-      "fromIndex" : 5,
-      "toIndex" : 9,
+      "fromIndex" : 4,
+      "toIndex" : 8,
       "type" : "Failure"
     }, {
-      "fromIndex" : 5,
-      "toIndex" : 9,
+      "fromIndex" : 4,
+      "toIndex" : 8,
       "type" : "False"
     }, {
-      "fromIndex" : 7,
-      "toIndex" : 6,
+      "fromIndex" : 6,
+      "toIndex" : 5,
       "type" : "UpsertAlarm"
     }, {
-      "fromIndex" : 7,
-      "toIndex" : 8,
+      "fromIndex" : 6,
+      "toIndex" : 7,
       "type" : "ClearAlarm"
     }, {
-      "fromIndex" : 7,
-      "toIndex" : 9,
+      "fromIndex" : 6,
+      "toIndex" : 8,
       "type" : "Failure"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 4,
+      "type" : "True"
     } ],
     "firstNodeIndex" : 2,
     "nodes" : [ {
@@ -193,34 +185,6 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 226,
-        "layoutY" : 336
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "// Define the map of who owns what\nvar authorityMap = [\n  'backend.hes': 'rulechain',\n  'modem.network': 'profile',\n  'power.mains': 'profile',\n  'uart.meter': 'rulechain'\n];\n\n// Use an explicit lookup\nvar authority = authorityMap[metadata.alarmFamily];\n\n// Fallback to 'profile' if the family is not in the map\nif (authority == null) {\n    authority = 'profile';\n}\n\nmetadata.authority = authority;\n\n// Branching logic\nif (authority == 'rulechain') {\n    return [true];\n}\n\nreturn [false'];"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776864670549,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "0f69fe71-3e4b-11f1-b05e-f177627734ea"
-      },
-      "name" : "FamilyAuthority",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     }, {
       "additionalInfo" : {
         "description" : "",
@@ -370,6 +334,34 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 223,
+        "layoutY" : 361
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "// Define the authority map\nvar authorityMap = [\n  \"backend.hes\": \"rulechain\",\n  \"modem.network\": \"profile\",\n  \"power.mains\": \"profile\",\n  \"uart.meter\": \"rulechain\"\n];\n\n// Explicitly retrieve the family from metadata\nvar fam = metadata.alarmFamily;\nvar auth = \"profile\"; // Default value\n\n// Perform lookup\nif (fam != null && authorityMap.containsKey(fam)) {\n    auth = authorityMap[fam];\n}\n\nmetadata.authority = auth;\n\n// TRUE means \"Go to Rulechain Primary path\"\n// FALSE means \"Go to Check Profile path\"\nif (auth == 'rulechain') {\nreturn true} \nelse \nreturn false;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776865984705,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7d619910-3e50-11f1-b05e-f177627734ea"
+      },
+      "name" : "CheckAuthority",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -398,7 +390,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14046
+    "version" : 14101
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
