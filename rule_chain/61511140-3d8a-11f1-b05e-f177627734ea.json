@@ -198,7 +198,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "// Define the map of who owns what\nvar authorityMap = [\n  'backend.hes': 'rulechain',\n  'modem.network': 'profile',\n  'power.mains': 'profile',\n  'uart.meter': 'rulechain'\n];\n\nvar authority = authorityMap[metadata.alarmFamily] ?: 'profile';\nmetadata.authority = authority;\n\n// If rulechain is the primary authority, go straight to \"Upsert\"\nif (authority == 'rulechain') {\n    return ['RulechainPrimary'];\n}\n\n// If profile is authority, we need to check if it actually set the alarm\nreturn ['CheckProfileStatus'];"
+        "tbelScript" : "// Define the map of who owns what\nvar authorityMap = [\n  'backend.hes': 'rulechain',\n  'modem.network': 'profile',\n  'power.mains': 'profile',\n  'uart.meter': 'rulechain'\n];\n\n// Use an explicit lookup\nvar authority = authorityMap[metadata.alarmFamily];\n\n// Fallback to 'profile' if the family is not in the map\nif (authority == null) {\n    authority = 'profile';\n}\n\nmetadata.authority = authority;\n\n// Branching logic\nif (authority == 'rulechain') {\n    return ['RulechainPrimary'];\n}\n\nreturn ['CheckProfileStatus'];"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -369,19 +369,6 @@
     "additionalInfo" : null,
     "from" : {
       "entityType" : "RULE_CHAIN",
-      "id" : "be0af4a0-2944-11f1-934f-053385dac27e"
-    },
-    "to" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "61511140-3d8a-11f1-b05e-f177627734ea"
-    },
-    "type" : "Uses",
-    "typeGroup" : "COMMON",
-    "version" : 7887
-  }, {
-    "additionalInfo" : null,
-    "from" : {
-      "entityType" : "RULE_CHAIN",
       "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
     },
     "to" : {
@@ -403,7 +390,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13776
+    "version" : 13886
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
