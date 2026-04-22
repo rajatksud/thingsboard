@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "b9a6aea0-3e15-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
@@ -21,16 +24,20 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 5,
+      "toIndex" : 6,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
       "toIndex" : 2,
-      "type" : "Success"
+      "type" : "True"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 5,
+      "toIndex" : 6,
       "type" : "Failure"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 6,
+      "type" : "False"
     }, {
       "fromIndex" : 2,
       "toIndex" : 3,
@@ -38,6 +45,10 @@
     }, {
       "fromIndex" : 2,
       "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 6,
       "type" : "Failure"
     }, {
       "fromIndex" : 3,
@@ -45,31 +56,34 @@
       "type" : "Success"
     }, {
       "fromIndex" : 3,
+      "toIndex" : 6,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 4,
       "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 6,
       "type" : "Failure"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "description" : null,
         "layoutX" : 120,
         "layoutY" : 120
       },
       "configuration" : {
         "scriptLang" : "TBEL",
-        "tbelScript" : "var s = msg['schema'];\nif (s == null) { s = metadata['schema']; }\nif (s == null) { s = '1'; }\nmetadata['schema'] = s;\nvar transitions = msg['ev'];\nif (transitions == null || transitions.size() == 0) {\n  var err = {'error': 'missing_or_empty_ev', 'candidateType': 'dlt'};\n  return {msg: err, metadata: metadata, msgType: 'Failure'};\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var s = msg['schema'];\nif (s == null) { s = metadata['schema']; }\nif (s == null) { s = '1'; }\nmetadata['schema'] = s;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776840464315,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "eea11c40-3e14-11f1-b05e-f177627734ea"
+        "id" : "b9a6aea0-3e15-11f1-b05e-f177627734ea"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -78,8 +92,29 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
-        "layoutX" : 420,
+        "layoutX" : 300,
+        "layoutY" : 120
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "tbelScript" : "var transitions = msg['ev']; if (transitions == null) { return false; } if (transitions.length != null) { return transitions.length > 0; } return transitions.size() > 0;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9a6fcc0-3e15-11f1-b05e-f177627734ea"
+      },
+      "name" : "Has EV Filter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 480,
         "layoutY" : 120
       },
       "configuration" : {
@@ -88,15 +123,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776840464315,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "eea11c41-3e14-11f1-b05e-f177627734ea"
+        "id" : "b9a6fcc1-3e15-11f1-b05e-f177627734ea"
       },
       "name" : "Event Mapper",
       "queueName" : "Main Queue",
@@ -105,7 +136,6 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
         "layoutX" : 720,
         "layoutY" : 120
       },
@@ -115,15 +145,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776840464315,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "eea11c42-3e14-11f1-b05e-f177627734ea"
+        "id" : "b9a723d0-3e15-11f1-b05e-f177627734ea"
       },
       "name" : "Event Candidate Router",
       "queueName" : "Main Queue",
@@ -132,8 +158,7 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
-        "layoutX" : 1020,
+        "layoutX" : 960,
         "layoutY" : 120
       },
       "configuration" : {
@@ -151,15 +176,11 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776840464315,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "eea14350-3e14-11f1-b05e-f177627734ea"
+        "id" : "b9a723d1-3e15-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Event",
       "queueName" : "Main Queue",
@@ -180,7 +201,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "eea14351-3e14-11f1-b05e-f177627734ea"
+        "id" : "b9a74ae0-3e15-11f1-b05e-f177627734ea"
       },
       "name" : "SendToOutput",
       "queueName" : null,
@@ -190,7 +211,7 @@
     }, {
       "additionalInfo" : {
         "layoutX" : 720,
-        "layoutY" : 320
+        "layoutY" : 340
       },
       "configuration" : {
         "name" : "DLT_Ignored"
@@ -201,7 +222,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "eea16a60-3e14-11f1-b05e-f177627734ea"
+        "id" : "b9a771f0-3e15-11f1-b05e-f177627734ea"
       },
       "name" : "SendToDeadLetter",
       "queueName" : null,
