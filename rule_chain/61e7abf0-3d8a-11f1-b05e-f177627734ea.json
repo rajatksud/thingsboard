@@ -54,6 +54,7 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 120,
         "layoutY" : 276
       },
@@ -63,7 +64,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776838675748,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
