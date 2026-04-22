@@ -32,6 +32,10 @@
       "type" : "Success"
     }, {
       "fromIndex" : 1,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
       "toIndex" : 8,
       "type" : "Failure"
     }, {
@@ -113,8 +117,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 300,
-        "layoutY" : 120
+        "layoutX" : 330,
+        "layoutY" : 225
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -140,8 +144,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 480,
-        "layoutY" : 120
+        "layoutX" : 561,
+        "layoutY" : 19
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -268,8 +272,8 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1200,
-        "layoutY" : 300
+        "layoutX" : 1202,
+        "layoutY" : 608
       },
       "configuration" : {
         "name" : "Output"
@@ -289,8 +293,8 @@
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 960,
-        "layoutY" : 340
+        "layoutX" : 267,
+        "layoutY" : 750
       },
       "configuration" : {
         "name" : "DLT_Ignored"
