@@ -5,10 +5,7 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : {
-      "entityType" : "RULE_NODE",
-      "id" : "60e57e30-3d8a-11f1-b05e-f177627734ea"
-    },
+    "firstRuleNodeId" : null,
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
@@ -55,7 +52,7 @@
       "toIndex" : 4,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : 0,
+    "firstNodeIndex" : null,
     "nodes" : [ {
       "additionalInfo" : {
         "layoutX" : 154,
@@ -189,7 +186,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 6222
+    "version" : 7896
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
