@@ -49,7 +49,11 @@
     }, {
       "fromIndex" : 4,
       "toIndex" : 5,
-      "type" : "Success"
+      "type" : "CheckProfileStatus"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 5,
+      "type" : "RuleChainPrimary"
     }, {
       "fromIndex" : 4,
       "toIndex" : 9,
@@ -390,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13886
+    "version" : 13938
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
