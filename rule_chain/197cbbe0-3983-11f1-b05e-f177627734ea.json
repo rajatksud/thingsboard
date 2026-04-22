@@ -69,6 +69,10 @@
     }, {
       "fromIndex" : 9,
       "toIndex" : 0,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 0,
       "type" : "Success"
     }, {
       "fromIndex" : 9,
@@ -364,7 +368,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 12823
+    "version" : 12875
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
