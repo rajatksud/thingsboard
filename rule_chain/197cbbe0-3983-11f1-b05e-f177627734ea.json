@@ -32,6 +32,10 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 0,
       "toIndex" : 8,
       "type" : "Failure"
     }, {
@@ -83,8 +87,8 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 420,
-        "layoutY" : 120
+        "layoutX" : 366,
+        "layoutY" : 32
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -181,6 +185,7 @@
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 1020,
         "layoutY" : 120
       },
@@ -199,7 +204,11 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776858462338,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -212,6 +221,7 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 1020,
         "layoutY" : 260
       },
@@ -220,7 +230,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776858462338,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -233,6 +247,7 @@
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 1020,
         "layoutY" : 380
       },
@@ -241,7 +256,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776858462338,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -373,7 +392,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13093
+    "version" : 13147
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
