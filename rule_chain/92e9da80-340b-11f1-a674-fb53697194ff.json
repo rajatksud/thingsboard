@@ -22,8 +22,8 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 250,
-        "layoutY" : 150
+        "layoutX" : 387,
+        "layoutY" : 158
       },
       "configuration" : {
         "jsScript" : "return 'Critical Failure: ' + JSON.stringify(msg) + '\\nMetadata: ' + JSON.stringify(metadata);"
@@ -56,9 +56,10 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 4775
+    "version" : 7894
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
-  }
+  },
+  "calculatedFields" : [ ]
 }
