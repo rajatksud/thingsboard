@@ -7,7 +7,7 @@
     "externalId" : null,
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "136b1750-3e2a-11f1-b05e-f177627734ea"
+      "id" : "3b6fb5e0-3e3d-11f1-b05e-f177627734ea"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -24,31 +24,31 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 9,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 1,
       "toIndex" : 2,
       "type" : "Success"
     }, {
-      "fromIndex" : 1,
+      "fromIndex" : 0,
       "toIndex" : 3,
       "type" : "Success"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 8,
+      "type" : "Failure"
     }, {
       "fromIndex" : 1,
       "toIndex" : 4,
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 9,
+      "toIndex" : 8,
       "type" : "Failure"
     }, {
       "fromIndex" : 2,
       "toIndex" : 5,
-      "type" : "Success"
+      "type" : "True"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 9,
+      "toIndex" : 8,
       "type" : "Failure"
     }, {
       "fromIndex" : 3,
@@ -56,54 +56,19 @@
       "type" : "True"
     }, {
       "fromIndex" : 3,
-      "toIndex" : 9,
+      "toIndex" : 8,
       "type" : "Failure"
     }, {
       "fromIndex" : 4,
       "toIndex" : 7,
-      "type" : "True"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 9,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 5,
-      "toIndex" : 8,
       "type" : "Success"
     }, {
-      "fromIndex" : 5,
-      "toIndex" : 9,
+      "fromIndex" : 4,
+      "toIndex" : 8,
       "type" : "Failure"
     } ],
-    "firstNodeIndex" : 0,
+    "firstNodeIndex" : 9,
     "nodes" : [ {
-      "additionalInfo" : {
-        "description" : null,
-        "layoutX" : 166,
-        "layoutY" : 302
-      },
-      "configuration" : {
-        "scriptLang" : "TBEL",
-        "tbelScript" : "var s = msg['schema'];\nif (s == null) { s = metadata['schema']; }\nif (s == null) { s = '1'; }\nmetadata['schema'] = s;\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776850831472,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "136b1750-3e2a-11f1-b05e-f177627734ea"
-      },
-      "name" : "Schema Resolver",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
-    }, {
       "additionalInfo" : {
         "description" : null,
         "layoutX" : 420,
@@ -118,7 +83,7 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1776850949194,
+        "allEnabledUntil" : 1776850327479,
         "failuresEnabled" : false
       },
       "externalId" : null,
@@ -312,6 +277,30 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 205,
+        "layoutY" : 252
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "var s = msg.schema ;\n\n// If schema is missing or not 1, route to Failure\nif (s != null && s == '1') {\n    return ['Success'];\n}\n// Otherwise, ensure it's in metadata and route to Success\nmetadata.schema = s;",
+        "tbelScript" : "var s = msg.schema ;\n\n// If schema is missing or not 1, route to Failure\nif (s == null || ('' + s) != '1') {\n    return ['Failure'];\n}\n\n// Otherwise, ensure it's in metadata and route to Success\nmetadata.schema = '' + s;\nreturn ['Success'];"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3b6fb5e0-3e3d-11f1-b05e-f177627734ea"
+      },
+      "name" : "isSchema1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     } ],
     "ruleChainConnections" : null
   },
