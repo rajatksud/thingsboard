@@ -79,8 +79,8 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 156,
-        "layoutY" : 303
+        "layoutX" : 166,
+        "layoutY" : 302
       },
       "configuration" : {
         "scriptLang" : "TBEL",
