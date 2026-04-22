@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "daa182a0-3e11-11f1-b05e-f177627734ea"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
@@ -21,7 +24,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 5,
+      "toIndex" : 4,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
@@ -48,29 +51,23 @@
       "toIndex" : 4,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "description" : null,
         "layoutX" : 120,
-        "layoutY" : 276
+        "layoutY" : 120
       },
       "configuration" : {
         "scriptLang" : "TBEL",
-        "jsScript" : null,
-        "tbelScript" : "var s = msg['schema']; if (s == null) { s = metadata['schema']; } if (s == null) { s = '1'; } metadata['schema'] = s; \nvar transitions = msg['ev'];\nif (transitions == null || transitions.size() == 0) {\n  return {msg: msg, metadata: metadata, msgType: 'IGNORE'};\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var s = msg['schema'];\nif (s == null) { s = metadata['schema']; }\nif (s == null) { s = '1'; }\nmetadata['schema'] = s;\nvar transitions = msg['ev'];\nif (transitions == null || transitions.size() == 0) {\n  var err = {'error': 'missing_or_empty_ev', 'candidateType': 'dlt'};\n  return {msg: err, metadata: metadata, msgType: 'FAILURE'};\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776838675748,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a62b7220-3e10-11f1-b05e-f177627734ea"
+        "id" : "daa182a0-3e11-11f1-b05e-f177627734ea"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -79,7 +76,6 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
         "layoutX" : 420,
         "layoutY" : 120
       },
@@ -89,15 +85,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776838625984,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a62b7221-3e10-11f1-b05e-f177627734ea"
+        "id" : "daa1a9b0-3e11-11f1-b05e-f177627734ea"
       },
       "name" : "Event Mapper",
       "queueName" : "Main Queue",
@@ -106,7 +98,6 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
         "layoutX" : 720,
         "layoutY" : 120
       },
@@ -116,15 +107,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776838663540,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a62b7222-3e10-11f1-b05e-f177627734ea"
+        "id" : "daa1a9b1-3e11-11f1-b05e-f177627734ea"
       },
       "name" : "Event Candidate Router",
       "queueName" : "Main Queue",
@@ -133,7 +120,6 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
         "layoutX" : 1020,
         "layoutY" : 120
       },
@@ -152,15 +138,11 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776838663540,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a62b7223-3e10-11f1-b05e-f177627734ea"
+        "id" : "daa1a9b2-3e11-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Event",
       "queueName" : "Main Queue",
@@ -169,7 +151,6 @@
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
     }, {
       "additionalInfo" : {
-        "description" : null,
         "layoutX" : 1020,
         "layoutY" : 280
       },
@@ -178,44 +159,17 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776838663540,
-        "failuresEnabled" : false
-      },
+      "debugSettings" : null,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "a62b9930-3e10-11f1-b05e-f177627734ea"
+        "id" : "daa1d0c0-3e11-11f1-b05e-f177627734ea"
       },
       "name" : "SendToOutput",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 677,
-        "layoutY" : 415
-      },
-      "configuration" : {
-        "forwardMsgToDefaultRuleChain" : false,
-        "ruleChainId" : "92e9da80-340b-11f1-a674-fb53697194ff"
-      },
-      "configurationVersion" : 1,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "9568b730-3e11-11f1-b05e-f177627734ea"
-      },
-      "name" : "IgnoredMessages",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -232,19 +186,6 @@
     "type" : "Uses",
     "typeGroup" : "COMMON",
     "version" : 7889
-  }, {
-    "additionalInfo" : null,
-    "from" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
-    },
-    "to" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "92e9da80-340b-11f1-a674-fb53697194ff"
-    },
-    "type" : "Uses",
-    "typeGroup" : "COMMON",
-    "version" : 8947
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
