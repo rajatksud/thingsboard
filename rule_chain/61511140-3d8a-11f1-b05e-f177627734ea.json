@@ -32,7 +32,7 @@
       "type" : "Failure"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 9,
+      "toIndex" : 3,
       "type" : "Success"
     }, {
       "fromIndex" : 3,
@@ -46,10 +46,6 @@
       "fromIndex" : 3,
       "toIndex" : 8,
       "type" : "Failure"
-    }, {
-      "fromIndex" : 4,
-      "toIndex" : 3,
-      "type" : "True"
     }, {
       "fromIndex" : 4,
       "toIndex" : 8,
@@ -168,19 +164,19 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 460,
-        "layoutY" : 368
+        "layoutX" : 461,
+        "layoutY" : 340
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\nvar isClear = (alarm.state == 0);\n\nvar alarmPayload = [\n    'alarmType': alarm.canonicalAlarm,\n    'alarmSeverity': 'MAJOR',\n    'alarmStatus': alarm.lifecycleState,\n    'alarmDetails': [\n        'source': 'rulechain_failsafe',\n        'sourceCode': alarm.sourceCode,\n        'sourceEventTs': alarm.sourceEventTs\n    ]\n];\n\nreturn {msg: alarmPayload, metadata: metadata, msgType: isClear ? 'ALARM_CLEAR' : 'ALARM_UPSERT'};"
+        "tbelScript" : "if (msg.mappedAlarms == null || msg.mappedAlarms.size() == 0) {\n    return {msg: msg, metadata: metadata, msgType: \"Failure\"};\n}\n\nvar alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\nvar isClear = (alarm.state == 0); // 0 = CLEARED, 1 = RAISED\n\nvar alarmPayload = [\n    \"alarmType\": alarm.canonicalAlarm,\n    \"alarmSeverity\": \"MAJOR\",\n    \"alarmStatus\": alarm.lifecycleState,\n    \"alarmDetails\": [\n        \"source\": \"rulechain_primary\",\n        \"sourceCode\": alarm.sourceCode,\n        \"sourceEventTs\": alarm.sourceEventTs\n    ]\n];\n\n// If there is extra metadata in the NIC packet, attach it to details\nif (alarm.metadata != null) { \n    alarmPayload.alarmDetails.metadata = alarm.metadata; \n}\n\n// Set msgType for the next Switch node\nreturn {msg: alarmPayload, metadata: metadata, msgType: isClear ? \"ALARM_CLEAR\" : \"ALARM_UPSERT\"};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1776864670549,
+        "allEnabledUntil" : 1776867007197,
         "failuresEnabled" : false
       },
       "externalId" : null,
@@ -398,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 14259
+    "version" : 14313
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
