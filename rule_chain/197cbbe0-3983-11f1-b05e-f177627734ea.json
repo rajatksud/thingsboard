@@ -59,6 +59,10 @@
       "toIndex" : 9,
       "type" : "True"
     }, {
+      "fromIndex" : 2,
+      "toIndex" : 10,
+      "type" : "True"
+    }, {
       "fromIndex" : 3,
       "toIndex" : 6,
       "type" : "Failure"
@@ -78,6 +82,14 @@
       "fromIndex" : 7,
       "toIndex" : 8,
       "type" : "Failure"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 5,
+      "type" : "SendToOutput"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 6,
+      "type" : "SendToDeadLetter"
     } ],
     "firstNodeIndex" : 7,
     "nodes" : [ {
@@ -239,8 +251,8 @@
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1220,
-        "layoutY" : 320
+        "layoutX" : 1427,
+        "layoutY" : 298
       },
       "configuration" : {
         "name" : "DLT_Ignored"
@@ -336,6 +348,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1040,
+        "layoutY" : 431
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "7c9048a0-3efb-11f1-b05e-f177627734ea"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ca0dee20-3efb-11f1-b05e-f177627734ea"
+      },
+      "name" : "S2sync",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -364,7 +399,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 15986
+    "version" : 16050
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -377,7 +412,20 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 15976
+    "version" : 16040
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "7c9048a0-3efb-11f1-b05e-f177627734ea"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 16038
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
