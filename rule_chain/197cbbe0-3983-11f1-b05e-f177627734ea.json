@@ -36,11 +36,7 @@
       "type" : "Success"
     }, {
       "fromIndex" : 0,
-      "toIndex" : 6,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 0,
-      "toIndex" : 8,
+      "toIndex" : 7,
       "type" : "Failure"
     }, {
       "fromIndex" : 1,
@@ -48,23 +44,27 @@
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 6,
+      "toIndex" : 7,
       "type" : "Failure"
     }, {
       "fromIndex" : 2,
-      "toIndex" : 6,
+      "toIndex" : 7,
       "type" : "Failure"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 8,
+      "type" : "True"
     }, {
       "fromIndex" : 2,
       "toIndex" : 9,
       "type" : "True"
     }, {
-      "fromIndex" : 2,
-      "toIndex" : 10,
+      "fromIndex" : 3,
+      "toIndex" : 5,
       "type" : "True"
     }, {
       "fromIndex" : 3,
-      "toIndex" : 6,
+      "toIndex" : 7,
       "type" : "Failure"
     }, {
       "fromIndex" : 4,
@@ -72,22 +72,22 @@
       "type" : "Success"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 6,
+      "toIndex" : 7,
       "type" : "Failure"
     }, {
-      "fromIndex" : 7,
+      "fromIndex" : 6,
       "toIndex" : 0,
       "type" : "Success"
     }, {
-      "fromIndex" : 7,
-      "toIndex" : 8,
+      "fromIndex" : 6,
+      "toIndex" : 7,
       "type" : "Failure"
     }, {
-      "fromIndex" : 10,
-      "toIndex" : 6,
+      "fromIndex" : 9,
+      "toIndex" : 7,
       "type" : "SendToDeadLetter"
     } ],
-    "firstNodeIndex" : 7,
+    "firstNodeIndex" : 6,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
@@ -141,8 +141,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 720,
-        "layoutY" : 260
+        "layoutX" : 568,
+        "layoutY" : 483
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -168,8 +168,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 380
+        "layoutX" : 865,
+        "layoutY" : 648
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -247,27 +247,6 @@
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 1427,
-        "layoutY" : 298
-      },
-      "configuration" : {
-        "name" : "DLT_Ignored"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : null,
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "136b8c81-3e2a-11f1-b05e-f177627734ea"
-      },
-      "name" : "SendToDeadLetter",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
-    }, {
-      "additionalInfo" : {
         "description" : "",
         "layoutX" : 249,
         "layoutY" : 277
@@ -297,8 +276,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 440,
-        "layoutY" : 448
+        "layoutX" : 1469,
+        "layoutY" : 235
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
@@ -320,8 +299,8 @@
     }, {
       "additionalInfo" : {
         "description" : "Send to Alarms Rule Chain",
-        "layoutX" : 996,
-        "layoutY" : 259
+        "layoutX" : 939,
+        "layoutY" : 314
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
@@ -347,8 +326,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1040,
-        "layoutY" : 431
+        "layoutX" : 895,
+        "layoutY" : 438
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : true,
@@ -399,7 +378,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16274
+    "version" : 16335
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -412,7 +391,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16264
+    "version" : 16326
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -425,7 +404,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16262
+    "version" : 16324
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
