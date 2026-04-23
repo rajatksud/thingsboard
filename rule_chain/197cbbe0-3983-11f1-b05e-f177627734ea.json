@@ -195,8 +195,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1213,
-        "layoutY" : 227
+        "layoutX" : 1188,
+        "layoutY" : 182
       },
       "configuration" : {
         "topicPattern" : "${kafkaTopic}",
@@ -252,8 +252,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 249,
-        "layoutY" : 277
+        "layoutX" : 280,
+        "layoutY" : 211
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -409,7 +409,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16457
+    "version" : 16523
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -422,7 +422,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16448
+    "version" : 16514
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -435,7 +435,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16444
+    "version" : 16510
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -448,7 +448,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16446
+    "version" : 16512
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
