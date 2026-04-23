@@ -38,6 +38,7 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 360,
         "layoutY" : 120
       },
@@ -47,7 +48,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776939714415,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -60,6 +65,7 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 690,
         "layoutY" : 120
       },
@@ -72,7 +78,11 @@
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776939714415,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -106,8 +116,8 @@
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 700,
-        "layoutY" : 300
+        "layoutX" : 956,
+        "layoutY" : 262
       },
       "configuration" : {
         "name" : "DLT_Ignored"
@@ -128,7 +138,20 @@
     } ],
     "ruleChainConnections" : null
   },
-  "relations" : [ ],
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "7c9048a0-3efb-11f1-b05e-f177627734ea"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 16166
+  } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   },
