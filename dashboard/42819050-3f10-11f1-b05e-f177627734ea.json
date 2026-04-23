@@ -1,0 +1,173 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "title" : "Alarm Sync Reconciler",
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "configuration" : {
+      "description" : "Shows scheduled reconciler output (aggregate + drill-down payloads) from Reconciler asset.",
+      "widgets" : {
+        "8f2f6b4a-3e13-4d2a-9d50-7b32e8f26d11" : {
+          "typeFullFqn" : "system.cards.entities_table",
+          "type" : "latest",
+          "sizeX" : 24,
+          "sizeY" : 16,
+          "config" : {
+            "showTitle" : true,
+            "title" : "Alarm Reconcile Output",
+            "showTitleIcon" : true,
+            "titleIcon" : "warning",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "a8d3d635-b0d9-4aab-a4d8-58b7d7c151f1",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Entity",
+                "color" : "#2196f3",
+                "settings" : { }
+              }, {
+                "name" : "recon.generated_at",
+                "type" : "timeseries",
+                "label" : "generated_at",
+                "color" : "#03a9f4",
+                "settings" : { }
+              }, {
+                "name" : "recon.device_count",
+                "type" : "timeseries",
+                "label" : "device_count",
+                "color" : "#d32f2f",
+                "settings" : { }
+              }, {
+                "name" : "recon.alarm_count",
+                "type" : "timeseries",
+                "label" : "alarm_count",
+                "color" : "#f44336",
+                "settings" : { }
+              }, {
+                "name" : "recon.aggregate_rows_json",
+                "type" : "timeseries",
+                "label" : "aggregate_rows_json",
+                "color" : "#ff9800",
+                "settings" : { }
+              }, {
+                "name" : "recon.aggregate_by_alarm",
+                "type" : "attribute",
+                "label" : "aggregate_by_alarm",
+                "color" : "#e91e63",
+                "settings" : { }
+              }, {
+                "name" : "recon.device_details",
+                "type" : "attribute",
+                "label" : "device_details",
+                "color" : "#9c27b0",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "configMode" : "basic",
+            "settings" : {
+              "entitiesTitle" : "Reconciler",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "displayEntityName" : false,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 20,
+              "defaultSortOrder" : "generated_at",
+              "reserveSpaceForHiddenAction" : "true",
+              "useRowStyleFunction" : false
+            },
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "8f2f6b4a-3e13-4d2a-9d50-7b32e8f26d11"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Alarm Sync Reconciler",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "8f2f6b4a-3e13-4d2a-9d50-7b32e8f26d11" : {
+                  "sizeX" : 24,
+                  "sizeY" : 16,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "layoutType" : "default",
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "a8d3d635-b0d9-4aab-a4d8-58b7d7c151f1" : {
+          "id" : "a8d3d635-b0d9-4aab-a4d8-58b7d7c151f1",
+          "alias" : "Reconciler Assets",
+          "filter" : {
+            "type" : "assetType",
+            "resolveMultiple" : true,
+            "assetTypes" : [ "Reconciler" ],
+            "assetNameFilter" : "Alarm Sync Reconciler"
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "timewindowMs" : 600000
+        },
+        "aggregation" : {
+          "type" : "NONE",
+          "limit" : 25000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "name" : "Alarm Sync Reconciler",
+    "resources" : null,
+    "assignedCustomers" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "42819050-3f10-11f1-b05e-f177627734ea"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}
