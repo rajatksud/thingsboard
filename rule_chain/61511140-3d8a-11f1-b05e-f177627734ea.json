@@ -170,13 +170,13 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n\n// 1. Isolate the custom parameters (v_bat, bat_pct, etc.)\n// We remove the specific system keys we don't want in the parameters block\nvar params = [:];\nif (alarm.metadata != null) {\n    params.putAll(alarm.metadata);\n}\n\n// 2. Build the structured Details object\nvar detailsObj = [\n    \"parameters\": params\n];\n\n// 3. Build the final Message compliant with ThingsBoard Alarm nodes\nvar outMsg = [\n    \"type\": alarm.canonicalAlarm,\n    \"severity\": \"MAJOR\",\n    \"details\": detailsObj\n];\n\n// 4. Set the message Type\nvar outType = (alarm.state == 0) ? \"ALARM_CLEAR\" : \"ALARM_UPSERT\";\n\n// 5. Use sourceEventTs for the message timestamp\n// ThingsBoard expects a Long value for the 'ts' field in the returned metadata\nvar customTs = Long.parseLong(alarm.sourceEventTs);\nmetadata.ts = '' + customTs;\n\nreturn {msg: outMsg, metadata: metadata, msgType: outType};"
+        "tbelScript" : "var alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n\n// 1. Isolate the custom parameters (v_bat, bat_pct, etc.)\n// We remove the specific system keys we don't want in the parameters block\nvar params = [:];\nif (alarm.metadata != null) {\n    params.putAll(alarm.metadata);\n}\n\n// 2. Build the structured Details object\nvar detailsObj = [\n    \"parameters\": params\n];\n\n// 3. Build the final Message compliant with ThingsBoard Alarm nodes\nvar outMsg = [\n    \"type\": alarm.canonicalAlarm,\n    \"severity\": \"MAJOR\",\n    \"details\": detailsObj\n];\n\n// 4. Set the message Type\nvar outType = (alarm.state == 0) ? \"ALARM_CLEAR\" : \"ALARM_UPSERT\";\n\n\n// 5. Apply the custom timestamp to metadata\n// This ensures the alarm is recorded at the NIC's detection time\nif (alarm.sourceEventTs != null) {\n    metadata.ts = \"\" + alarm.sourceEventTs;\n}\n\nreturn {msg: outMsg, metadata: metadata, msgType: outType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1776922916724,
+        "allEnabledUntil" : 1776924725080,
         "failuresEnabled" : false
       },
       "externalId" : null,
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 15769
+    "version" : 15821
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
