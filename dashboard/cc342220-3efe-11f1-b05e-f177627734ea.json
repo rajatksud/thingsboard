@@ -1,0 +1,185 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "title" : "Alarm Sync Drift",
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "configuration" : {
+      "description" : "Tracks drift between device active alarms (aa) and active alarms in ThingsBoard.",
+      "widgets" : {
+        "8f2f6b4a-3e13-4d2a-9d50-7b32e8f26d11" : {
+          "typeFullFqn" : "system.cards.entities_table",
+          "type" : "latest",
+          "sizeX" : 24,
+          "sizeY" : 16,
+          "config" : {
+            "showTitle" : true,
+            "title" : "AA vs TB Alarm Drift",
+            "showTitleIcon" : true,
+            "titleIcon" : "warning",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "a8d3d635-b0d9-4aab-a4d8-58b7d7c151f1",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Device",
+                "color" : "#2196f3",
+                "settings" : { }
+              }, {
+                "name" : "alarm.sync.in_sync",
+                "type" : "timeseries",
+                "label" : "in_sync",
+                "color" : "#4caf50",
+                "settings" : { }
+              }, {
+                "name" : "alarm.sync.only_in_device_count",
+                "type" : "timeseries",
+                "label" : "only_in_device_count",
+                "color" : "#f44336",
+                "settings" : { }
+              }, {
+                "name" : "alarm.sync.only_in_tb_count",
+                "type" : "timeseries",
+                "label" : "only_in_tb_count",
+                "color" : "#ff9800",
+                "settings" : { }
+              }, {
+                "name" : "alarm.sync.only_in_device",
+                "type" : "timeseries",
+                "label" : "only_in_device",
+                "color" : "#e91e63",
+                "settings" : { }
+              }, {
+                "name" : "alarm.sync.only_in_tb",
+                "type" : "timeseries",
+                "label" : "only_in_tb",
+                "color" : "#9c27b0",
+                "settings" : { }
+              }, {
+                "name" : "alarm.sync.nic_active",
+                "type" : "timeseries",
+                "label" : "nic_active",
+                "color" : "#607d8b",
+                "settings" : { }
+              }, {
+                "name" : "alarm.sync.tb_active",
+                "type" : "timeseries",
+                "label" : "tb_active",
+                "color" : "#3f51b5",
+                "settings" : { }
+              }, {
+                "name" : "alarm.sync.last_ts",
+                "type" : "timeseries",
+                "label" : "last_sync_ts",
+                "color" : "#795548",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "configMode" : "basic",
+            "settings" : {
+              "entitiesTitle" : "Devices",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "displayEntityName" : false,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 20,
+              "defaultSortOrder" : "only_in_device_count",
+              "reserveSpaceForHiddenAction" : "true",
+              "useRowStyleFunction" : false
+            },
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "8f2f6b4a-3e13-4d2a-9d50-7b32e8f26d11"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Alarm Sync Drift",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "8f2f6b4a-3e13-4d2a-9d50-7b32e8f26d11" : {
+                  "sizeX" : 24,
+                  "sizeY" : 16,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "layoutType" : "default",
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "a8d3d635-b0d9-4aab-a4d8-58b7d7c151f1" : {
+          "id" : "a8d3d635-b0d9-4aab-a4d8-58b7d7c151f1",
+          "alias" : "All Endpoints",
+          "filter" : {
+            "type" : "deviceType",
+            "resolveMultiple" : true,
+            "deviceTypes" : [ "SmartEndpoint" ],
+            "deviceNameFilter" : ""
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "timewindowMs" : 600000
+        },
+        "aggregation" : {
+          "type" : "NONE",
+          "limit" : 25000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "name" : "Alarm Sync Drift",
+    "resources" : null,
+    "assignedCustomers" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "cc342220-3efe-11f1-b05e-f177627734ea"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}
