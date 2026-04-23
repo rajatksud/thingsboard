@@ -355,7 +355,7 @@
         "layoutY" : 431
       },
       "configuration" : {
-        "forwardMsgToDefaultRuleChain" : false,
+        "forwardMsgToDefaultRuleChain" : true,
         "ruleChainId" : "7c9048a0-3efb-11f1-b05e-f177627734ea"
       },
       "configurationVersion" : 1,
@@ -403,7 +403,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16114
+    "version" : 16178
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -416,7 +416,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16104
+    "version" : 16168
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -429,7 +429,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16102
+    "version" : 16166
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
