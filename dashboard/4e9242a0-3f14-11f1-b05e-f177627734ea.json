@@ -1,0 +1,411 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "title" : "Alarm Sync Difference",
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "configuration" : {
+      "description" : "Multi-level alarm sync dashboard: alarm aggregate -> device list -> TB vs DEV active alarms.",
+      "widgets" : {
+        "8f2f6b4a-3e13-4d2a-9d50-7b32e8f26d11" : {
+          "typeFullFqn" : "system.cards.entities_table",
+          "type" : "latest",
+          "sizeX" : 24,
+          "sizeY" : 16,
+          "config" : {
+            "showTitle" : true,
+            "title" : "Level 1: Alarm Aggregate (SYNC/TB/DEV)",
+            "showTitleIcon" : true,
+            "titleIcon" : "warning",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "a8d3d635-b0d9-4aab-a4d8-58b7d7c151f1",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Alarm Name",
+                "color" : "#2196f3",
+                "settings" : { }
+              }, {
+                "name" : "recon.sync",
+                "type" : "timeseries",
+                "label" : "SYNC",
+                "color" : "#03a9f4",
+                "settings" : { }
+              }, {
+                "name" : "recon.tb",
+                "type" : "timeseries",
+                "label" : "TB",
+                "color" : "#d32f2f",
+                "settings" : { }
+              }, {
+                "name" : "recon.dev",
+                "type" : "timeseries",
+                "label" : "DEV",
+                "color" : "#f44336",
+                "settings" : { }
+              }, {
+                "name" : "recon.generated_at",
+                "type" : "timeseries",
+                "label" : "generated_at",
+                "color" : "#ff9800",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "configMode" : "basic",
+            "settings" : {
+              "entitiesTitle" : "Alarm Aggregate",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "displayEntityName" : false,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 20,
+              "defaultSortOrder" : "TB",
+              "reserveSpaceForHiddenAction" : "true",
+              "useRowStyleFunction" : false
+            },
+            "actions" : {
+              "rowClick" : [ {
+                "name" : "OpenAlarmDevices",
+                "icon" : "more_horiz",
+                "showWidgetActionFunction" : "return true;",
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "alarm_devices",
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "openRightLayout" : true,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "0f2c0f66-7f4d-4df0-95db-f3d130362083"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "8f2f6b4a-3e13-4d2a-9d50-7b32e8f26d11"
+        },
+        "1f1b59f9-f772-4e8e-aea5-9f7e9ec18c07" : {
+          "typeFullFqn" : "system.cards.entities_table",
+          "type" : "latest",
+          "sizeX" : 24,
+          "sizeY" : 14,
+          "config" : {
+            "showTitle" : true,
+            "title" : "Level 2: Selected Alarm Device Buckets",
+            "showTitleIcon" : true,
+            "titleIcon" : "list",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "8d7b6a8a-c4af-4f58-b5c9-3e6109e4ee1a",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "name",
+                "type" : "entityField",
+                "label" : "Alarm",
+                "color" : "#2196f3",
+                "settings" : { }
+              }, {
+                "name" : "recon.sync",
+                "type" : "timeseries",
+                "label" : "SYNC",
+                "color" : "#03a9f4",
+                "settings" : { }
+              }, {
+                "name" : "recon.tb",
+                "type" : "timeseries",
+                "label" : "TB",
+                "color" : "#d32f2f",
+                "settings" : { }
+              }, {
+                "name" : "recon.dev",
+                "type" : "timeseries",
+                "label" : "DEV",
+                "color" : "#f44336",
+                "settings" : { }
+              }, {
+                "name" : "recon.devices_sync_json",
+                "type" : "timeseries",
+                "label" : "devices.sync",
+                "color" : "#4caf50",
+                "settings" : { }
+              }, {
+                "name" : "recon.devices_tb_only_json",
+                "type" : "timeseries",
+                "label" : "devices.tb_only",
+                "color" : "#ff9800",
+                "settings" : { }
+              }, {
+                "name" : "recon.devices_dev_only_json",
+                "type" : "timeseries",
+                "label" : "devices.dev_only",
+                "color" : "#9c27b0",
+                "settings" : { }
+              }, {
+                "name" : "recon.generated_at",
+                "type" : "timeseries",
+                "label" : "generated_at",
+                "color" : "#607d8b",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "configMode" : "basic",
+            "settings" : {
+              "entitiesTitle" : "Selected Alarm",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "displayEntityName" : false,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 20,
+              "defaultSortOrder" : "generated_at",
+              "reserveSpaceForHiddenAction" : "true",
+              "useRowStyleFunction" : false
+            },
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "1f1b59f9-f772-4e8e-aea5-9f7e9ec18c07"
+        },
+        "d806f8a3-5ddb-4f9f-a74f-a57594e16f58" : {
+          "typeFullFqn" : "system.cards.entities_table",
+          "type" : "latest",
+          "sizeX" : 24,
+          "sizeY" : 14,
+          "config" : {
+            "showTitle" : true,
+            "title" : "Level 3: Device TB vs DEV Active Alarms",
+            "showTitleIcon" : true,
+            "titleIcon" : "compare_arrows",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : "",
+              "entityAliasId" : "3dcb34ea-fcca-4c26-a978-f148700aef09",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "recon.alarm_name",
+                "type" : "timeseries",
+                "label" : "Alarm",
+                "color" : "#2196f3",
+                "settings" : { }
+              }, {
+                "name" : "recon.device_name",
+                "type" : "timeseries",
+                "label" : "Device",
+                "color" : "#009688",
+                "settings" : { }
+              }, {
+                "name" : "recon.tb_active_json",
+                "type" : "timeseries",
+                "label" : "TB active alarms",
+                "color" : "#d32f2f",
+                "settings" : { }
+              }, {
+                "name" : "recon.dev_active_json",
+                "type" : "timeseries",
+                "label" : "DEV active alarms",
+                "color" : "#4caf50",
+                "settings" : { }
+              }, {
+                "name" : "recon.generated_at",
+                "type" : "timeseries",
+                "label" : "generated_at",
+                "color" : "#607d8b",
+                "settings" : { }
+              } ],
+              "alarmFilterConfig" : {
+                "statusList" : [ "ACTIVE" ]
+              }
+            } ],
+            "configMode" : "basic",
+            "settings" : {
+              "entitiesTitle" : "Device Compare",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "displayEntityName" : false,
+              "displayEntityLabel" : false,
+              "displayEntityType" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 20,
+              "defaultSortOrder" : "generated_at",
+              "reserveSpaceForHiddenAction" : "true",
+              "useRowStyleFunction" : false
+            },
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "d806f8a3-5ddb-4f9f-a74f-a57594e16f58"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Alarm Aggregate",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "8f2f6b4a-3e13-4d2a-9d50-7b32e8f26d11" : {
+                  "sizeX" : 24,
+                  "sizeY" : 16,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "layoutType" : "default",
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "alarm_devices" : {
+          "name" : "Alarm Devices",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "1f1b59f9-f772-4e8e-aea5-9f7e9ec18c07" : {
+                  "sizeX" : 24,
+                  "sizeY" : 14,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "layoutType" : "default",
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        },
+        "device_compare" : {
+          "name" : "Device Compare",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "d806f8a3-5ddb-4f9f-a74f-a57594e16f58" : {
+                  "sizeX" : 24,
+                  "sizeY" : 14,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "layoutType" : "default",
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : true,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "a8d3d635-b0d9-4aab-a4d8-58b7d7c151f1" : {
+          "id" : "a8d3d635-b0d9-4aab-a4d8-58b7d7c151f1",
+          "alias" : "Recon Alarm Rows",
+          "filter" : {
+            "type" : "assetType",
+            "resolveMultiple" : true,
+            "assetTypes" : [ "ReconAlarm" ],
+            "assetNameFilter" : "Alarm Sync ::"
+          }
+        },
+        "8d7b6a8a-c4af-4f58-b5c9-3e6109e4ee1a" : {
+          "id" : "8d7b6a8a-c4af-4f58-b5c9-3e6109e4ee1a",
+          "alias" : "Selected Alarm Row",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null
+          }
+        },
+        "3dcb34ea-fcca-4c26-a978-f148700aef09" : {
+          "id" : "3dcb34ea-fcca-4c26-a978-f148700aef09",
+          "alias" : "Selected Alarm Device Row",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : null
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "timewindowMs" : 600000
+        },
+        "aggregation" : {
+          "type" : "NONE",
+          "limit" : 25000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "name" : "Alarm Sync Difference",
+    "resources" : null,
+    "assignedCustomers" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "4e9242a0-3f14-11f1-b05e-f177627734ea"
+    }
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}
