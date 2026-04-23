@@ -230,7 +230,7 @@
         "useMessageAlarmData" : false,
         "overwriteAlarmDetails" : true,
         "alarmType" : "${alarmType}",
-        "severity" : "${alarmSeverity}",
+        "severity" : "${msg.alarmSeverity}",
         "propagate" : true,
         "relationTypes" : [ "Contains", "To" ],
         "propagateToOwner" : true,
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 15665
+    "version" : 15717
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
