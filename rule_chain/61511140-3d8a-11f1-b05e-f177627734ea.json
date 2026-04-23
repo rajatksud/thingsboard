@@ -142,7 +142,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "if (msg.mappedAlarms != null && msg.mappedAlarms.size() > 0) {\n    var alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n    var canonical = alarm.canonicalAlarm;\n    var parts = canonical.split('\\\\.'); \n    \n    if (parts.size() >= 2) {\n        metadata.alarmFamily = parts[0] + '.' + parts[1];\n    } else {\n        metadata.alarmFamily = 'unknown';\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var alarm\n\nif (msg.mappedAlarms != null && msg.mappedAlarms.size() > 0) {\n    alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n }\nif (msg.mappedAlarms != null && msg.mappedAlarms.size() > 0) {\n    alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n}\nif (alarm != null) {\n    var canonical = alarm.canonicalAlarm;\n    var parts = canonical.split('\\\\.'); \n    \n    if (parts.size() >= 2) {\n        metadata.alarmFamily = parts[0] + '.' + parts[1];\n    } else {\n        metadata.alarmFamily = 'unknown';\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -170,7 +170,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n\n// 1. Isolate the custom parameters (v_bat, bat_pct, etc.)\n// We remove the specific system keys we don't want in the parameters block\nvar params = [:];\nif (alarm.metadata != null) {\n    params.putAll(alarm.metadata);\n}\n\n// 2. Build the structured Details object\nvar detailsObj = [\n    \"parameters\": params\n];\n\n// 3. Build the final Message compliant with ThingsBoard Alarm nodes\nvar outMsg = [\n    \"type\": alarm.canonicalAlarm,\n    \"severity\": \"MAJOR\",\n    \"details\": detailsObj\n];\n\n// 4. Set the message Type\nvar outType = (alarm.state == 0) ? \"ALARM_CLEAR\" : \"ALARM_UPSERT\";\n\n\n// 5. Apply the custom timestamp to metadata\n// This ensures the alarm is recorded at the NIC's detection time\nif (alarm.sourceEventTs != null) {\n    metadata.ts = \"\" + alarm.sourceEventTs;\n}\n\nreturn {msg: outMsg, metadata: metadata, msgType: outType};"
+        "tbelScript" : "var alarm = null;\nif (msg.mappedAlarms != null && msg.mappedAlarms.size() > 0) {\n    alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n} else if (msg.mappedActiveAlarms != null && msg.mappedActiveAlarms.size() > 0) {\n    alarm = msg.mappedActiveAlarms[msg.mappedActiveAlarms.size() - 1];\n}\n// 1. Hard guard\nif (alarm == null) {\n    return {msg: msg, metadata: metadata, msgType: 'Failure'};\n}\n\n// 1. Isolate the custom parameters (v_bat, bat_pct, etc.)\n// We remove the specific system keys we don't want in the parameters block\nvar params = [:];\nif (alarm.metadata != null) {\n    params.putAll(alarm.metadata);\n}\n\n// 2. Build the structured Details object\nvar detailsObj = [\n    \"parameters\": params\n];\n\n// 3. Build the final Message compliant with ThingsBoard Alarm nodes\nvar outMsg = [\n    \"type\": alarm.canonicalAlarm,\n    \"severity\": \"MAJOR\",\n    \"details\": detailsObj\n];\n\n// 4. Set the message Type\n// - mappedAlarms carries state transitions, so clear/upsert is explicit\n// - mappedActiveAlarms is active snapshot, so treat as upsert\nvar outType = \"ALARM_UPSERT\";\nif (alarm.state != null && alarm.state == 0) {\n    outType = \"ALARM_CLEAR\";\n}\n\n\n// 5. Apply the custom timestamp to metadata\n// This ensures the alarm is recorded at the NIC's detection time\nif (alarm.sourceEventTs != null) {\n    metadata.ts = \"\" + alarm.sourceEventTs;\n}\n\nreturn {msg: outMsg, metadata: metadata, msgType: outType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -381,7 +381,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13511
+    "version" : 15870
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 15821
+    "version" : 15927
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
