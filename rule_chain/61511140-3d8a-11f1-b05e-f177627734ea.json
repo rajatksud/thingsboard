@@ -142,7 +142,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "var alarm\n\nif (msg.mappedAlarms != null && msg.mappedAlarms.size() > 0) {\n    alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n }\nif (msg.mappedAlarms != null && msg.mappedAlarms.size() > 0) {\n    alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n}\nif (alarm != null) {\n    var canonical = alarm.canonicalAlarm;\n    var parts = canonical.split('\\\\.'); \n    \n    if (parts.size() >= 2) {\n        metadata.alarmFamily = parts[0] + '.' + parts[1];\n    } else {\n        metadata.alarmFamily = 'unknown';\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+        "tbelScript" : "var alarm;\n\nif (msg.mappedAlarms != null && msg.mappedAlarms.size() > 0) {\n    alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n }\nif (msg.mappedAlarms != null && msg.mappedAlarms.size() > 0) {\n    alarm = msg.mappedAlarms[msg.mappedAlarms.size() - 1];\n}\nif (alarm != null) {\n    var canonical = alarm.canonicalAlarm;\n    var parts = canonical.split('\\\\.'); \n    \n    if (parts.size() >= 2) {\n        metadata.alarmFamily = parts[0] + '.' + parts[1];\n    } else {\n        metadata.alarmFamily = 'unknown';\n    }\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 18621
+    "version" : 18673
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
