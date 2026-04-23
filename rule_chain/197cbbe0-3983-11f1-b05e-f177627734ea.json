@@ -60,12 +60,12 @@
       "type" : "True"
     }, {
       "fromIndex" : 3,
-      "toIndex" : 5,
-      "type" : "True"
-    }, {
-      "fromIndex" : 3,
       "toIndex" : 7,
       "type" : "Failure"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 10,
+      "type" : "True"
     }, {
       "fromIndex" : 4,
       "toIndex" : 5,
@@ -86,6 +86,10 @@
       "fromIndex" : 9,
       "toIndex" : 7,
       "type" : "SendToDeadLetter"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 5,
+      "type" : "SendToOutput"
     } ],
     "firstNodeIndex" : 6,
     "nodes" : [ {
@@ -118,8 +122,8 @@
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 720,
-        "layoutY" : 120
+        "layoutX" : 665,
+        "layoutY" : 194
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -168,8 +172,8 @@
       "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 865,
-        "layoutY" : 648
+        "layoutX" : 607,
+        "layoutY" : 627
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -191,8 +195,8 @@
     }, {
       "additionalInfo" : {
         "description" : null,
-        "layoutX" : 1081,
-        "layoutY" : 29
+        "layoutX" : 1213,
+        "layoutY" : 227
       },
       "configuration" : {
         "topicPattern" : "${kafkaTopic}",
@@ -276,8 +280,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1469,
-        "layoutY" : 235
+        "layoutX" : 1445,
+        "layoutY" : 317
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
@@ -299,8 +303,8 @@
     }, {
       "additionalInfo" : {
         "description" : "Send to Alarms Rule Chain",
-        "layoutX" : 939,
-        "layoutY" : 314
+        "layoutX" : 696,
+        "layoutY" : 295
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
@@ -326,8 +330,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 895,
-        "layoutY" : 438
+        "layoutX" : 764,
+        "layoutY" : 358
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : true,
@@ -346,6 +350,33 @@
         "id" : "ca0dee20-3efb-11f1-b05e-f177627734ea"
       },
       "name" : "S2sync",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 926,
+        "layoutY" : 609
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1776940206614,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4d164870-3efd-11f1-b05e-f177627734ea"
+      },
+      "name" : "handleEvents",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -378,7 +409,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16395
+    "version" : 16457
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -391,7 +422,20 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16386
+    "version" : 16448
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "61e7abf0-3d8a-11f1-b05e-f177627734ea"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 16444
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -404,7 +448,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16384
+    "version" : 16446
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
