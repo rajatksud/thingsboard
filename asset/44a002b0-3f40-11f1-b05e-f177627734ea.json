@@ -1,0 +1,27 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : null,
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "d9497ff0-3f12-11f1-b05e-f177627734ea"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "44a002b0-3f40-11f1-b05e-f177627734ea"
+    },
+    "label" : "Alarm Sync :: modem.network.no_coverage :: RR-KOR-90076",
+    "name" : "Alarm Sync :: modem.network.no_coverage :: RR-KOR-90076",
+    "type" : "ReconAlarmDevice"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}
