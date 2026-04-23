@@ -291,7 +291,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
-        "alarmDetailsBuildTbel" : "var details = {};\n\n// 1. Preserve the history of how the alarm started\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    metadata.remove('prevAlarmDetails');\n}\n\n// 2. Add 'Restoration' data so you know why it cleared\ndetails.clearedSource = msg.details.source;\ndetails.clearedAtTs = msg.details.sourceEventTs;\ndetails.final_v_bat = msg.details.v_bat; \n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\n\n// 1. Preserve the history of how the alarm started\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    metadata.remove('prevAlarmDetails');\n}\n\n// 2. Add 'Restoration' data so you know why it cleared\ndetails.clearedSource = msg.details.source;\ndetails.clearedAtTs = msg.details.sourceEventTs;\ndetails.type = msg.type;\ndetails.alarmFamily = metadata.alarmFamily;\ndetails.parameters = msg.details.parameters; \n\nreturn details;",
         "alarmType" : "${type}"
       },
       "configurationVersion" : 0,
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 15457
+    "version" : 15509
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
