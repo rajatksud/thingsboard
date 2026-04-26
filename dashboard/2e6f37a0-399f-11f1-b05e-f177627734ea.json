@@ -19,19 +19,25 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
+              "entitiesTitle" : "Entities",
               "enableSearch" : true,
               "enableSelectColumnDisplay" : true,
               "enableStickyHeader" : true,
               "enableStickyAction" : true,
+              "showCellActionsMenu" : true,
               "reserveSpaceForHiddenAction" : "true",
               "displayEntityName" : false,
+              "entityNameColumnTitle" : "",
               "displayEntityLabel" : false,
+              "entityLabelColumnTitle" : "",
               "displayEntityType" : false,
               "displayPagination" : true,
-              "defaultPageSize" : 10,
+              "defaultPageSize" : 30,
+              "pageStepCount" : 3,
+              "pageStepIncrement" : 10,
               "defaultSortOrder" : "name",
               "useRowStyleFunction" : false,
-              "entitiesTitle" : "Entities"
+              "rowStyleFunction" : ""
             },
             "title" : "Entities table",
             "dropShadow" : true,
@@ -54,32 +60,52 @@
                 "color" : "#2196f3",
                 "settings" : { }
               }, {
-                "name" : "device.health.alert_active",
+                "name" : "device.runtime.uptime_s",
                 "type" : "timeseries",
-                "label" : "has_alarm",
-                "color" : "#4caf50",
+                "label" : "device.runtime.uptime_s",
+                "color" : "#ffc107",
                 "settings" : { },
                 "decimals" : 0
               }, {
-                "name" : "device.runtime.active_alarms",
+                "name" : "device.health.score",
                 "type" : "timeseries",
-                "label" : "device.runtime.active_alarms",
-                "color" : "#f44336",
+                "label" : "Health Score",
+                "color" : "#4caf50",
                 "settings" : { },
                 "decimals" : 0
               }, {
                 "name" : "device.runtime.alarm_transition",
                 "type" : "timeseries",
-                "label" : "device.runtime.alarm_transition",
-                "color" : "#ffc107",
+                "label" : "mappedActiveAlarms",
+                "color" : "#f44336",
                 "settings" : { },
                 "decimals" : 0
+              }, {
+                "name" : "active",
+                "type" : "attribute",
+                "label" : "active",
+                "color" : "#607d8b",
+                "settings" : { },
+                "decimals" : 0
+              }, {
+                "name" : "lastActivityTime",
+                "type" : "attribute",
+                "label" : "lastActivityTime",
+                "color" : "#9c27b0",
+                "settings" : { },
+                "decimals" : 0
+              }, {
+                "name" : "mappedEvents",
+                "type" : "timeseries",
+                "label" : "mappedEvents",
+                "color" : "#8bc34a",
+                "settings" : { }
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
               }
             } ],
-            "configMode" : "basic",
+            "configMode" : "advanced",
             "actions" : { },
             "showTitleIcon" : false,
             "titleIcon" : "list",
@@ -164,5 +190,6 @@
   "relations" : [ ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
-  }
+  },
+  "calculatedFields" : [ ]
 }
