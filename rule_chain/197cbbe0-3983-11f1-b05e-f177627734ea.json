@@ -248,7 +248,7 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "var s = msg.schema;\n// Missing schema => default to v1 (compact transport from simulator)\nif (s == null || s == undefined) { return ['Success']; }\nif (('' + s) === '1') { return ['Success']; }\nreturn ['Failure'];\n",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    var s = msg.schema;\n    if (s == null || s == undefined || ('' + s) === '1') {\n        return ['Success'];\n    }\n    return ['Failure'];\n}\nreturn nextRelation(metadata, msg);",
         "tbelScript" : "var s = msg.schema;\nif (s == null) {\n    s = '1';\n}\n// If schema is not 1, route to Failure\nif (('' + s) != '1') {\n    return ['Failure'];\n}\n\n// Otherwise, ensure it's in metadata and route to Success\nmetadata.schema = '' + s;\nreturn ['Success'];"
       },
       "configurationVersion" : 0,
@@ -373,7 +373,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8496196
+    "version" : 8497596
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -386,7 +386,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8496187
+    "version" : 8497587
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -399,7 +399,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8496185
+    "version" : 8497585
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
