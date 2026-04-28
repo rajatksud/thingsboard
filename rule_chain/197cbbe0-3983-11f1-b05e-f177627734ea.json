@@ -73,11 +73,11 @@
     }, {
       "fromIndex" : 6,
       "toIndex" : 0,
-      "type" : "Success"
+      "type" : "True"
     }, {
       "fromIndex" : 6,
       "toIndex" : 7,
-      "type" : "Failure"
+      "type" : "False"
     }, {
       "fromIndex" : 9,
       "toIndex" : 5,
@@ -248,8 +248,7 @@
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "function nextRelation(metadata, msg) {\n    var s = msg.schema;\n    if (s == null || s == undefined || ('' + s) === '1') {\n        return ['Success'];\n    }\n    return ['Failure'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "var s = msg.schema;\nif (s == null) {\n    s = '1';\n}\n// If schema is not 1, route to Failure\nif (('' + s) != '1') {\n    return ['Failure'];\n}\n\n// Otherwise, ensure it's in metadata and route to Success\nmetadata.schema = '' + s;\nreturn ['Success'];"
+        "jsScript" : "// Missing schema = compact transport (schema 1), allow through\nvar s = msg.schema;\nreturn (s == null || s == undefined || ('' + s) === '1');\n"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -267,7 +266,7 @@
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     }, {
       "additionalInfo" : {
         "description" : "",
@@ -373,7 +372,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8497596
+    "version" : 8498980
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -386,7 +385,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8497587
+    "version" : 8498971
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -399,7 +398,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8497585
+    "version" : 8498969
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
