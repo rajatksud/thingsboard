@@ -87,7 +87,7 @@
       },
       "configuration" : {
         "scriptLang" : "TBEL",
-        "tbelScript" : "var routes = {\n  'alarm': 'tb.nic.candidate.alarm.v1',\n  'device_state': 'tb.nic.candidate.device-state.v1',\n  'lifecycle': 'tb.nic.candidate.lifecycle.v1',\n  'ota': 'tb.nic.candidate.ota.v1'\n};\nvar candidateType = msg['candidateType'];\nif (candidateType == null) {\n  var err = {'error': 'missing_candidate_type', 'candidateType': 'dlt'};\n  return {msg: err, metadata: metadata, msgType: 'Failure'};\n}\nvar topic = routes[candidateType];\nif (topic == null) {\n  var err2 = {'error': 'unknown_candidate_type', 'value': candidateType, 'candidateType': 'dlt'};\n  return {msg: err2, metadata: metadata, msgType: 'Failure'};\n}\nmetadata['kafkaTopic'] = topic;\nreturn {msg: msg, metadata: metadata, msgType: 'Success'};"
+        "tbelScript" : "var candidateType = msg['candidateType'];\n\nvar topic = null;\nif (candidateType == 'alarm') { topic = 'tb.nic.candidate.alarm.v1'; }\nelse if (candidateType == 'device_state') { topic = 'tb.nic.candidate.device-state.v1'; }\n\nif (topic == null) {\n  throw 'missing_candidate_type: ' + candidateType;\n}\n\nmetadata['kafkaTopic'] = topic;\nreturn {msg: msg, metadata: metadata, msgType: 'Success'};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -381,7 +381,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8520260
+    "version" : 8535636
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8532396
+    "version" : 8535692
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
