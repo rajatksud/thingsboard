@@ -110,7 +110,7 @@
       "configuration" : {
         "topicPattern" : "${kafkaTopic}",
         "keyPattern" : "${deviceName}",
-        "bootstrapServers" : "localhost:9092",
+        "bootstrapServers" : "localhost:19092",
         "retries" : 0,
         "batchSize" : 16384,
         "linger" : 0,
@@ -381,7 +381,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 16514
+    "version" : 8464561
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -394,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 18673
+    "version" : 8465840
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
