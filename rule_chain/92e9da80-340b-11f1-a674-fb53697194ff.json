@@ -27,7 +27,9 @@
         "layoutY" : 158
       },
       "configuration" : {
-        "jsScript" : "return 'Critical Failure: ' + JSON.stringify(msg) + '\\nMetadata: ' + JSON.stringify(metadata);"
+        "jsScript" : "return 'Critical Failure: ' + JSON.stringify(msg) + '\\nMetadata: ' + JSON.stringify(metadata);",
+        "scriptLang" : "TBEL",
+        "tbelScript" : "\nvar origin = metadata['deviceName'] != null ? metadata['deviceName'] : \n            (metadata['assetName'] != null ? metadata['assetName'] : \n            (metadata['entityName'] != null ? metadata['entityName'] : 'Unknown Origin'));\n\nvar dType = metadata['deviceType'] != null ? metadata['deviceType'] : 'N/A';\nvar err = metadata['error'] != null ? metadata['error'] : 'Unknown Engine Failure';\n\nreturn '\\n--- DEAD LETTER ---' +\n       '\\nOrigin: ' + origin + ' (Type: ' + dType + ')' +\n       '\\nMsgType: ' + msgType +\n       '\\nError/Reason: ' + err +\n       '\\nPayload: ' + JSON.stringify(msg) +\n       '\\n-------------------\\n';\n"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -61,7 +63,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8447479
+    "version" : 8455927
   }, {
     "additionalInfo" : null,
     "from" : {
