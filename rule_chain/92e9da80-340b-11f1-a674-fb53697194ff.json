@@ -22,6 +22,7 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 387,
         "layoutY" : 158
       },
@@ -30,7 +31,11 @@
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1777396565042,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
@@ -56,7 +61,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13836
+    "version" : 8447479
   }, {
     "additionalInfo" : null,
     "from" : {
