@@ -193,7 +193,7 @@
       "configuration" : {
         "topicPattern" : "${kafkaTopic}",
         "keyPattern" : "${deviceName}",
-        "bootstrapServers" : "localhost:9092",
+        "bootstrapServers" : "localhost:19092",
         "retries" : 0,
         "batchSize" : 16384,
         "linger" : 0,
@@ -361,7 +361,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 13838
+    "version" : 8455929
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -374,7 +374,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 4972259
+    "version" : 8464570
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -387,7 +387,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 4972250
+    "version" : 8464561
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -400,7 +400,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 4972248
+    "version" : 8464559
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
