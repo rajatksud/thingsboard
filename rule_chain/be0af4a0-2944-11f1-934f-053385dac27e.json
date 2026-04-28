@@ -10,7 +10,7 @@
     },
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "0d212eb0-2c6a-11f1-8e8f-ffe40fd5ba85"
+      "id" : "475b5400-4323-11f1-a6c2-b36bf49bbd87"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -69,8 +69,16 @@
       "fromIndex" : 9,
       "toIndex" : 7,
       "type" : "SendToOutput"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 0,
+      "type" : "Asset"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 4,
+      "type" : "Device"
     } ],
-    "firstNodeIndex" : 4,
+    "firstNodeIndex" : 10,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
@@ -328,6 +336,28 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 204,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "475b5400-4323-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Originator Type Switch",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeSwitchNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -343,7 +373,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8445572
+    "version" : 8447479
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -356,7 +386,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8445574
+    "version" : 8447481
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
