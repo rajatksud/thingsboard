@@ -250,7 +250,7 @@
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
-        "tbelScript" : "var s = msg.schema ;\n\n// If schema is missing or not 1, route to Failure\nif (s == null || ('' + s) != '1') {\n    return ['Failure'];\n}\n\n// Otherwise, ensure it's in metadata and route to Success\nmetadata.schema = '' + s;\nreturn ['Success'];"
+        "tbelScript" : "var s = msg.schema;\nif (s == null) {\n    s = '1';\n}\n// If schema is not 1, route to Failure\nif (('' + s) != '1') {\n    return ['Failure'];\n}\n\n// Otherwise, ensure it's in metadata and route to Success\nmetadata.schema = '' + s;\nreturn ['Success'];"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -374,7 +374,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8481224
+    "version" : 8486138
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -387,7 +387,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8481215
+    "version" : 8486129
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -400,7 +400,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8481213
+    "version" : 8486127
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
