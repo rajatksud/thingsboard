@@ -247,8 +247,8 @@
         "layoutY" : 211
       },
       "configuration" : {
-        "scriptLang" : "TBEL",
-        "jsScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType === 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);",
+        "scriptLang" : "JS",
+        "jsScript" : "var s = msg.schema;\n// Missing schema => default to v1 (compact transport from simulator)\nif (s == null || s == undefined) { return ['Success']; }\nif (('' + s) === '1') { return ['Success']; }\nreturn ['Failure'];\n",
         "tbelScript" : "var s = msg.schema;\nif (s == null) {\n    s = '1';\n}\n// If schema is not 1, route to Failure\nif (('' + s) != '1') {\n    return ['Failure'];\n}\n\n// Otherwise, ensure it's in metadata and route to Success\nmetadata.schema = '' + s;\nreturn ['Success'];"
       },
       "configurationVersion" : 0,
@@ -373,7 +373,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8493382
+    "version" : 8496196
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -386,7 +386,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8493373
+    "version" : 8496187
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -399,7 +399,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8493371
+    "version" : 8496185
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
