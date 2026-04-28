@@ -7,7 +7,7 @@
     "externalId" : null,
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "529f6bb0-3e3e-11f1-b05e-f177627734ea"
+      "id" : "04a41ba0-4329-11f1-a6c2-b36bf49bbd87"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -44,23 +44,23 @@
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 7,
+      "toIndex" : 6,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 6,
       "type" : "Failure"
     }, {
       "fromIndex" : 2,
       "toIndex" : 7,
-      "type" : "Failure"
-    }, {
-      "fromIndex" : 2,
-      "toIndex" : 8,
       "type" : "True"
     }, {
       "fromIndex" : 3,
-      "toIndex" : 7,
+      "toIndex" : 6,
       "type" : "Failure"
     }, {
       "fromIndex" : 3,
-      "toIndex" : 9,
+      "toIndex" : 8,
       "type" : "True"
     }, {
       "fromIndex" : 4,
@@ -68,22 +68,22 @@
       "type" : "Success"
     }, {
       "fromIndex" : 4,
-      "toIndex" : 7,
+      "toIndex" : 6,
       "type" : "Failure"
     }, {
-      "fromIndex" : 6,
+      "fromIndex" : 8,
+      "toIndex" : 5,
+      "type" : "SendToOutput"
+    }, {
+      "fromIndex" : 9,
       "toIndex" : 0,
       "type" : "True"
     }, {
-      "fromIndex" : 6,
-      "toIndex" : 7,
-      "type" : "False"
-    }, {
       "fromIndex" : 9,
-      "toIndex" : 5,
-      "type" : "SendToOutput"
+      "toIndex" : 6,
+      "type" : "False"
     } ],
-    "firstNodeIndex" : 6,
+    "firstNodeIndex" : 9,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
@@ -243,33 +243,6 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 280,
-        "layoutY" : 211
-      },
-      "configuration" : {
-        "scriptLang" : "JS",
-        "jsScript" : "// Missing schema = compact transport (schema 1), allow through\nvar s = msg.schema;\nreturn (s == null || s == undefined || ('' + s) === '1');\n"
-      },
-      "configurationVersion" : 0,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1776858198438,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "529f6bb0-3e3e-11f1-b05e-f177627734ea"
-      },
-      "name" : "isSchema1",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
         "layoutX" : 1445,
         "layoutY" : 317
       },
@@ -344,6 +317,29 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 280,
+        "layoutY" : 211
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "// Allow missing schema (compact transport) and explicit schema=1\nvar s = msg.schema;\nreturn (s == null || s == undefined || ('' + s) === '1');\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "04a41ba0-4329-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "isSchema1",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -372,7 +368,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8498980
+    "version" : 8500504
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -385,7 +381,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8498971
+    "version" : 8500496
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -398,7 +394,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8498969
+    "version" : 8500494
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
