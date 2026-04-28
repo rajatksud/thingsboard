@@ -104,7 +104,7 @@
       "configuration" : {
         "topicPattern" : "${kafkaTopic}",
         "keyPattern" : "${deviceName}",
-        "bootstrapServers" : "localhost:9092",
+        "bootstrapServers" : "localhost:19092",
         "retries" : 0,
         "batchSize" : 16384,
         "linger" : 0,
@@ -176,7 +176,7 @@
     "additionalInfo" : null,
     "from" : {
       "entityType" : "RULE_CHAIN",
-      "id" : "be0af4a0-2944-11f1-934f-053385dac27e"
+      "id" : "197cbbe0-3983-11f1-b05e-f177627734ea"
     },
     "to" : {
       "entityType" : "RULE_CHAIN",
@@ -184,7 +184,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 7889
+    "version" : 8464559
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
