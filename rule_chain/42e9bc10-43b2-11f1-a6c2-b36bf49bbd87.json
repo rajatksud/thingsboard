@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "5f465300-43b2-11f1-a6c2-b36bf49bbd87"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "42e9bc10-43b2-11f1-a6c2-b36bf49bbd87"
@@ -72,7 +75,7 @@
       "toIndex" : 9,
       "type" : "Failure"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
         "layoutX" : 120,
@@ -88,7 +91,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "430c8650-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5f465300-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Schema Resolver",
       "queueName" : null,
@@ -110,7 +113,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "430c8651-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5f465301-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Telemetry Mapper",
       "queueName" : "Main Queue",
@@ -132,7 +135,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "430c8652-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5f467a10-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Telemetry Candidate Router",
       "queueName" : "Main Queue",
@@ -154,7 +157,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "430cad60-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5f467a11-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Has Alarms Filter",
       "queueName" : null,
@@ -176,7 +179,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "430cad61-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5f467a12-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Has Events Filter",
       "queueName" : null,
@@ -207,7 +210,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "430cd470-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5f467a13-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Kafka Export Main",
       "queueName" : "Main Queue",
@@ -228,7 +231,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "430cd471-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5f46a120-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "SendToAlarms",
       "queueName" : null,
@@ -249,7 +252,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "430cfb80-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5f46a121-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "SendToEvents",
       "queueName" : null,
@@ -270,7 +273,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "430cfb81-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5f46c830-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "SendToOutput",
       "queueName" : null,
@@ -291,7 +294,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "430cfb82-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5f46c831-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "SendToDeadLetter",
       "queueName" : null,
