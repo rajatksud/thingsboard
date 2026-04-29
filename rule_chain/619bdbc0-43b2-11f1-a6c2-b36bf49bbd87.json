@@ -38,8 +38,8 @@
     "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
-        "layoutX" : 120,
-        "layoutY" : 120
+        "layoutX" : 92,
+        "layoutY" : 263
       },
       "configuration" : { },
       "configurationVersion" : 0,
@@ -78,8 +78,8 @@
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
     }, {
       "additionalInfo" : {
-        "layoutX" : 420,
-        "layoutY" : 260
+        "layoutX" : 639,
+        "layoutY" : 258
       },
       "configuration" : {
         "name" : "TIER2_ALARM_EVENT_PROCESSING_V4"
