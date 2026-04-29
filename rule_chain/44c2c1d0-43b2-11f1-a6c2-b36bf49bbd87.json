@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "44e5da30-43b2-11f1-a6c2-b36bf49bbd87"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "44c2c1d0-43b2-11f1-a6c2-b36bf49bbd87"
@@ -15,9 +18,120 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
-    "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 3,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Failure"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "layoutX" : 420,
+        "layoutY" : 120
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "tbelScript" : "var allowedIntents = {\n  'REBOOT': true,\n  'RECONFIG': true,\n  'OTA_TRIGGER': true,\n  'DIAGNOSTIC_PING': true\n};\nvar control = msg['control'];\nif (control == null) { return {msg: msg, metadata: metadata, msgType: 'IGNORE'}; }\nvar intent = control['intent'];\nif (intent == null || allowedIntents[intent] != true) {\n  var err = {'error': 'invalid_or_missing_intent', 'intent': intent, 'candidateType': 'dlt'};\n  return {msg: err, metadata: metadata, msgType: 'Failure'};\n}\nmetadata['kafkaTopic'] = 'tb.nic.control.v1';\nmetadata['lastIntent'] = intent;\nreturn {msg: control, metadata: metadata, msgType: 'Success'};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "44e5da30-43b2-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Control Envelope Mapper",
+      "queueName" : "Main Queue",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 720,
+        "layoutY" : 120
+      },
+      "configuration" : {
+        "topicPattern" : "${kafkaTopic}",
+        "keyPattern" : "${deviceName}",
+        "bootstrapServers" : "localhost:9092",
+        "retries" : 0,
+        "batchSize" : 16384,
+        "linger" : 0,
+        "bufferMemory" : 33554432,
+        "acks" : "-1",
+        "otherProperties" : { },
+        "addMetadataKeyValuesAsKafkaHeaders" : false,
+        "kafkaHeadersCharset" : "UTF-8"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "44e5da31-43b2-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Kafka Export Control",
+      "queueName" : "Main Queue",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 720,
+        "layoutY" : 240
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "44e67670-43b2-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Save Last Intent",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbSaveAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1020,
+        "layoutY" : 120
+      },
+      "configuration" : {
+        "name" : "DLT_Ignored"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "44e67671-43b2-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "SendToDeadLetter",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
+    } ],
     "ruleChainConnections" : null
   },
   "relations" : [ ],
