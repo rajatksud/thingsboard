@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "61252520-43b2-11f1-a6c2-b36bf49bbd87"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "44c2c1d0-43b2-11f1-a6c2-b36bf49bbd87"
@@ -32,7 +35,7 @@
       "toIndex" : 3,
       "type" : "Failure"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
         "layoutX" : 420,
@@ -48,7 +51,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "44e5da30-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "61252520-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Control Envelope Mapper",
       "queueName" : "Main Queue",
@@ -79,7 +82,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "44e5da31-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "61252521-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Kafka Export Control",
       "queueName" : "Main Queue",
@@ -100,7 +103,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "44e67670-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "61257340-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Save Last Intent",
       "queueName" : null,
@@ -121,7 +124,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "44e67671-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "61257341-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "SendToDeadLetter",
       "queueName" : null,
