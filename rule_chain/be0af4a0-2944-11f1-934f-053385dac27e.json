@@ -175,8 +175,8 @@
     }, {
       "additionalInfo" : {
         "description" : "Process incoming messages from devices with the alarm rules defined in the device profile. Dispatch all incoming messages with \"Success\" relation type.",
-        "layoutX" : 239,
-        "layoutY" : 352
+        "layoutX" : 295,
+        "layoutY" : 437
       },
       "configuration" : {
         "persistAlarmRulesState" : false,
@@ -339,8 +339,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 194,
-        "layoutY" : 80
+        "layoutX" : 25,
+        "layoutY" : 265
       },
       "configuration" : {
         "version" : 0
@@ -373,7 +373,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8455927
+    "version" : 10339149
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -386,7 +386,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 8455929
+    "version" : 10339151
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
