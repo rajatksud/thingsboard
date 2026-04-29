@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "5fea3420-43b2-11f1-a6c2-b36bf49bbd87"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "4387f7e0-43b2-11f1-a6c2-b36bf49bbd87"
@@ -48,7 +51,7 @@
       "toIndex" : 4,
       "type" : "Success"
     } ],
-    "firstNodeIndex" : null,
+    "firstNodeIndex" : 0,
     "nodes" : [ {
       "additionalInfo" : {
         "layoutX" : 420,
@@ -64,7 +67,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "43a89f40-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5fea3420-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Event Mapper",
       "queueName" : "Main Queue",
@@ -86,7 +89,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "43a89f41-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5fea3421-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Event Candidate Router",
       "queueName" : "Main Queue",
@@ -117,7 +120,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "43a8c650-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5fea5b30-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "Kafka Export Event",
       "queueName" : "Main Queue",
@@ -138,7 +141,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "43a8c651-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5fea5b31-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "SendToOutput",
       "queueName" : null,
@@ -159,7 +162,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "43a8ed60-43b2-11f1-a6c2-b36bf49bbd87"
+        "id" : "5fea8240-43b2-11f1-a6c2-b36bf49bbd87"
       },
       "name" : "SendToDeadLetter",
       "queueName" : null,
