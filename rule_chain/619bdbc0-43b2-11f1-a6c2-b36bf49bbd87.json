@@ -5,7 +5,10 @@
     "configuration" : null,
     "debugMode" : false,
     "externalId" : null,
-    "firstRuleNodeId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "61bcf850-43b2-11f1-a6c2-b36bf49bbd87"
+    },
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "619bdbc0-43b2-11f1-a6c2-b36bf49bbd87"
@@ -15,9 +18,107 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
-    "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 2,
+      "type" : "Alarm Severity Updated"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 2,
+      "type" : "Alarm Updated"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 3,
+      "type" : "Other"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "layoutX" : 120,
+        "layoutY" : 120
+      },
+      "configuration" : { },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "61bcf850-43b2-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Message Type Switch",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 420,
+        "layoutY" : 120
+      },
+      "configuration" : {
+        "name" : "TIER2_TELEMETRY_PROCESSING_V4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "61bcf851-43b2-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Route to Telemetry",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 420,
+        "layoutY" : 260
+      },
+      "configuration" : {
+        "name" : "TIER2_ALARM_EVENT_PROCESSING_V4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "61bcf852-43b2-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Route to Alarms",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 420,
+        "layoutY" : 400
+      },
+      "configuration" : {
+        "name" : "TIER2_DEAD_LETTER_V4"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "61bd1f60-43b2-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Route to DLT",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
+    } ],
     "ruleChainConnections" : null
   },
   "relations" : [ ],
