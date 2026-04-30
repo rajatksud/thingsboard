@@ -81,7 +81,7 @@
       },
       "configuration" : {
         "scriptLang" : "TBEL",
-        "tbelScript" : "var candidateType = msg['candidateType'];\n\nvar topic = null;\nif (candidateType == 'lifecycle') { topic = 'tb.nic.candidate.lifecycle.v1'; }\nelse if (candidateType == 'ota') { topic = 'tb.nic.candidate.ota.v1'; }\n\nif (topic == null) {\n  throw 'missing_candidate_type: ' + candidateType;\n}\n\nmetadata['kafkaTopic'] = topic;\nreturn {msg: msg, metadata: metadata, msgType: 'Success'};"
+        "tbelScript" : "var candidateType = msg['candidateType'];\n\n// Handle internal TB entity events\nif (candidateType == null && (msgType.contains('ENTITY_') || msgType.contains('CREATED') || msgType.contains('UPDATED') || msgType.contains('DELETED'))) {\n    candidateType = 'lifecycle';\n}\n\nvar topic = null;\nif (candidateType == 'lifecycle') { topic = 'tb.nic.candidate.lifecycle.v1'; }\nelse if (candidateType == 'ota') { topic = 'tb.nic.candidate.ota.v1'; }\n\nif (topic == null) {\n  throw 'missing_candidate_type: ' + candidateType;\n}\n\nmetadata['kafkaTopic'] = topic;\nreturn {msg: msg, metadata: metadata, msgType: 'Success'};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
