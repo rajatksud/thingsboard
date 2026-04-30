@@ -93,6 +93,10 @@
       "fromIndex" : 11,
       "toIndex" : 12,
       "type" : "Alarm"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 13,
+      "type" : "Alarm"
     } ],
     "firstNodeIndex" : 10,
     "nodes" : [ {
@@ -417,6 +421,27 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 600,
+        "layoutY" : 800
+      },
+      "configuration" : {
+        "jsScript" : "return 'ROOT ALARM: ' + msgType + ' ' + JSON.stringify(msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "517fa580-446d-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Log Alarms",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbLogNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -432,7 +457,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11519299
+    "version" : 11525082
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -445,7 +470,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11519301
+    "version" : 11525084
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -458,7 +483,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11519293
+    "version" : 11525076
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
