@@ -75,8 +75,44 @@
       "type" : "Asset"
     }, {
       "fromIndex" : 10,
-      "toIndex" : 4,
+      "toIndex" : 11,
       "type" : "Device"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 0,
+      "type" : "Other"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 0,
+      "type" : "RPC Request from Device"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 0,
+      "type" : "RPC Request to Device"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 4,
+      "type" : "Post attributes"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 4,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 12,
+      "type" : "Alarm Cleared"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 12,
+      "type" : "Alarm Created"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 12,
+      "type" : "Alarm Severity Updated"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 12,
+      "type" : "Alarm Updated"
     } ],
     "firstNodeIndex" : 10,
     "nodes" : [ {
@@ -358,6 +394,47 @@
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 150,
+        "layoutY" : 450
+      },
+      "configuration" : { },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5de51640-446b-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Entry Switch",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 400,
+        "layoutY" : 650
+      },
+      "configuration" : {
+        "ruleChainId" : "61511140-3d8a-11f1-b05e-f177627734ea",
+        "forwardMsgToDefaultRuleChain" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "5de51641-446b-11f1-a6c2-b36bf49bbd87"
+      },
+      "name" : "Tier2AlarmsMap",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },
@@ -373,7 +450,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 10339149
+    "version" : 11506902
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -386,7 +463,20 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 10339151
+    "version" : 11506904
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "be0af4a0-2944-11f1-934f-053385dac27e"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "61511140-3d8a-11f1-b05e-f177627734ea"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 11506896
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
