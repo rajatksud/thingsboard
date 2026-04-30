@@ -153,7 +153,7 @@
         "id" : "144ee7a3-3e2a-11f1-b05e-f177627734ea"
       },
       "name" : "Kafka Export Alarm",
-      "queueName" : "HighPriority",
+      "queueName" : "Main Queue",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.kafka.TbKafkaNode"
@@ -450,7 +450,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11510101
+    "version" : 11514551
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
