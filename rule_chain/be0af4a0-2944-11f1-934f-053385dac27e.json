@@ -83,36 +83,16 @@
       "type" : "Other"
     }, {
       "fromIndex" : 11,
-      "toIndex" : 0,
-      "type" : "RPC Request from Device"
-    }, {
-      "fromIndex" : 11,
-      "toIndex" : 0,
-      "type" : "RPC Request to Device"
+      "toIndex" : 4,
+      "type" : "Attributes"
     }, {
       "fromIndex" : 11,
       "toIndex" : 4,
-      "type" : "Post attributes"
-    }, {
-      "fromIndex" : 11,
-      "toIndex" : 4,
-      "type" : "Post telemetry"
+      "type" : "Telemetry"
     }, {
       "fromIndex" : 11,
       "toIndex" : 12,
-      "type" : "Alarm Cleared"
-    }, {
-      "fromIndex" : 11,
-      "toIndex" : 12,
-      "type" : "Alarm Created"
-    }, {
-      "fromIndex" : 11,
-      "toIndex" : 12,
-      "type" : "Alarm Severity Updated"
-    }, {
-      "fromIndex" : 11,
-      "toIndex" : 12,
-      "type" : "Alarm Updated"
+      "type" : "Alarm"
     } ],
     "firstNodeIndex" : 10,
     "nodes" : [ {
@@ -399,7 +379,9 @@
         "layoutX" : 150,
         "layoutY" : 450
       },
-      "configuration" : { },
+      "configuration" : {
+        "tbelScript" : "if (msgType.startsWith('ALARM_')) {\n    return ['Alarm'];\n}\nif (msgType == 'POST_TELEMETRY_REQUEST') {\n    return ['Telemetry'];\n}\nif (msgType == 'POST_ATTRIBUTES_REQUEST') {\n    return ['Attributes'];\n}\nreturn ['Other'];"
+      },
       "configurationVersion" : 0,
       "createdTime" : 0,
       "debugSettings" : null,
@@ -412,7 +394,7 @@
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
     }, {
       "additionalInfo" : {
         "layoutX" : 400,
@@ -450,7 +432,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11506902
+    "version" : 11517479
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -463,7 +445,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11506904
+    "version" : 11517481
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -476,7 +458,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11506896
+    "version" : 11517473
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
