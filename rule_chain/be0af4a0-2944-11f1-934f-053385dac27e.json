@@ -380,7 +380,7 @@
         "layoutY" : 450
       },
       "configuration" : {
-        "tbelScript" : "if (msgType.startsWith('ALARM_')) {\n    return ['Alarm'];\n}\nif (msgType == 'POST_TELEMETRY_REQUEST') {\n    return ['Telemetry'];\n}\nif (msgType == 'POST_ATTRIBUTES_REQUEST') {\n    return ['Attributes'];\n}\nreturn ['Other'];"
+        "tbelScript" : "var isAlarm = msgType.startsWith('ALARM_');\nvar isTelemetry = (msgType == 'POST_TELEMETRY_REQUEST');\nvar isAttributes = (msgType == 'POST_ATTRIBUTES_REQUEST');\n\nif (isAlarm) {\n    return ['Alarm'];\n}\n\n// Only route to Device Profile Node if it's a DEVICE\nif ((isTelemetry || isAttributes) && metadata.deviceType != null) {\n    return [isTelemetry ? 'Telemetry' : 'Attributes'];\n}\n\nreturn ['Other'];"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -432,7 +432,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11518961
+    "version" : 11519299
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -445,7 +445,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11518963
+    "version" : 11519301
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -458,7 +458,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11518955
+    "version" : 11519293
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
