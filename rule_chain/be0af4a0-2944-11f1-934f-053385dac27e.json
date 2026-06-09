@@ -8,10 +8,7 @@
       "entityType" : "RULE_CHAIN",
       "id" : "be0af4a0-2944-11f1-934f-053385dac27e"
     },
-    "firstRuleNodeId" : {
-      "entityType" : "RULE_NODE",
-      "id" : "475b5400-4323-11f1-a6c2-b36bf49bbd87"
-    },
+    "firstRuleNodeId" : null,
     "id" : {
       "entityType" : "RULE_CHAIN",
       "id" : "be0af4a0-2944-11f1-934f-053385dac27e"
@@ -79,22 +76,14 @@
       "type" : "Device"
     }, {
       "fromIndex" : 11,
-      "toIndex" : 0,
-      "type" : "Other"
-    }, {
-      "fromIndex" : 11,
       "toIndex" : 4,
       "type" : "Attributes"
     }, {
       "fromIndex" : 11,
       "toIndex" : 4,
       "type" : "Telemetry"
-    }, {
-      "fromIndex" : 11,
-      "toIndex" : 12,
-      "type" : "Alarm"
     } ],
-    "firstNodeIndex" : 10,
+    "firstNodeIndex" : null,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : null,
@@ -191,8 +180,8 @@
     }, {
       "additionalInfo" : {
         "description" : "Process incoming messages from devices with the alarm rules defined in the device profile. Dispatch all incoming messages with \"Success\" relation type.",
-        "layoutX" : 295,
-        "layoutY" : 437
+        "layoutX" : 393,
+        "layoutY" : 332
       },
       "configuration" : {
         "persistAlarmRulesState" : false,
@@ -432,7 +421,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11528189
+    "version" : 26542885
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -445,7 +434,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11528191
+    "version" : 26542887
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -458,7 +447,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 11528183
+    "version" : 26542879
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]
