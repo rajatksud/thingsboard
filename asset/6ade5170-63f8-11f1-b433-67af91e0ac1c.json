@@ -1,0 +1,27 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : null,
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "d9497ff0-3f12-11f1-b05e-f177627734ea"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "6ade5170-63f8-11f1-b433-67af91e0ac1c"
+    },
+    "label" : "Alarm Sync :: backend.hes.connect_timeout :: RR-KOR-90046",
+    "name" : "Alarm Sync :: backend.hes.connect_timeout :: RR-KOR-90046",
+    "type" : "ReconAlarmDevice"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}
